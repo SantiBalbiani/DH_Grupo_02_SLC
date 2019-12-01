@@ -48,6 +48,7 @@ __Paleta de colores__
 https://material.io/resources/color/#!/?view.left=1&view.right=1&primary.color=597ff9
 
 __Tipografía__
+
 https://fonts.google.com/specimen/Montserrat?selection.family=Montserrat
 
 <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
