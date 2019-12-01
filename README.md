@@ -1,7 +1,43 @@
 # Proyecto Integrador de Digital House
 
-## ¿Qué productos o servicios brindará nuestro sitio?
+**Grupo 02 | Santiago Balbiani - Luciano Schiavone - Clara Salvadores
 
-## ¿Quién será nuestra audiencia objetivo?
 
-## ¿Cómo ajustaremos nuestra oferta a ese público?
+## Temática
+
+**¿Qué productos o servicios brindará nuestro sitio?
+
+_Componentes electrónicos - Soluciones de Internet en las Cosas (IoT)
+
+
+_Visión_
+
+Ser un socio estratégico reconocido en la región para la distribución de componentes y el diseño de productos electrónicos.
+
+_Misión_
+
+Agregar valor al negocio de nuestros clientes mediante la búsqueda de la mejor solución costo-beneficio y tecnología.
+
+
+__¿Quién será nuestra audiencia objetivo? 
+
+Público en general interesado en crear soluciones digitales.
+
+Elegimos este proyecto para que más personas puedan aprovechar el poder de las tecnologías digitales para el trabajo, resolver problemas que les importan y expresarse creativamente.
+
+
+__¿Cómo ajustaremos nuestra oferta a ese público?
+
+Nos proponemos crear un sitio que tenga diferentes categorías que agrupen las clases de componentes, en conjunto con un buscador que permita encontrar lo que cada usuario está buscando. 
+
+
+## Benchmark
+Planeta Electrónico https://www.planetaelectronico.com/
+
+Semak https://www.semak.com.ar/
+
+Electrónica Elemon http://www.elemon.net/
+
+Mercado Libre Categoría Electrónica https://electronica.mercadolibre.com.ar/componentes-electronicos/
+
+Alibaba Categoría Componentes Eletrónicos  https://www.alibaba.com/trade/search?fsb=y&IndexArea=product_en&CatId=&SearchText=electronic+components
