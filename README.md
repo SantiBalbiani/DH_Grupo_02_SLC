@@ -1,11 +1,11 @@
 # Proyecto Integrador de Digital House
 
-**Grupo 02 | Santiago Balbiani - Luciano Schiavone - Clara Salvadores
+__Grupo 02 | Santiago Balbiani - Luciano Schiavone - Clara Salvadores
 
 
 ## Temática
 
-**¿Qué productos o servicios brindará nuestro sitio?
+__¿Qué productos o servicios brindará nuestro sitio?
 
 _Componentes electrónicos - Soluciones de Internet en las Cosas (IoT)
 
