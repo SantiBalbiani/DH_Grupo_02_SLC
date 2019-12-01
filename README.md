@@ -1,13 +1,13 @@
 # Proyecto Integrador de Digital House
 
-__Grupo 02 | Santiago Balbiani - Luciano Schiavone - Clara Salvadores
+Grupo 02 | Santiago Balbiani - Luciano Schiavone - Clara Salvadores
 
 
 ## Temática
 
-__¿Qué productos o servicios brindará nuestro sitio?
+__¿Qué productos o servicios brindará nuestro sitio?__
 
-_Componentes electrónicos - Soluciones de Internet en las Cosas (IoT)
+__Componentes electrónicos - Soluciones de Internet en las Cosas (IoT)__
 
 
 _Visión_
@@ -19,14 +19,14 @@ _Misión_
 Agregar valor al negocio de nuestros clientes mediante la búsqueda de la mejor solución costo-beneficio y tecnología.
 
 
-__¿Quién será nuestra audiencia objetivo? 
+__¿Quién será nuestra audiencia objetivo?__
 
 Público en general interesado en crear soluciones digitales.
 
 Elegimos este proyecto para que más personas puedan aprovechar el poder de las tecnologías digitales para el trabajo, resolver problemas que les importan y expresarse creativamente.
 
 
-__¿Cómo ajustaremos nuestra oferta a ese público?
+__¿Cómo ajustaremos nuestra oferta a ese público?__
 
 Nos proponemos crear un sitio que tenga diferentes categorías que agrupen las clases de componentes, en conjunto con un buscador que permita encontrar lo que cada usuario está buscando. 
 
