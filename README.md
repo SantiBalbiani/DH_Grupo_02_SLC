@@ -42,6 +42,10 @@ Mercado Libre Categoría Electrónica https://electronica.mercadolibre.com.ar/co
 
 Alibaba Categoría Componentes Eletrónicos  https://www.alibaba.com/trade/search?fsb=y&IndexArea=product_en&CatId=&SearchText=electronic+components
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> bd5a2170ad308b792089ae5859e8ffac70245635
 ## Estilos y tipografía
 __Paleta de colores__
 
@@ -56,4 +60,8 @@ https://fonts.google.com/specimen/Montserrat?selection.family=Montserrat
 Specify in CSS
 Use the following CSS rules to specify these families:
 
+<<<<<<< HEAD
 font-family: 'Montserrat', sans-serif;
+=======
+font-family: 'Montserrat', sans-serif;
+>>>>>>> bd5a2170ad308b792089ae5859e8ffac70245635
