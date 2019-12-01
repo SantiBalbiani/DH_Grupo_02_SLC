@@ -41,3 +41,19 @@ Electrónica Elemon http://www.elemon.net/
 Mercado Libre Categoría Electrónica https://electronica.mercadolibre.com.ar/componentes-electronicos/
 
 Alibaba Categoría Componentes Eletrónicos  https://www.alibaba.com/trade/search?fsb=y&IndexArea=product_en&CatId=&SearchText=electronic+components
+
+
+## Estilos y tipografía
+__Paleta de colores__
+
+https://material.io/resources/color/#!/?view.left=1&view.right=1&primary.color=597ff9
+
+__Tipografía__
+https://fonts.google.com/specimen/Montserrat?selection.family=Montserrat
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+Specify in CSS
+Use the following CSS rules to specify these families:
+
+font-family: 'Montserrat', sans-serif;
