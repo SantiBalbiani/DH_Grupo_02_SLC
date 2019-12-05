@@ -1,0 +1,11 @@
+{
+  "name": "grupo_02_slc",
+  "version": "1.0.0",
+  "description": "Grupo 02 | Santiago Balbiani - Luciano Schiavone - Clara Salvadores",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
