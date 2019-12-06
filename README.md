@@ -1,7 +1,7 @@
 # Proyecto Integrador de Digital House
 
 Grupo 02 | Santiago Balbiani - Luciano Schiavone - Clara Salvadores
-
+Enlace a Tablero de Trello https://trello.com/b/lbqA3Q5L
 
 ## Temática
 
