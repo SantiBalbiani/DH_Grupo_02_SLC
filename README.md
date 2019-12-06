@@ -3,6 +3,8 @@
 Grupo 02 | Santiago Balbiani - Luciano Schiavone - Clara Salvadores
 
 
+Enlace a Tablero de Trello https://trello.com/b/lbqA3Q5L
+
 ## Temática
 
 __¿Qué productos o servicios brindará nuestro sitio?__
