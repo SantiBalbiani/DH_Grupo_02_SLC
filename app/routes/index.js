@@ -10,8 +10,8 @@ const mainController = require('../controllers/mainController');
 /* GET */
 router.get('/', mainController.root);
 router.get('/productDetail', mainController.productDetail);
-router.get('/shoppingCart', mainController.shoppingCart);
+router.get('/productCart', mainController.productCart);
 router.get('/register', mainController.register);
-router.get('/loadProduct', mainController.loadProduct);
+router.get('/productAdd', mainController.productAdd);
 
 module.exports = router;

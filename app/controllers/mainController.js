@@ -17,16 +17,16 @@ const controller = {
 		let html = readHTML('productDetail');
 		res.send(html);
 	},
-	shoppingCart: (req, res) => {
-		let html = readHTML('shoppingCart');
+	productCart: (req, res) => {
+		let html = readHTML('productCart');
 		res.send(html);
 	},
 	register: (req, res) => {
 		let html = readHTML('register');
 		res.send(html);
 	},
-	loadProduct: (req, res) => {
-		let html = readHTML('loadProduct');
+	productAdd: (req, res) => {
+		let html = readHTML('productAdd');
 		res.send(html);
 	},
 
