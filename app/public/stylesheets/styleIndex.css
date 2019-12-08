@@ -108,40 +108,41 @@ a {
   color: lightgrey;
 }
 
-.main-content {
-width: 100%;
-overflow: hidden;
-}
-
+/*Primer grupo de tres cajas*/
 .product-category1 {
   width: 65%;
   background-color: #ffffff;
   float: left;
 }
 
-.product-category2{
-  width: 25%;
-  float: right;
-  }
-
+/*Primer grupo de tres cajas- Cajas iguales*/
 .detail-category1 {
   width: 33%;
   text-transform: uppercase;
   float: left;
-  margin: auto;
+  margin: 10px;
   height: 267px;
   border: solid 1px lightgrey;
-
 }
 
+/*Primer grupo de tres cajas - Caja +grande abajo*/
 .detail-category2 {
   text-transform: uppercase;
   float: left;
-  margin: auto;
-  width: 60%;
-  height: 253px;
+  margin: 10px;
+  width: 68%;
+  height: 260px;
   border: solid 1px lightgrey;
 }
+
+/*Segundo grupo - Caja a la derecha*/
+.product-category2{
+  position: absolute;
+  right: 100px;
+  top: 209px;
+  width: 25%;
+  float: right;
+  }
 
 .detail-category3 {
   text-transform: uppercase;
@@ -150,6 +151,8 @@ overflow: hidden;
   height: 543px;
   border: solid 1px lightgrey;
 }
+
+/*Call To Action - Ver Categoria*/
 
 .call-to-action {
   padding: 10px 25px;
@@ -165,12 +168,14 @@ text-decoration: underline;
 
 /*Pie*/
 .footer-navbar {
+  width: 100%;
   position: fixed;
   bottom: 20px;
   font-size: 10px;
   margin-left: 10px;
   color: grey;
   text-transform: capitalize;
+  margin-top: -50px;
   }
 
 .footer-navbar li {
@@ -178,4 +183,5 @@ text-decoration: underline;
   vertical-align: middle;
   padding-right: 10px;
   padding-left: 10px;
+  
 }
