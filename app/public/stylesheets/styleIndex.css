@@ -8,6 +8,7 @@ body {
  font-family: 'Montserrat', sans-serif;
 }
 
+/*Header*/
 ul,
 ol {
   padding: 0;
@@ -20,8 +21,8 @@ a {
   text-decoration: none;
 }
 
-.container {
-  width: 1140px;
+.container-header {
+  max-width: 1140px;
   margin: auto;
   overflow: hidden;
 }
@@ -50,7 +51,6 @@ a {
   font-size: 14px;
 }
 
-.footer-navbar,
 .left-navbar p,
 .right-navbar a {  
   color: #597ff9;
@@ -58,7 +58,6 @@ a {
   margin-right: 10px;
 }
 
-.footer-navbar,
 .right-navbar a:hover {
   color: #000000;
 }
@@ -76,7 +75,7 @@ a {
 }
 
 .searchTerm {
-  width: 100%;
+  width: 90%;
   border: 1px solid #597ff9;
   border-right: none;
   padding: 5px;
@@ -84,6 +83,7 @@ a {
   border-radius: 5px 0 0 5px;
   outline: none;
   color: #9DBFAF;
+  text-align: center;
 }
 
 .searchTerm:focus{
@@ -91,7 +91,7 @@ a {
 }
 
 .searchButton {
-  width: 40px;
+  width: 5%;
   height: auto;
   border: 1px solid #597ff9;
   background: white;
@@ -109,47 +109,51 @@ a {
 }
 
 /*Primer grupo de tres cajas*/
-.product-category1 {
-  width: 65%;
+.container-productos{
+  width: 66%;
   background-color: #ffffff;
   float: left;
+  height: 534px;
 }
 
 /*Primer grupo de tres cajas- Cajas iguales*/
 .detail-category1 {
-  width: 33%;
+  width: 48%;
   text-transform: uppercase;
-  float: left;
-  margin: 10px;
   height: 267px;
   border: solid 1px lightgrey;
+  float: left;
+  padding: 1%;
+  margin: 1%;
 }
 
 /*Primer grupo de tres cajas - Caja +grande abajo*/
 .detail-category2 {
   text-transform: uppercase;
-  float: left;
-  margin: 10px;
-  width: 68%;
+  width: 98%;
   height: 260px;
   border: solid 1px lightgrey;
+  clear: both;
+  padding: 1%;
+  margin: 1%;
 }
 
 /*Segundo grupo - Caja a la derecha*/
-.product-category2{
-  position: absolute;
-  right: 100px;
-  top: 209px;
-  width: 25%;
-  float: right;
+.container-productos2{
+  width: 33%;
+  float: left;
   }
 
+/*Caja grande derecha*/
 .detail-category3 {
   text-transform: uppercase;
-  float: right;
-  margin: auto;
-  height: 543px;
+  height: 534px;
   border: solid 1px lightgrey;
+  float: left;
+  padding: 1%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+
 }
 
 /*Call To Action - Ver Categoria*/
@@ -169,13 +173,10 @@ text-decoration: underline;
 /*Pie*/
 .footer-navbar {
   width: 100%;
-  position: fixed;
-  bottom: 20px;
   font-size: 10px;
-  margin-left: 10px;
-  color: grey;
+  
   text-transform: capitalize;
-  margin-top: -50px;
+  clear: both;
   }
 
 .footer-navbar li {
@@ -183,5 +184,7 @@ text-decoration: underline;
   vertical-align: middle;
   padding-right: 10px;
   padding-left: 10px;
-  
+}
+.footer-navbar a {
+  color:#597ff9;
 }
