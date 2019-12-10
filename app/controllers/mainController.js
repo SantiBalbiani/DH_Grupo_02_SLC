@@ -29,6 +29,10 @@ const controller = {
 		let html = readHTML('productAdd');
 		res.send(html);
 	},
+	legal: (req, res) => {
+		let html = readHTML('legal');
+		res.send(html);
+	}
 
 };
 

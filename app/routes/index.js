@@ -13,5 +13,6 @@ router.get('/productDetail', mainController.productDetail);
 router.get('/productCart', mainController.productCart);
 router.get('/register', mainController.register);
 router.get('/productAdd', mainController.productAdd);
+router.get('/legal', mainController.legal);
 
 module.exports = router;
