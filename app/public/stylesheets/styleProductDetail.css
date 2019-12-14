@@ -101,112 +101,97 @@ a {
   font-size: 20px;
 }
 
-/*Destacados*/
-.destacados {
-  text-align: center;
-  font-size: 16px;
-  color:black;
-}
-
-/*Primer grupo de tres cajas*/
-.container-productos{
-  width: 66%;
-  background-color: #ffffff;
-  float: left;
-  height: 534px;
-}
-
-/*Primer grupo de tres cajas- Cajas iguales*/
-.detail-category1 {
-  width: 48%;
-  font-weight: bold;
-  height: 267px;
-  border: solid 1px lightgrey;
-  float: left;
-  padding: 1%;
-  margin: 1%;
-}
-.detail-category1 img {
-  width:50%;
-  position: relative;
-  left: 1%;
-  
-}
-
-.detail-category1Color {
-  width: 48%;
-  background-color: #597ff9;
-  font-weight: bold;
-  height: 267px;
-  border: solid 1px lightgrey;
-  float: left;
-  padding: 1%;
-  margin: 1%;
-}
-
-/*Primer grupo de tres cajas - Caja +grande abajo*/
-.detail-category2 {
-  font-weight: bold;
-  width: 98%;
-  height: 260px;
-  border: solid 1px lightgrey;
-  clear: both;
-  padding: 1%;
-  margin: 1%;
-}
-
-.detail-category2 img {
-  position: absolute;
-  right:38%;
-  bottom: -13%;
-}
-/*Segundo grupo - Caja a la derecha*/
-.container-productos2{
-  width: 33%;
-  float: left;
+/*Breadcrum*/
+.breadcrum li{
+    display:inline-block;
+    padding:25px 0px 15px;
+    font-size: 12px;
   }
 
-/*Caja grande derecha*/
-.detail-category3 {
+.breadcrum li a{
+   color: #000;
+   font-size: 12px;
+  }
+
+.breadcrum li:first-child a{
+    color: #007bff;
+  }
+
+/*Título producto*/
+ .tituloProducto {
+   font-weight: bold;
+   font-size:  18px;
+ }
+
+ .tituloDetalle{
   font-weight: bold;
-  height: 534px;
-  border: solid 1px lightgrey;
-  float: left;
-  padding: 1%;
-  margin-top: 2%;
-  margin-bottom: 2%;
+  font-size:  14px;
+ }
 
+
+ /*Estrellas*/
+ .checked {
+  color: orange;
 }
 
-.detail-category3 img {
-  position: relative;
-  top: 25%;
+.container {
+  padding-top: 10px;
 }
 
-/*Nombres de categorías*/
-h6 {
-  padding: 10px 25px;
+.caracteristicasProductos li {
+  display: inline-block;
+  font-size: 13px;
 }
 
-/*Call To Action - Ver Categoria*/
-
-.call-to-action {
-  padding: 10px 25px;
-  color:lightgrey;
-  min-width: 150px;
-  text-align: left;
-  font-size: 12px;
+.textoDescripcion {
+  font-size: 13px;
 }
 
-.call-to-action:hover {
-text-decoration: underline; 
+/*Pie de Detalle Compra*/
+.pieDetalle {
+  border:solid 1px lightslategrey;
+  padding-top: 20px;
+  margin-top: 60px;
+  display: flex;
+  justify-content:space-around;
+  padding-bottom: 10px;
 }
+.precio {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.buttonComprar {
+  background-color: #597ff9;
+  border: none;
+  color: white;
+  padding: 5px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5%;
+}
+
+.buttonCarrito {
+  background-color: white ;
+  border: none;
+  color: #597ff9;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border: solid 1px #597ff9 ;
+  border-radius: 5%;
+}
+
 
 /*Pie*/
 .footer-navbar {
   width: 100%;
   font-size: 10px;
-  
+  padding-top: 20px;
   text-transform: capitalize;
   clear: both;
   }
@@ -220,3 +205,4 @@ text-decoration: underline;
 .footer-navbar a {
   color:#597ff9;
 }
+

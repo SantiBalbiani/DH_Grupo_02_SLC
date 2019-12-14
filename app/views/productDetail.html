@@ -1,11 +1,129 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title> SLC Componentes Electrónicos </title>
+    <link rel='stylesheet' href='/stylesheets/styleProductDetail.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name= "viewport" content="width= device-width">
   </head>
+
   <body>
-    <h1><%= title %></h1>
-    <p>detalle de producto</p>
+      <div class="container-header">
+          <!-- main-header -->
+          <header class="main-header">
+            <!-- logo -->
+            <div class="logo">
+              <a href="/">
+                <img src="/images/logo.png" alt="Logo SLC">
+              </a>
+            </div>
+            <!-- Left-navbar -->
+            <nav class="left-navbar">
+             <p> Componentes Electrónicos</p>
+            </nav>
+            <!-- right-navbar -->
+            <nav class="right-navbar">
+              <ul>
+                  <li><a href="/">Inicio</a></li>
+                  <li><a href="/register" target="blank">Ingresá</a></li>
+                  <li><a href="/register" target="blank">Registrate</a></li>
+                  <li><a href="/productCart" target="blank"> <img src="/images/carrito16px.png"></a></li>
+              </ul>
+            </nav>
+          </header>
+    
+<!-- buscador -->
+<div class="wrap">
+    <div class="search">
+       <input type="text" class="searchTerm" placeholder="Buscá por producto, por categoría o por marca">
+       <button type="submit" class="searchButton"> &#128270;
+        </button>
+      
+    </div>
+ </div>
+ <!---breadrcum-->
+
+ <ul class="breadcrum"> 
+    <li><a href="#"> Raspberry &#x203A
+      </i></a></li> 
+    <li><a href="#"> Raspberry Pi</a></li> 
+    </ul>
+
+<!---titulo producto-->
+
+<div class="container">
+  <div class="row">
+    <div class="col-9"> <p class="tituloProducto"> Raspberry Pi 3 B+ Plus Kit 64gb A1 Fuente Gab Disipa E14 Rs</p></div>
+    <div class="col-3"> 
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <a href="#" target="blank">Ver Opiniones </a>
+
+    </div>
+  </div>
+</div>
+
+<div class="container">
+    <div class="row">
+      <div class="col-6"> <img src="/images/Raspberri_Home.jpg"> </div>
+      <div class="col-6"> 
+       <p class="tituloDetalle">ESPECIFICACIONES</p> 
+       <ul class="caracteristicasProductos">
+       <li>Marca: Raspberry </li>   
+       <li>Modelo: 3B+ </li> 
+       <li>Voltaje: 5V</li>
+       <li>Microcontrolador: Cortex-A53 (ARMv8) 64-bit SoC @ 1.4GHz</li>
+      </ul>
+        <p class="tituloDetalle"> DESCRIPCION </p>
+        <p class="textoDescripcion">
+        ELEMENT14 o RS PCB GREEN o Edicion Limitada E14 BLUE UK
+        Broadcom BCM2837B0, Cortex-A53 (ARMv8) 64-bit SoC @ 1.4GHz
+        1GB LPDDR2 SDRAM
+        2.4GHz and 5GHz IEEE 802.11.b/g/n/ac wireless LAN, Bluetooth 4.2, BLE
+        Gigabit Ethernet over USB 2.0 (maximum throughput 300 Mbps)
+        Extended 40-pin GPIO header
+      </p>
+      </div>
+    </div>
+  </div>
+
+<!-- detalle para comprar -->
+<div class="pieDetalle">
+ <P class="precio"> $1532,56 </P>  
+
+ <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">Elegir Cantidad
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+  </div>
+ 
+ <div class="buttonComprar"> Comprar </div>
+ <div class="buttonCarrito"> Agregar al Carrito </div>   
+</div>
+
+<!-- pie -->
+<footer>
+    <nav class="footer-navbar">
+      <ul>
+          <li><a href="/legal" target="blank">Terminos y Condiciones</a></li>
+          <li><a href="/legal" target="blank">Política de Privacidad</a></li>
+          <li><a href="#" target="blank">Ayuda</a></li>
+      </ul>
+    </nav>
+    </footer>
+    
+
+<!---bootstrap-->
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
