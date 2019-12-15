@@ -34,72 +34,71 @@
   </header>
 
   <h3 class="tituloPagina"> Cargar Producto</h3>
-  <h6> Paso 1 de 2</h6>
-  <div class="container"> 
-  <form class="cabezalPagina">
-    <div class="row">
-      <div class="col-3">
-        <p> Nombre del Producto</p>
-      </div>
-      <div class="col-9">
-        <input type="text" class="form-control"  required> 
-        
-      </div>
-    </div>
-  </form>
+  <h6> Paso 2 de 2</h6>
 
-  <form>
-    <div class="row">
-      <div class="col-3">
-        <p> Categoría</p>
-      </div>
-        <div class="form-group col-9">
-        <select id="inputState" class="form-control">
-          <option selected>Elegir Categoría</option>
-          <option>Arduino</option>
-          <option>Raspberry</option>
-          <option>PLCs</option>
-          <option>Combos y Ofertas</option>
-        </select>
-      </div>
-  </form>
-</div>
-  <div class="container"> 
-  <div class="row">
-    <div class="col-12">
-      <p class="tituloDetalle"> ESPECIFICACIONES </p>
-    </div>
-  </div>
   <div class="container"> 
     <div class="row">
-      <div class="form-group col">
-        <label for="inputMarca">Marca</label>
-        <input type="text" class="form-control" id="inputMarca">
-      </div>
-      <div class="form-group col">
-        <label for="inputModelo">Modelo</label>
-        <input type="text" class="form-control" id="inputModelo">
+      <div class="col-12">
+        <p class="tituloDetalle"> IMAGENES </p>
       </div>
     </div>
 
+    <div class="flex-container">
+    <div><img src="/images/camera.jpg"></div>
+     <div><img src="/images/placeholderIMG2.png"></div>
+      <div><img src="/images/placeholderIMG.png"></div>
+      <div><img src="/images/placeholderIMG2.png"></div>
+      <div><img src="/images/placeholderIMG.png"></div>
+      <div><img src="/images/placeholderIMG2.png"></div>
+      <div><img src="/images/placeholderIMG.png"></div>
+      <div><img src="/images/placeholderIMG2.png"></div>
+    </div>
+
+ 
     <div class="container"> 
       <div class="row">
-        <div class="form-group col">
-          <label for="inputMicrocontrolador">Microcontrolador</label>
-          <input type="text" class="form-control" id="inputMicrocontrolador">
-        </div>
-        <div class="form-group col">
-          <label for="inputVoltaje">Voltaje</label>
-          <input type="text" class="form-control" id="inputVoltaje">
+        <div class="col-12">
+          <p class="tituloDetalle"> DETALLES </p>
         </div>
       </div>
+  <div class="container">
+      <form class="was-validated">
+        <div class="mb-3">
+          <label for="validationTextarea">Descripción del Producto</label>
+          <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Por favor, ingresá una descripción" required></textarea>
+          <div class="invalid-feedback">
+           Es necesaria una descripción
+          </div>
+        </div>
+      </div>
+  
+     <div class="container"> 
+      <div class="row">
+        <div class="form-group col">
+          <label>Cantidad disponible</label>
+          <select class="custom-select" required>
+            <option value="">Cantidad disponible</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          <div class="invalid-feedback">Es necesaria una cantidad</div>
+        </div>
+        <div class="form-group col-6">
+          <label for="inputPrecio">Precio unitario</label>
+          <input type="text" class="form-control" id="inputPrecio">
+        </div>
+      </div>
+   
 
       <div class="containerBoton"> 
         <div class="row">
           <div class="col-12">
-             <a class="buttonSiguiente" href="/productAdd2" >Siguiente</a> 
+             <a class="buttonSiguiente" href="/productAdd2" >PUBLICAR</a> 
           </div>
         </div>
+
 
 
 <!---bootstrap-->
