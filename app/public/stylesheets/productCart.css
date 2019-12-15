@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+.main-header{
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tituloH{
+    align-self: center;
+    color: #597ff9;
+}
+
+.compras{
+    display:flex;
+    flex-direction: column;
+    
+    font-family: 'Montserrat', sans-serif;
+    color: #5A5756;
+}
+.titulo{
+    align-self: flex-start;
+}
+
+.unItem{
+    display: flex;
+    margin: 10px;
+    
+    justify-content: center;
+    
+}
+
+.imagen{
+    
+
+}
+.tituloYCantPrecio{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  
+}
+.tituloProducto{
+    align-self: flex-start;
+}
+
+.precioCant{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cantidad{
+    width: 30%;
+}
+
+.seguiComprando{
+    align-self: left;
+
+}
+
+.resaltarTexto{
+    font-size: 170%;
+
+}
+
+.superResaltarTexto{
+    font-size: 200%;
+    font-weight: bolder;
+
+}
+
+.totalFinal{
+    display: flex;
+}
+
+.precioFinal{
+    display: flex;
+    align-items: center;
+}
+
+

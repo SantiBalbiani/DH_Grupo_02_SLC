@@ -1,11 +1,62 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Shoppingcart</title>
+    <link rel='stylesheet' href='/stylesheets/productCart.css' />
+    <meta name= "viewport" content="width= device-width">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Carrito de compras</p>
+      <div class="main-header">
+        <div>
+          <a href="/">
+            <img src="/images/logo.png" alt="Logo SLC">
+          </a> 
+        </div>
+          <div class="tituloH">
+              Componentes Electrónicos
+          </div>
+      </div>
+      <div class="compras">
+          <div class="titulo">
+              Carrito de Compras
+            </div>
+        <div class="unItem"> 
+          <div class="imagen">
+              <img src="/images/raspberry.JPG" alt="una compra"> 
+              </div>
+          <div class="tituloYCantPrecio">
+              <div class="tituloProducto">Raspberry Pi 3 Plus con descripcion super larga aaaa</div>
+              <div class="precioCant">
+                  <input class="cantidad" type="number" value="2" min="1" class="w-9">
+                  <div>$1532</div> </div>
+          </div>
+        </div>
+        
+        <div class="unItem"> 
+            <div class="imagen">
+                <img src="/images/puenteRect.JPG" alt="una compra"> 
+                </div>
+            <div class="tituloYCantPrecio">
+                <div class="tituloProducto">Puente Rectificador 1.5A con descripción super larga aa</div>
+                <div class="precioCant">
+                    <input class="cantidad" type="number" value="2" min="1" class="w-9">
+                    <div>$232</div> </div>
+            </div>
+          </div>
+    <div class="unItem"> 
+        
+            <div class="seguiComprando"> <a href="/"> seguir comprando </a></div>
+            <div class="precioFinal">
+              <div class="resaltarTexto"> Total: </div>
+              <div class="superResaltarTexto"> $1764.82</div>
+              <button type="submit" class="btn btn-primary">Comprar</button>
+              </div>
+        
+          </div>
+        
+      </div>
+
+    
   </body>
 </html>
