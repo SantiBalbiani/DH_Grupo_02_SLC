@@ -3,6 +3,7 @@
 .main-header{
     display: flex;
     font-family: 'Montserrat', sans-serif;
+    padding: 2%;
 }
 
 .tituloH{
@@ -13,24 +14,25 @@
 .compras{
     display:flex;
     flex-direction: column;
-    
+    align-items: flex-start;
     font-family: 'Montserrat', sans-serif;
     color: #5A5756;
+    padding: 2%;
 }
+
 .titulo{
     align-self: flex-start;
+    font-size: 140%;
 }
 
 .unItem{
     display: flex;
     margin: 10px;
-    
     justify-content: center;
-    
 }
 
 .imagen{
-    
+    width: 70%;
 
 }
 .tituloYCantPrecio{
@@ -53,29 +55,30 @@
     width: 30%;
 }
 
-.seguiComprando{
-    align-self: left;
+.precioFinal{
+    display: flex;
+    align-self: flex-end;
+}
 
+.seguiComprando{
+    align-self: flex-end;
 }
 
 .resaltarTexto{
     font-size: 170%;
-
+    align-self: center;
 }
 
 .superResaltarTexto{
     font-size: 200%;
     font-weight: bolder;
-
 }
 
 .totalFinal{
     display: flex;
+    
 }
 
-.precioFinal{
-    display: flex;
-    align-items: center;
-}
+
 
 
