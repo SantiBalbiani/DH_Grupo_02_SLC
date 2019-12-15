@@ -11,57 +11,71 @@
     color: #597ff9;
 }
 
-.compras{
-    display:flex;
-    flex-direction: column;
-    align-items: flex-start;
-    font-family: 'Montserrat', sans-serif;
-    color: #5A5756;
-    padding: 2%;
-}
-
 .titulo{
     align-self: flex-start;
     font-size: 140%;
+    font-family: 'Montserrat', sans-serif;
+    color: #5A5756;
+    margin: 1%;
+}
+
+.compras{
+    display:flex;
+    font-family: 'Montserrat', sans-serif;
+    color: #5A5756;
+    padding: 1%;
+    flex-direction: column;
+    width: 180%;
 }
 
 .unItem{
     display: flex;
-    margin: 10px;
-    justify-content: center;
 }
 
 .imagen{
-    width: 70%;
+    border: 1px;
+}
 
+.prodImagen{
+    width: 20%;
 }
 .tituloYCantPrecio{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  
-  
+  justify-content: space-between; 
 }
+
 .tituloProducto{
     align-self: flex-start;
+    width: 90%;
 }
 
 .precioCant{
     display: flex;
     justify-content: flex-end;
+    align-self: flex-end;
+    justify-self: flex-end;
 }
 
 .cantidad{
     width: 30%;
 }
 
-.precioFinal{
-    display: flex;
-    align-self: flex-end;
+.resumen{
+    display:flex;
+    padding: 1%;
 }
 
 .seguiComprando{
     align-self: flex-end;
+    justify-self: flex-start;
+}
+
+.precioFinal{
+    display: flex;
+    justify-content: flex-end;
+    width: 32%;
+    
 }
 
 .resaltarTexto{
@@ -74,10 +88,7 @@
     font-weight: bolder;
 }
 
-.totalFinal{
-    display: flex;
-    
-}
+
 
 
 
