@@ -25,7 +25,7 @@
     color: #5A5756;
     padding: 1%;
     flex-direction: column;
-    width: 180%;
+    align-items: flex-start;
 }
 
 .unItem{
@@ -37,7 +37,7 @@
 }
 
 .prodImagen{
-    width: 20%;
+    
 }
 .tituloYCantPrecio{
   display: flex;
@@ -47,7 +47,7 @@
 
 .tituloProducto{
     align-self: flex-start;
-    width: 90%;
+    
 }
 
 .precioCant{
@@ -73,9 +73,6 @@
 
 .precioFinal{
     display: flex;
-    justify-content: flex-end;
-    width: 32%;
-    
 }
 
 .resaltarTexto{
