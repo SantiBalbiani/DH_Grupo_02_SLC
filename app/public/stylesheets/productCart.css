@@ -87,6 +87,7 @@
 
 .unItem{
     display: flex;
+    margin-bottom: 4%;
 }
 
 .imagen{
@@ -99,6 +100,7 @@
   flex-direction: column;
   justify-content: space-around;
   margin-left: 5%; 
+  width: 90%;
 }
 
 .tituloProducto{
@@ -145,9 +147,27 @@
 }
 
 .botonComprar{
-  display: flex;
+  background-color: #597ff9;
+  height: 2%;
+  width:5%
 }
 
+.buttonComprar {
+  justify-self: center;
+  align-self: center;
+  text-align: left;
+  background-color: #597ff9;
+  border: none;
+  color: white;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5%;
+  height: 8%;
+  
+}
 
 
 
