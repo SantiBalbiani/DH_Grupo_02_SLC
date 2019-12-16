@@ -36,6 +36,14 @@ const controller = {
 	legal: (req, res) => {
 		let html = readHTML('legal');
 		res.send(html);
+	},
+	registerforma: (req, res) => {
+		let html = readHTML('registerforma');
+		res.send(html);
+	},
+	registerformb: (req, res) => {
+		let html = readHTML('registerformb');
+		res.send(html);
 	}
 
 };

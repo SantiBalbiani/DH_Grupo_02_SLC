@@ -15,5 +15,6 @@ router.get('/register', mainController.register);
 router.get('/productAdd', mainController.productAdd);
 router.get('/productAdd2', mainController.productAdd2);
 router.get('/legal', mainController.legal);
-
+router.get('/registerforma', mainController.registerforma);
+router.get('/registerformb', mainController.registerformb);
 module.exports = router;

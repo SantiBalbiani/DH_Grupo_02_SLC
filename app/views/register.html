@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Formulario de Registro</title>
+    <link rel='stylesheet' href='/stylesheets/register.css' />
+    <meta name="viewport" content="width = device-width">
+
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Registro</p>
+    <header class="container-header">
+    <div class = "logo">
+      <img src="/images/logo.png"/>
+      <a>Componentes electronicos</a>
+    </div>
+    <div class="bloque">
+      <h2>Registrate</h2>
+      <input type="text" name="email" size="40" placeholder="Correo Electronico">
+      <input type="password" name="password" size="40" placeholder="Contraseña">
+      <div>
+       <a href="/index">
+        <a class="ingreso" href="/index" type="submit" value="Ingresá">
+          Ingresá 
+       </a>
+      </div>
+      <p>¿No tenes una cuenta?</p>
+     <a class= href="/registerformA">
+      <input class="registrate" type="submit" value="Registrate">
+     </a>
+     </div>
+    </header>
   </body>
 </html>
