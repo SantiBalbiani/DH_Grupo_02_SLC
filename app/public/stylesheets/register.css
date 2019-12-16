@@ -1,14 +1,75 @@
-.container-header {
-    max-width: 1140px;
-    margin-top: 20px;
-    overflow: hidden;
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+* {
+    box-sizing: border-box;
   }
 
-.main-header {
+  body {
+   font-family: 'Montserrat', sans-serif;
+   padding: 1%;
+  }
+ 
+  .elLogo{
+    width:100%;
+  }
+
+  /*Header*/
+  ul,
+  ol {
+    padding: 0;
+    margin: 0;
+    list-style: none; /* eliminar el bullet de la lista */
+  }
+  
+  a {
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  .container-header {
+    max-width: 1140px;
+    margin: auto;
+    overflow: hidden;
+    width:70%
+  }
+  
+  .main-header {
     background-color: transparent;
     padding: 5px;
     margin-bottom: 20px;
   }
+  
+  
+  .logo,
+  .left-navbar, 
+  .right-navbar li {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .left-navbar {
+    margin-left: 2px;
+  }
+  
+  .right-navbar {
+    float: right;
+    margin-top: 20px;
+    font-size: 12px;
+    margin-right: 10%;
+  }
+  
+  .left-navbar p,
+  .right-navbar a {  
+    color: #597ff9;
+    text-transform: capitalize;
+    margin-right: 10px;
+  }
+  
+  .right-navbar a:hover {
+    color: #000000;
+  }
+
+
 
 header {
     display: flex;
