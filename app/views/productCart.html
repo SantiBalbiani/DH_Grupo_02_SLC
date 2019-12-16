@@ -3,20 +3,35 @@
   <head>
     <title>Shoppingcart</title>
     <link rel='stylesheet' href='/stylesheets/productCart.css' />
-    <meta name= "viewport" content="width= device-width">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+    <meta name= 'viewport' content="width= device-width">
   </head>
+  
   <body>
-      <div class="main-header">
-        <div>
+    <div class="container-header">
+      <!-- main-header -->
+      <header class="main-header">
+        <!-- logo -->
+        <div class="logo">
           <a href="/">
             <img src="/images/logo.png" alt="Logo SLC">
-          </a> 
+          </a>
         </div>
-          <div class="tituloH">
-              Componentes Electrónicos
-          </div>
-      </div>
+        <!-- Left-navbar -->
+        <nav class="left-navbar">
+         <p> Componentes Electrónicos</p>
+        </nav>
+        <!-- right-navbar -->
+        <nav class="right-navbar">
+          <ul>
+              <li><a href="/">Inicio</a></li>
+              <li><a href="/register" target="blank">Ingresá</a></li>
+              <li><a href="/register" target="blank">Registrate</a></li>
+              <li><a href="/productCart" target="blank"> <img src="/images/carrito16px.png"></a></li>
+          </ul>
+        </nav>
+      </header>
+
       <div class="titulo">
         Carrito de Compras
       </div>
@@ -29,7 +44,7 @@
           <div class="tituloYCantPrecio">
               <div class="tituloProducto">Raspberry Pi 3 Plus con descripcion super larga aaaa</div>
               <div class="precioCant">
-                  <input class="cantidad" type="number" value="2" min="1" class="w-9">
+                  <input class="form-control col-sm-2" type="number" value="2" min="1" max="999">
                   <div>$1532</div> </div>
           </div>
         </div>
@@ -41,19 +56,25 @@
             <div class="tituloYCantPrecio">
                 <div class="tituloProducto">Puente Rectificador 1.5A con descripción super larga</div>
                 <div class="precioCant">
-                    <input class="cantidad" type="number" value="2" min="1" class="w-9">
+                  <input type=number class="form-control col-md-2" value=42 min=0 max=99>
+                    
                     <div>$232</div> </div>
             </div>
           </div>
    
         <div class="resumen">
-            <div class="seguiComprando"> <a href="/"> seguir comprando </a></div>
-            <div class="precioFinal">
-              <div class="resaltarTexto"> Total: </div>
-              <div class="superResaltarTexto"> $1764.82</div>
+            <span class="seguiComprando"> <a href="/"> seguir comprando </a></span>
+            
+              <span class="resaltarTexto"> Total: </span>
+              <span class="superResaltarTexto"> $1764.82</span>
               <button type="submit" class="btn btn-primary">Comprar</button>
-              </div>
-           </div>
+            </div>
+            
           </div>
   </body>
+  <script src="/js/jquery-3.4.1.min.js"></script>
+  <script src="/js/bootstrap-input-spinner.js"></script>
+<script>
+    $("input[type='number']").inputSpinner();
+</script> 
 </html>

@@ -1,10 +1,69 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 
-.main-header{
-    display: flex;
-    font-family: 'Montserrat', sans-serif;
-    padding: 2%;
-}
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+   font-family: 'Montserrat', sans-serif;
+   padding: 1%;
+  }
+  
+  /*Header*/
+  ul,
+  ol {
+    padding: 0;
+    margin: 0;
+    list-style: none; /* eliminar el bullet de la lista */
+  }
+  
+  a {
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  .container-header {
+    max-width: 1140px;
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  .main-header {
+    background-color: transparent;
+    padding: 5px;
+    margin-bottom: 20px;
+  }
+  
+  
+  .logo,
+  .left-navbar, 
+  .right-navbar li {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .left-navbar {
+    margin-left: 2px;
+  }
+  
+  .right-navbar {
+    float: right;
+    margin-top: 20px;
+    font-size: 12px;
+  }
+  
+  .left-navbar p,
+  .right-navbar a {  
+    color: #597ff9;
+    text-transform: capitalize;
+    margin-right: 10px;
+  }
+  
+  .right-navbar a:hover {
+    color: #000000;
+  }
+
+
 
 .tituloH{
     align-self: center;
@@ -36,13 +95,11 @@
     border: 1px;
 }
 
-.prodImagen{
-    
-}
 .tituloYCantPrecio{
   display: flex;
   flex-direction: column;
-  justify-content: space-between; 
+  justify-content: space-around;
+  margin-left: 5%; 
 }
 
 .tituloProducto{
@@ -52,37 +109,31 @@
 
 .precioCant{
     display: flex;
-    justify-content: flex-end;
-    align-self: flex-end;
-    justify-self: flex-end;
-}
-
-.cantidad{
-    width: 30%;
 }
 
 .resumen{
     display:flex;
     padding: 1%;
+    width: 100%;
 }
+
 
 .seguiComprando{
     align-self: flex-end;
-    justify-self: flex-start;
-}
-
-.precioFinal{
-    display: flex;
 }
 
 .resaltarTexto{
     font-size: 170%;
     align-self: center;
+    justify-self: flex-end;
+    margin-left: 20%;
 }
 
 .superResaltarTexto{
     font-size: 200%;
     font-weight: bolder;
+    justify-self: flex-end;
+    margin-right: 1%;
 }
 
 
