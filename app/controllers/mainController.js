@@ -25,7 +25,7 @@ const controller = {
 	},
 	register: (req, res) => {
 		let html = readHTML('register');
-		res.send(html);
+		res.render('register');
 	},
 	productAdd: (req, res) => {
 		let html = readHTML('productAdd');
