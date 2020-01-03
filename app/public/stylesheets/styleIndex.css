@@ -126,20 +126,20 @@ a {
   padding: 1%;
   margin: 1%;
 }
-.detail-category1 img {
+/* .detail-category1 img {
   width:50%;
   position: relative;
   left: 1%;
   
-}
+} */
 
 .detail-category1Color {
-  width: 48%;
-  background-color: #597ff9;
+  width: 30%;
+  
+  background-size: cover;
   font-weight: bold;
-  height: 267px;
+  height: 40vh;
   border: solid 1px lightgrey;
-  float: left;
   padding: 1%;
   margin: 1%;
 }
@@ -155,11 +155,11 @@ a {
   margin: 1%;
 }
 
-.detail-category2 img {
+/* .detail-category2 img {
   position: absolute;
   right:38%;
   bottom: -13%;
-}
+} */
 /*Segundo grupo - Caja a la derecha*/
 .container-productos2{
   width: 33%;
@@ -178,15 +178,28 @@ a {
 
 }
 
-.detail-category3 img {
+/* .detail-category3 img {
   position: relative;
   top: 25%;
-}
+} */
 
 /*Nombres de categorías*/
-h6 {
-  padding: 10px 25px;
+
+.cont{
+  position: relative;
 }
+
+h6 {
+  position: absolute;
+  padding: 10px 25px;
+  top: 20px;
+  background-color: #597ff9;
+  color: black;
+  left: 25px;
+  
+}
+
+
 
 /*Call To Action - Ver Categoria*/
 
@@ -213,6 +226,7 @@ text-decoration: underline;
 
 .footer-navbar li {
   display: inline-block;
+  order: 100;
   vertical-align: middle;
   padding-right: 10px;
   padding-left: 10px;
@@ -220,3 +234,13 @@ text-decoration: underline;
 .footer-navbar a {
   color:#597ff9;
 }
+
+.cat1{
+  display: flex;
+  background-image: url("/app/public/images/raspberry.jpg");
+  width: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  order: 100;
+}
+
