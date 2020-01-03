@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <%- include('../partials/head', {title: 'Product Add Step 1 of 2'}); %>
+        <link rel='stylesheet' href='/stylesheets/styleProductAdd.css' />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+      </head>
+    
+  <body>
+    <div class="container-header">
+      <%- include('../partials/nav'); %> 
+
+  <h3 class="tituloPagina"> Cargar Producto</h3>
+  <h6> Paso 1 de 2</h6>
+  <div class="container"> 
+  <form class="cabezalPagina">
+    <div class="row">
+      <div class="col-3">
+        <p> Nombre del Producto</p>
+      </div>
+      <div class="col-9">
+        <input type="text" class="form-control"  required> 
+        
+      </div>
+    </div>
+  </form>
+
+  <form>
+    <div class="row">
+      <div class="col-3">
+        <p> Categoría</p>
+      </div>
+        <div class="form-group col-9">
+        <select id="inputState" class="form-control">
+          <option selected>Elegir Categoría</option>
+          <option>Arduino</option>
+          <option>Raspberry</option>
+          <option>PLCs</option>
+          <option>Combos y Ofertas</option>
+        </select>
+      </div>
+  </form>
+</div>
+  <div class="container"> 
+  <div class="row">
+    <div class="col-12">
+      <p class="tituloDetalle"> ESPECIFICACIONES </p>
+    </div>
+  </div>
+  <div class="container"> 
+    <div class="row">
+      <div class="form-group col">
+        <label for="inputMarca">Marca</label>
+        <input type="text" class="form-control" id="inputMarca">
+      </div>
+      <div class="form-group col">
+        <label for="inputModelo">Modelo</label>
+        <input type="text" class="form-control" id="inputModelo">
+      </div>
+    </div>
+
+    <div class="container"> 
+      <div class="row">
+        <div class="form-group col">
+          <label for="inputMicrocontrolador">Microcontrolador</label>
+          <input type="text" class="form-control" id="inputMicrocontrolador">
+        </div>
+        <div class="form-group col">
+          <label for="inputVoltaje">Voltaje</label>
+          <input type="text" class="form-control" id="inputVoltaje">
+        </div>
+      </div>
+
+      <div class="containerBoton"> 
+        <div class="row">
+          <div class="col-12">
+             <a class="buttonSiguiente" href="/productAdd2" >Siguiente</a> 
+          </div>
+        </div>
+
+
+<!---bootstrap-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<%- include('../partials/footer'); %>
+</body>
+</html>

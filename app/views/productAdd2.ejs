@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <%- include('../partials/head', {title: 'Product Add Step 2 of 2'}); %>
+        <link rel='stylesheet' href='/stylesheets/styleProductAdd.css' />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+      </head>
+    
+  <body>
+    <div class="container-header">
+  <!-- main-header -->
+  <header class="main-header">
+    <!-- logo -->
+    <div class="logo">
+      <a href="/">
+        <img src="/images/logo.png" alt="Logo SLC">
+      </a>
+    </div>
+    <!-- Left-navbar -->
+    <nav class="left-navbar">
+     <p> Componentes Electrónicos</p>
+    </nav>
+    <!-- right-navbar -->
+    <nav class="right-navbar">
+      <ul>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/register" target="blank">Ingresá</a></li>
+          <li><a href="/register" target="blank">Registrate</a></li>
+          <li><a href="/productCart" target="blank"> <img src="/images/carrito16px.png"></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h3 class="tituloPagina"> Cargar Producto</h3>
+  <h6> Paso 2 de 2</h6>
+
+  <div class="container"> 
+    <div class="row">
+      <div class="col-12">
+        <p class="tituloDetalle"> IMAGENES </p>
+      </div>
+    </div>
+
+    <div class="flex-container">
+    <div><img src="/images/camera.jpg"></div>
+     <div><img src="/images/placeholderIMG2.png"></div>
+      <div><img src="/images/placeholderIMG.png"></div>
+      <div><img src="/images/placeholderIMG2.png"></div>
+      <div><img src="/images/placeholderIMG.png"></div>
+      <div><img src="/images/placeholderIMG2.png"></div>
+      <div><img src="/images/placeholderIMG.png"></div>
+      <div><img src="/images/placeholderIMG2.png"></div>
+    </div>
+
+ 
+    <div class="container"> 
+      <div class="row">
+        <div class="col-12">
+          <p class="tituloDetalle"> DETALLES </p>
+        </div>
+      </div>
+  <div class="container">
+      <form class="was-validated">
+        <div class="mb-3">
+          <label for="validationTextarea">Descripción del Producto</label>
+          <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Por favor, ingresá una descripción" required></textarea>
+          <div class="invalid-feedback">
+           Es necesaria una descripción
+          </div>
+        </div>
+      </div>
+  
+     <div class="container"> 
+      <div class="row">
+        <div class="form-group col">
+          <label>Cantidad disponible</label>
+          <select class="custom-select" required>
+            <option value="">Cantidad disponible</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          <div class="invalid-feedback">Es necesaria una cantidad</div>
+        </div>
+        <div class="form-group col-6">
+          <label for="inputPrecio">Precio unitario</label>
+          <input type="text" class="form-control" id="inputPrecio">
+        </div>
+      </div>
+   
+
+      <div class="containerBoton"> 
+        <div class="row">
+          <div class="col-12">
+             <a class="buttonSiguiente" href="/productAdd2" >PUBLICAR</a> 
+          </div>
+          <div class="col-12">
+            <%- include('../partials/footer'); %>
+          </div>
+        </div>
+
+
+
+<!---bootstrap-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>

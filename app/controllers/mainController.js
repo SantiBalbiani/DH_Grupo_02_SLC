@@ -24,16 +24,16 @@ const controller = {
 		res.render('productCart', {title: 'Compras'});
 	},
 	register: (req, res) => {
-		let html = readHTML('register');
+	//	let html = readHTML('register');
 		res.render('register');
 	},
 	productAdd: (req, res) => {
-		let html = readHTML('productAdd');
-		res.send(html);
+	//	let html = readHTML('productAdd');
+		res.render('productAdd');
 	},
 	productAdd2: (req, res) => {
-		let html = readHTML('productAdd2');
-		res.send(html);
+	//	let html = readHTML('productAdd2');
+		res.render('productAdd2');
 	},
 	legal: (req, res) => {
 		let html = readHTML('legal');
@@ -44,8 +44,8 @@ const controller = {
 		res.render('registerforma');
 	},
 	registerformb: (req, res) => {
-		let html = readHTML('registerformb');
-		res.send(html);
+//		let html = readHTML('registerformb');
+		res.render('registerformb');
 	}
 
 };
