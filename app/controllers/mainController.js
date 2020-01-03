@@ -17,7 +17,7 @@ const controller = {
 	},
 	productDetail: (req, res) => {
 		let html = readHTML('productDetail');
-		res.send(html);
+		res.render('productDetail');
 	},
 	productCart: (req, res) => {
 		//let html = readHTML('productCart');
