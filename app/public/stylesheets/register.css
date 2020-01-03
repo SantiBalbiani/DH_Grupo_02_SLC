@@ -53,9 +53,9 @@
   
   .right-navbar {
     float: right;
-    margin-top: 20px;
+    margin-top: 2%;
     font-size: 12px;
-    margin-right: 10%;
+    margin-right: 2%;
   }
   
   .left-navbar p,
@@ -130,8 +130,8 @@ h2 {
 }
 
 p {
-    margin-left: 33%;
-    margin-top: 50px;
+    margin-left: 2%;
+    margin-top: 2%;
 }
 
 .titulo {

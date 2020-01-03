@@ -13,27 +13,27 @@ function readHTML (fileName) {
 const controller = {
 	root: (req, res) => {
 		//let html = readHTML('index');
-		res.render('index', {title: 'Inicio'} );
+		res.render('index', {title2: 'SLC Componentes Electrónicos'} );
 	},
 	productDetail: (req, res) => {
 		//let html = readHTML('productDetail');
-		res.render('productDetail');
+		res.render('productDetail', {title2: 'Detalle del Producto'});
 	},
 	productCart: (req, res) => {
 		//let html = readHTML('productCart');
-		res.render('productCart', {title: 'Compras'});
+		res.render('productCart', {title2: 'SLC: Carrito'});
 	},
 	register: (req, res) => {
 	//	let html = readHTML('register');
-		res.render('register');
+		res.render('register', {title2: 'SLC: Registro'});
 	},
 	productAdd: (req, res) => {
 	//	let html = readHTML('productAdd');
-		res.render('productAdd');
+		res.render('productAdd',{title2: 'Step 1 of 2'});
 	},
 	productAdd2: (req, res) => {
 	//	let html = readHTML('productAdd2');
-		res.render('productAdd2');
+		res.render('productAdd2',{title2: 'Step 2 of 2'});
 	},
 	legal: (req, res) => {
 		let html = readHTML('legal');
@@ -41,11 +41,11 @@ const controller = {
 	},
 	registerforma: (req, res) => {
 	//	let html = readHTML('registerforma');
-		res.render('registerforma');
+		res.render('registerforma',{title2: 'Register'});
 	},
 	registerformb: (req, res) => {
 //		let html = readHTML('registerformb');
-		res.render('registerformb');
+		res.render('registerformb',{title2: 'Register'});
 	}
 
 };
