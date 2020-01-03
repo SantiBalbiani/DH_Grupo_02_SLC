@@ -7,6 +7,7 @@ const  router = express.Router();
 const mainController = require('../controllers/mainController');
 
 
+
 /* GET */
 router.get('/', mainController.root);
 router.get('/productDetail', mainController.productDetail);
