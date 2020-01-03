@@ -16,7 +16,7 @@ const controller = {
 		res.render('index', {title: 'Inicio'} );
 	},
 	productDetail: (req, res) => {
-		let html = readHTML('productDetail');
+		//let html = readHTML('productDetail');
 		res.render('productDetail');
 	},
 	productCart: (req, res) => {
@@ -40,8 +40,8 @@ const controller = {
 		res.send(html);
 	},
 	registerforma: (req, res) => {
-		let html = readHTML('registerforma');
-		res.send(html);
+	//	let html = readHTML('registerforma');
+		res.render('registerforma');
 	},
 	registerformb: (req, res) => {
 		let html = readHTML('registerformb');
