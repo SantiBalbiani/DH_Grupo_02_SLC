@@ -54,10 +54,14 @@ a {
 }
 
 .left-navbar {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 10%;
   margin-left: 2px;
 }
 
 .right-navbar {
+  display: flex;
   float: right;
   margin-top: 20px;
   font-size: 12px;
