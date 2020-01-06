@@ -3,14 +3,12 @@
   <head>
     <%- include('../partials/head'); %> 
     <link rel='stylesheet' href='/stylesheets/register.css' />
-    
-
   </head>
-
   <body>
     <%- include('../partials/nav'); %> 
     <%- include('../partials/searchBar'); %>
-    <header class="container">
+    <div class="container">
+      <div class="espacio">
     <div class="row">
       <div class="col-12">
       <h2>Registrate</h2>
@@ -25,14 +23,23 @@
           Ingresá 
        </a>
       </div>
+    </div>
+    <div class="espacio">
+    <div class="row">
       <div class="col-12">
-           <p>¿No tenes una cuenta?</p>
-            <a class= href="/registerformA">
+        <div class="crearCta">
+           <div>¿No tenes una cuenta?
+           </div>
+           <div>
+           <a class= href="/registerformA">
             <input class="registrate" type="submit" value="Registrate">
             </a>
+        </div>
        </div>
      </div>
-    </header>
+    </div>
+    </div>
+    </div>
     <%- include('../partials/footer'); %>
   </body>
 </html>

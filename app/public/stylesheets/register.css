@@ -109,8 +109,7 @@ header {
     display: inline-block;
     font-size: 2vh;
     border-radius: 5%;
-    margin-left: 33%;
-    
+    margin-left: 5%;
 }
 
 a {
@@ -178,4 +177,13 @@ p {
 }
 .footer-navbar a {
   color:#597ff9;
+}
+
+.espacio{
+  margin-top: 3%;
+  margin-bottom: 2%;
+}
+
+.crearCta{
+  display: flex;
 }
