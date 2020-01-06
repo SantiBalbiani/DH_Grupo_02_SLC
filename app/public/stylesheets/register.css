@@ -229,3 +229,20 @@ p {
   display: flex;
   
 }
+
+.elImput{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.unInput{
+  width: 50%;
+  outline: none;
+  border: none;
+  margin-top: 2%;
+}
+
+
