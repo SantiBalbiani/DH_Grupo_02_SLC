@@ -10,21 +10,27 @@
   <body>
     <%- include('../partials/nav'); %> 
     <%- include('../partials/searchBar'); %>
-    <header class="container-header">
-    <div class="bloque">
+    <header class="container">
+    <div class="row">
+      <div class="col-12">
       <h2>Registrate</h2>
+    </div>
+    <div class="col-12">
       <input type="text" name="email" size="40" placeholder="Correo Electronico">
       <input type="password" name="password" size="40" placeholder="Contraseña">
-      <div>
+    </div>
+    <div class="col-12">
        <a href="/index">
         <a class="ingreso" href="/index" type="submit" value="Ingresá">
           Ingresá 
        </a>
       </div>
-      <p>¿No tenes una cuenta?</p>
-     <a class= href="/registerformA">
-      <input class="registrate" type="submit" value="Registrate">
-     </a>
+      <div class="col-12">
+           <p>¿No tenes una cuenta?</p>
+            <a class= href="/registerformA">
+            <input class="registrate" type="submit" value="Registrate">
+            </a>
+       </div>
      </div>
     </header>
     <%- include('../partials/footer'); %>
