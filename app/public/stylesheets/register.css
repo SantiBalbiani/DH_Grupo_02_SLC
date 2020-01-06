@@ -94,11 +94,41 @@ header {
         display: inline-block;
         font-size: 16px;
         border-radius: 5%;
-        margin-top: 30px;
-        margin-left: 35%;
+        margin-top: 6%;
+        margin-left: 5%;
+        margin-bottom: 2%;
 }
 
-.registrate {
+.registrate{
+  background-color: white;
+  border: none;
+  color: #597ff9;
+  padding: 5px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 5%;
+}
+
+.ingreso2{
+  background-color: white;
+  border: none;
+  color: #597ff9;
+  padding: 5px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5%;
+  margin-top: 6%;
+  margin-left: 5%;
+}
+
+/* .registrate {
     background-color: white;
     color:blue;
     border-radius: 30%;
@@ -110,7 +140,8 @@ header {
     font-size: 2vh;
     border-radius: 5%;
     margin-left: 5%;
-}
+} */
+
 
 a {
     color:blue;
@@ -120,6 +151,8 @@ a {
 body {
     font-family: 'Montserrat', sans-serif;
     padding: 1%;
+    background-color: rgba(237, 241, 254, 0.5);
+}
    }
 
 h2 {
@@ -186,4 +219,13 @@ p {
 
 .crearCta{
   display: flex;
+  justify-content: center;
+}
+.tituloSaludo{
+  text-align: center;
+}
+
+.pie{
+  display: flex;
+  
 }

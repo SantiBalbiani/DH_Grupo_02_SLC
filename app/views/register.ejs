@@ -5,41 +5,44 @@
     <link rel='stylesheet' href='/stylesheets/register.css' />
   </head>
   <body>
+    
     <%- include('../partials/nav'); %> 
-    <%- include('../partials/searchBar'); %>
-    <div class="container">
-      <div class="espacio">
+   
+      
     <div class="row">
       <div class="col-12">
-      <h2>Registrate</h2>
+      <div class="tituloSaludo">
+      <h2>Hola :)</h2>
+    </div>
     </div>
     <div class="col-12">
       <input type="text" name="email" size="40" placeholder="Correo Electronico">
       <input type="password" name="password" size="40" placeholder="Contraseña">
     </div>
     <div class="col-12">
-       <a href="/index">
-        <a class="ingreso" href="/index" type="submit" value="Ingresá">
-          Ingresá 
+        <a class="crearCta" href="/index" type="submit" value="Ingresá">
+          <input class="ingreso" type="submit" value="Ingresá">
        </a>
       </div>
     </div>
-    <div class="espacio">
+    
     <div class="row">
       <div class="col-12">
         <div class="crearCta">
-           <div>¿No tenes una cuenta?
-           </div>
-           <div>
-           <a class= href="/registerformA">
-            <input class="registrate" type="submit" value="Registrate">
-            </a>
-        </div>
-       </div>
-     </div>
+           <div>¿No tenes una cuenta?</div>
     </div>
+      </div>
     </div>
+    <div class="row">
+      <div class="col-12">
+        
+    <a class="crearCta" href="/registerformA">
+      <input class="registrate" type="submit" value="Registrate">
+      </a>
+      </div>
+    
     </div>
     <%- include('../partials/footer'); %>
+
   </body>
 </html>
