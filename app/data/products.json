@@ -1,0 +1,15 @@
+[{
+"id": 1,
+"name": "cafetera",
+"price": 120,
+"discount": 23,
+"image": "plc.jpg"
+},
+{
+"id": 2,
+"name": "cafetera",
+"price": 120,
+"discount": 23,
+"image": "plc.jpg"
+}
+]

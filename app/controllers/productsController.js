@@ -4,8 +4,8 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/products.json');
 
 function getAllProducts () {
-	let prodsFileContent = fs.readFileSync(usersFilePath, 'utf-8');
-	let usersArray;
+	let prodsFileContent = fs.readFileSync(productsFilePath, 'utf-8');
+	let prods;
 	if (prodsFileContent == '') {
 		prods = [];
 	} else {
@@ -30,8 +30,8 @@ let prods = getAllProducts();
 
 const controller = {
 	root: (req, res) => {
-		//let html = readHTML('index');
-		res.render('products', {title2: 'SLC Componentes Electrónicos'} );
+		let allProducts = getAllProducts(); 
+		res.render('products', {title2: 'Todos los Productos', prods: allProducts } );
 	},
 	getProduct: (req, res) => {
 		//let html = readHTML('productDetail');
