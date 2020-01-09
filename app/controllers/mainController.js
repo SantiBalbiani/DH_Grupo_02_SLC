@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-
+const bcrypt = require('bcrypt');
 
 
 // ************ Function to Read an HTML File ************
