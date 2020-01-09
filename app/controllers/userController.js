@@ -42,4 +42,55 @@ function guardarCambiosUser(user) {
 	fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
 	};
 
+    const controller = {
+        getUsers: (req, res) => {
+            let allUsers = getAllUsers(); 
+            res.render('users', {title2: 'Todos los Usuarios', users: allUsers } );
+        },
+        getUser: (req, res) => {
+            //let html = readHTML('productDetail');
+            let allUsers = getAllUsers ();
+        elUser = allUsers.find( usr => usr.userId == req.params.idUser )
+            res.render('userDetail', {title2: 'Detalle del Producto', prod: elProd});
+        },
+        createUser: (req, res) => {
+            //let html = readHTML('productCart');
+            res.render('userAdd', {title2: 'SLC: Crear Usuario'});
+        },
+        editUser: (req, res) => {
+        //	let html = readHTML('register');
+        // Buscar producto
+        let todosProd = getAllProducts ();
+        elProd = todosProd.find( prod => prod.id == req.params.id )
+            res.render('editProduct', { prod:elProd, title2: 'Editar Producto'});
+        },
+        saveUser: (req, res) => {
+            let newProduct = {
+                id: generateId(),
+                ...req.body,
+                image: req.file.filename,
+            }
+            guardarProducto(newProduct);
+            res.redirect('/');
+        },
+        saveChanges: (req, res) => {
+        //	let html = readHTML('productAdd2');
     
+        let todosProd = getAllProducts ();
+        elProd = todosProd.find( prod => prod.id == req.params.id )
+        elProd.prodName = req.body.prodName;
+        elProd.description = req.body.description;
+        elProd.price= req.body.price;
+        elProd.discount = req.body.discount;// req.body.discount;
+        elProd.image = req.file.filename,
+        guardarCambiosProducto(elProd);
+        let guardado = "/products/" + elProd.id + "/edit" 
+        res.redirect(guardado);
+        },
+        deleteUser: (req, res) => {
+            borrarProducto(req.params.id);
+            res.redirect("/");
+        },
+    };
+    
+    module.exports = controller

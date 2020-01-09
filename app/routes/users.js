@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const usersController = require('../controllers/userController');
+const userController = require('../controllers/userController');
 const multer = require('multer');
 const path = require('path');
 
@@ -13,6 +13,8 @@ let diskStorage = multer.diskStorage({
 		cb(null, finalName);
 	}
 });
+
+let upload = multer({ storage: diskStorage })
 
 /* GET users listing. */
 

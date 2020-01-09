@@ -2,6 +2,15 @@
     "userId": 1,
     "nombre": "Jose",
     "apellido":"Hernandez",
-    "email": "jo@jo.com"
+    "email": "jo@jo.com",
+    "image": "Arduino.JPG"
+
+},
+{
+    "userId": 2,
+    "nombre": "Flavio",
+    "apellido":"Hernandez",
+    "email": "jojojo@jo.com",
+    "image": "Arduino.JPG"
 
 }]
