@@ -12,8 +12,13 @@
     "debug": "~2.6.9",
     "ejs": "^2.6.2",
     "express": "^4.16.4",
+    "fs": "0.0.1-security",
     "http-errors": "~1.6.3",
+    "method-override": "^3.0.0",
     "morgan": "~1.9.1",
-    "nodemon": "^2.0.2"
+    "multer": "^1.4.2",
+    "node-gyp": "^6.1.0",
+    "nodemon": "^2.0.2",
+    "path": "^0.12.7"
   }
 }
