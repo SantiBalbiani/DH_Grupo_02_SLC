@@ -1,15 +1,18 @@
-[{
-"id": 1,
-"name": "cafetera",
-"price": 120,
-"discount": 23,
-"image": "plc.jpg"
-},
-{
-"id": 2,
-"name": "cafetera",
-"price": 120,
-"discount": 23,
-"image": "plc.jpg"
-}
+[
+ {
+  "id": 1,
+  "prodName": "Microcontrolador: Cortex-A53 (ARMv8) 64-bit SoC @ 1.4GHz",
+  "description": "ELEMENT14 o RS PCB GREEN o Edicion Limitada E14 BLUE UK Broadcom BCM2837B0, Cortex-A53 (ARMv8) 64-bit SoC @ 1.4GHz 1GB LPDDR2 SDRAM 2.4GHz and 5GHz IEEE 802.11.b/g/n/ac wireless LAN, Bluetooth 4.2, BLE Gigabit Ethernet over USB 2.0 (maximum throughput 300 Mbps) Extended 40-pin GPIO header",
+  "price": 120,
+  "discount": 23,
+  "categoria": "PLC",
+  "image": "plc.jpg"
+ },
+ {
+  "id": 2,
+  "prodName": "taza",
+  "price": "333",
+  "description": "fdfdfd",
+  "image": "raspberry.jpg"
+ }
 ]

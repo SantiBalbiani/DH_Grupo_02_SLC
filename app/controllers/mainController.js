@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 
 
 // ************ Function to Read an HTML File ************
@@ -15,10 +15,10 @@ const controller = {
 		//let html = readHTML('index');
 		res.render('index', {title2: 'SLC Componentes Electrónicos'} );
 	},
-	productDetail: (req, res) => {
+/*	productDetail: (req, res) => {
 		//let html = readHTML('productDetail');
 		res.render('productDetail', {title2: 'Detalle del Producto'});
-	},
+	}, */
 	productCart: (req, res) => {
 		//let html = readHTML('productCart');
 		res.render('productCart', {title2: 'SLC: Carrito'});

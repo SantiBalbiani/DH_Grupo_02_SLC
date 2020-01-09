@@ -14,19 +14,19 @@
   <h3 class="tituloPagina"> Cargar Producto</h3>
   <h6> Paso 1 de 2</h6>
   <div class="container"> 
-  <form class="cabezalPagina">
+    <form action="/products" enctype="multipart/form-data" method="POST" class="cabezalPagina">
     <div class="row">
       <div class="col-3">
         <p> Nombre del Producto</p>
       </div>
       <div class="col-9">
-        <input type="text" class="form-control"  required> 
+        <input type="text" class="form-control" name="prodName" required> 
         
       </div>
     </div>
-  </form>
+  
 
-  <form>
+  
     <div class="row">
       <div class="col-3">
         <p> Categoría</p>
@@ -36,11 +36,15 @@
           <option selected>Elegir Categoría</option>
           <option>Arduino</option>
           <option>Raspberry</option>
-          <option>PLCs</option>
+          <option>PLC</option>
           <option>Combos y Ofertas</option>
         </select>
+        <label>Imagen del Producto:</label>
+      <input type="file" name="image">
       </div>
-  </form>
+      
+    </div>
+  
 </div>
   <div class="container"> 
   <div class="row">
@@ -59,7 +63,7 @@
         <input type="text" class="form-control" id="inputModelo">
       </div>
     </div>
-
+  </div>
     <div class="container"> 
       <div class="row">
         <div class="form-group col">
@@ -71,19 +75,40 @@
           <input type="text" class="form-control" id="inputVoltaje">
         </div>
       </div>
+      <div class="row">
+        <div class="col-12">
+          <p class="tituloDetalle"> ESPECIFICACIONES </p>
+        </div>
+      </div>
+      
+        <div class="row">
+          <div class="form-group col">
+            <label for="Price">Precio</label>
+            <input type="text" class="form-control" id="inputMarca" name="price">
+          </div>
+          <div class="form-group col">
+            <label for="inputModelo">Descripción</label>
+            <input type="text" class="form-control" id="inputModelo" name="description">
+          </div>
+        </div>
+      
 
       <div class="containerBoton"> 
         <div class="row">
           <div class="col-12">
-             <a class="buttonSiguiente" href="/productAdd2" >Siguiente</a> 
+             <button type="submit" class="buttonSiguiente"  >Guardar</button>
           </div>
         </div>
-
-
+      </div>
+    </div>
+  </form>
+  </div>
+    </div>
+        <%- include('../partials/footer'); %>
 <!---bootstrap-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<%- include('../partials/footer'); %>
+
 </body>
 </html>

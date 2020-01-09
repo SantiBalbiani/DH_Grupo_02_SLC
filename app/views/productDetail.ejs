@@ -38,23 +38,18 @@
 
 <div class="container">
     <div class="row">
-      <div class="col-6 col-lg-4"> <img src="/images/Raspberri_Home.jpg"> </div>
+      <div class="col-6 col-lg-4"> <img src="/images/products/<%= prod.image %>"> </div>
       <div class="col-12 col-sm-6 col-lg-8"> 
        <p class="tituloDetalle">ESPECIFICACIONES</p> 
        <ul class="caracteristicasProductos">
        <li>Marca: Raspberry </li>   
        <li>Modelo: 3B+ </li> 
        <li>Voltaje: 5V</li>
-       <li>Microcontrolador: Cortex-A53 (ARMv8) 64-bit SoC @ 1.4GHz</li>
+       <li>  <%= prod.prodName %>  </li>
       </ul>
         <p class="tituloDetalle"> DESCRIPCION </p>
         <p class="textoDescripcion">
-        ELEMENT14 o RS PCB GREEN o Edicion Limitada E14 BLUE UK
-        Broadcom BCM2837B0, Cortex-A53 (ARMv8) 64-bit SoC @ 1.4GHz
-        1GB LPDDR2 SDRAM
-        2.4GHz and 5GHz IEEE 802.11.b/g/n/ac wireless LAN, Bluetooth 4.2, BLE
-        Gigabit Ethernet over USB 2.0 (maximum throughput 300 Mbps)
-        Extended 40-pin GPIO header
+          <%= prod.description %>
       </p>
       </div>
     </div>
@@ -64,12 +59,12 @@
 <div class="pieDetalle">
 
   <!-- precio -->
-  <div class="col-xs-6 col-md-3">
-   <P class="precio"> $1532,56 </P>  
+  <div class="col-xs-3 col-md-6">
+   <P class="precio"> $ <%= prod.price %> </P>  
   </div>
 
 <!-- cantidad -->
-<div class="col-xs-6 col-md-3">
+<div class="col-xs-3 col-md-6">
   <div class="dropdown">
      <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
       Elegir Cantidad
@@ -83,12 +78,12 @@
     </div>
 
  <!-- comprar -->
- <div class="col-xs-6 col-md-3">
+ <div class="col-xs-3 col-md-6">
  <div class="buttonComprar">  Comprar  </div>
 </div>
 
  <!-- agregar al carrito -->
- <div class="col-xs-6 col-md-3">
+ <div class="col-xs-3 col-md-6">
  <div class="buttonCarrito"> Agregar al Carrito </div> 
 </div>
 
