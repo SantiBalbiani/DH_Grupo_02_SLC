@@ -51,7 +51,7 @@ function guardarCambiosUser(user) {
             //let html = readHTML('productDetail');
             let allUsers = getAllUsers ();
         elUser = allUsers.find( usr => usr.userId == req.params.idUser )
-            res.render('userDetail', {title2: 'Detalle del Producto', prod: elProd});
+            res.render('userDetail', {title2: 'Detalle del Usuario', user:elUser});
         },
         createUser: (req, res) => {
             //let html = readHTML('productCart');
@@ -61,8 +61,8 @@ function guardarCambiosUser(user) {
         //	let html = readHTML('register');
         // Buscar producto
         let todosProd = getAllProducts ();
-        elProd = todosProd.find( prod => prod.id == req.params.id )
-            res.render('editProduct', { prod:elProd, title2: 'Editar Producto'});
+        elUser = todosProd.find( prod => usr.user == req.params.id )
+            res.render('editProduct', { prod:elUser, title2: 'Editar Producto'});
         },
         saveUser: (req, res) => {
             let newProduct = {
@@ -77,18 +77,17 @@ function guardarCambiosUser(user) {
         //	let html = readHTML('productAdd2');
     
         let todosProd = getAllProducts ();
-        elProd = todosProd.find( prod => prod.id == req.params.id )
-        elProd.prodName = req.body.prodName;
-        elProd.description = req.body.description;
-        elProd.price= req.body.price;
-        elProd.discount = req.body.discount;// req.body.discount;
-        elProd.image = req.file.filename,
-        guardarCambiosProducto(elProd);
-        let guardado = "/products/" + elProd.id + "/edit" 
+        elUser = todosProd.find( prod => prod.id == req.params.id )
+        elUser.nombre = req.body.nombre;
+        elUser.apellido = req.body.apellido;
+        elUser.email= req.body.email;
+        elUser.image = req.file.filename,
+        guardarCambiosProducto(elUser);
+        let guardado = "/users/" + elUser.id + "/edit" 
         res.redirect(guardado);
         },
         deleteUser: (req, res) => {
-            borrarProducto(req.params.id);
+            borrarUser(req.params.id);
             res.redirect("/");
         },
     };
