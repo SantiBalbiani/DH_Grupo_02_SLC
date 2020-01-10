@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head'); %> 
+  </head>
+  
+  <body>
+    <%- include('../partials/nav'); %> 
+    <%- include('../partials/searchBar'); %>
+<!-- main-content -->
+
+<div class="container products-wrapper">
+    <div class="row">
+        <div class="col-12">
+            <% if(title == undefined) { var title = "Modificar Producto"} else { var title = "Producto Modificado! :)" } %>
+            <h2 class="products-title"> <%= title %> </h2>
+        </div>
+    
+        <div class="col-12 col-sm-6 col-lg-3">
+           
+            <section class="product-box">
+                <form action="/products/<%= elProd.id %>/edit?_method=PUT" enctype="multipart/form-data" method="POST" >
+                    <div>
+                        <label>Nombre Producto:</label>
+                        <!-- value="<%= elProd.prodName %>" -->
+                        <input type="text" name="prodName" value="<%= elProd.prodName %>" >
+                    </div>
+                    <div>
+                        <label>Descripcion:</label>
+                        <input type="text" name="description" value="<%= elProd.description %>">
+                    </div>
+                    <div>
+                        <label>Precio:</label>
+                        <input type="text" name="price" value="<%= elProd.price %>">
+                    </div>
+                    <div>
+                        <label>Descuento:</label>
+                        <input type="text" name="discount" value="<%= elProd.discount %>">
+                    </div>
+                    <div>
+                        <label>Imagen Actual:</label>
+                        <img src="/images/products/<%= elProd.image %>">
+                    </div>
+                    <div>
+                        <label>Imagen del Producto:</label>
+                        <input type="file" name="image">
+                    </div>
+                    <button type="submit">Guardar</button>
+                </form>
+
+                <form  action="/products/<%= elProd.id %>?_method=DELETE" method="POST" >
+                    <button type="submit">Borrar Producto</button>
+                
+                </form>
+            </section>
+          
+        </div>
+    
+    </div>
+</div>
+
+</div>
+
+</section>
+
+
+    <!-- pie -->
+<%- include('../partials/footer'); %>
+
+</body>
+</html>

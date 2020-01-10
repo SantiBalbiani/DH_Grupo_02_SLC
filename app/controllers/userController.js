@@ -65,12 +65,12 @@ function guardarCambiosUser(user) {
             res.render('editUser', { user:elUser, title2: 'Editar Usuario'});
         },
         saveUser: (req, res) => {
-            let newProduct = {
+            let newUser = {
                 id: generateId(),
                 ...req.body,
                 image: req.file.filename,
             }
-            guardarProducto(newProduct);
+            guardarUser(newUser);
             res.redirect('/');
         },
         saveChanges: (req, res) => {
