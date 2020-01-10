@@ -12,44 +12,44 @@
 <div class="container products-wrapper">
     <div class="row">
         <div class="col-12">
-            <% if(title == undefined) { var title = "Modificar Producto"} else { var title = "Producto Modificado! :)" } %>
-            <h2 class="products-title"> <%= title %> </h2>
+            <% if(title == undefined) { var title = "Modificar Usuario"} else { var title = "Usuario Modificado! :)" } %>
+            <h2 class="products-title"> <%= title2 %> </h2>
         </div>
     
         <div class="col-12 col-sm-6 col-lg-3">
            
             <section class="product-box">
-                <form action="/products/<%= elProd.id %>/edit?_method=PUT" enctype="multipart/form-data" method="POST" >
+                <form action="/products/<%= user.userId %>/edit?_method=PUT" enctype="multipart/form-data" method="POST" >
                     <div>
-                        <label>Nombre Producto:</label>
+                        <label>Nombre de Usuario:</label>
                         <!-- value="<%= elProd.prodName %>" -->
-                        <input type="text" name="prodName" value="<%= elProd.prodName %>" >
+                        <input type="text" name="nombre" value="<%= user.nombre %>" >
                     </div>
                     <div>
-                        <label>Descripcion:</label>
-                        <input type="text" name="description" value="<%= elProd.description %>">
+                        <label>Apellido:</label>
+                        <input type="text" name="apellido" value="<%= user.apellido %>">
                     </div>
                     <div>
-                        <label>Precio:</label>
-                        <input type="text" name="price" value="<%= elProd.price %>">
+                        <label>Email:</label>
+                        <input type="text" name="email" value="<%= user.email %>">
                     </div>
-                    <div>
+                  <!--   <div>
                         <label>Descuento:</label>
                         <input type="text" name="discount" value="<%= elProd.discount %>">
-                    </div>
+                    </div> -->
                     <div>
                         <label>Imagen Actual:</label>
-                        <img src="/images/products/<%= elProd.image %>">
+                        <img src="/images/products/<%= user.image %>">
                     </div>
                     <div>
-                        <label>Imagen del Producto:</label>
+                        <label>Avatar del usuario:</label>
                         <input type="file" name="image">
                     </div>
-                    <button type="submit">Guardar</button>
+                    <button type="submit">Guardar Usuario</button>
                 </form>
 
-                <form  action="/products/<%= elProd.id %>?_method=DELETE" method="POST" >
-                    <button type="submit">Borrar Producto</button>
+                <form  action="/products/<%= user.userId %>?_method=DELETE" method="POST" >
+                    <button type="submit">Borrar Usuario</button>
                 
                 </form>
             </section>
