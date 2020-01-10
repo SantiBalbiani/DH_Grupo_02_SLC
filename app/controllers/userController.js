@@ -28,6 +28,12 @@ let users = getAllUsers();
     fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
 };
 
+function borrarUser(userId){
+	let users = getAllUsers();
+	users = users.filter( usr => usr.userId != userId);
+	fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
+}
+
 function guardarCambiosUser(user) {
 
 	let usersContent = fs.readFileSync(usersFilePath, 'utf-8');
@@ -83,11 +89,11 @@ function guardarCambiosUser(user) {
         elUser.email= req.body.email;
         elUser.image = req.file.filename,
         guardarCambiosUser(elUser);
-        let guardado = "/users/" + elUser.id + "/edit" 
+        let guardado = "/users/" + elUser.userId + "/edit" 
         res.redirect(guardado);
         },
         deleteUser: (req, res) => {
-            borrarUser(req.params.id);
+            borrarUser(req.params.userId);
             res.redirect("/");
         },
     };

@@ -12,12 +12,5 @@
   "apellido": "Hernandez",
   "email": "jojojo@jo.com",
   "image": "Arduino.JPG"
- },
- {
-  "userId": 3,
-  "nombre": "Luciano",
-  "apellido": "Schiavone",
-  "email": "lubruschiavone@gmail.com",
-  "image": "WIN_20191023_16_46_52_Pro.jpg"
  }
 ]
