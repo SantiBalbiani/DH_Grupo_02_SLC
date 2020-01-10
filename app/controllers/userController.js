@@ -60,9 +60,9 @@ function guardarCambiosUser(user) {
         editUser: (req, res) => {
         //	let html = readHTML('register');
         // Buscar producto
-        let todosProd = getAllProducts ();
-        elUser = todosProd.find( prod => usr.user == req.params.id )
-            res.render('editProduct', { prod:elUser, title2: 'Editar Producto'});
+        let allUsers = getAllUsers ();
+        elUser = allUsers.find( usr => usr.user == req.params.userId )
+            res.render('editUser', { user:elUser, title2: 'Editar Usuario'});
         },
         saveUser: (req, res) => {
             let newProduct = {
@@ -76,13 +76,13 @@ function guardarCambiosUser(user) {
         saveChanges: (req, res) => {
         //	let html = readHTML('productAdd2');
     
-        let todosProd = getAllProducts ();
-        elUser = todosProd.find( prod => prod.id == req.params.id )
+        let allUsers = getAllUsers ();
+        elUser = allUsers.find( usr => usr.userId == req.params.userId )
         elUser.nombre = req.body.nombre;
         elUser.apellido = req.body.apellido;
         elUser.email= req.body.email;
         elUser.image = req.file.filename,
-        guardarCambiosProducto(elUser);
+        guardarCambiosUser(elUser);
         let guardado = "/users/" + elUser.id + "/edit" 
         res.redirect(guardado);
         },
