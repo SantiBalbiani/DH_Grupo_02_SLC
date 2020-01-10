@@ -61,7 +61,7 @@ function guardarCambiosUser(user) {
         //	let html = readHTML('register');
         // Buscar producto
         let allUsers = getAllUsers ();
-        elUser = allUsers.find( usr => usr.user == req.params.userId )
+        elUser = allUsers.find( usr => usr.userId == req.params.userId )
             res.render('editUser', { user:elUser, title2: 'Editar Usuario'});
         },
         saveUser: (req, res) => {
