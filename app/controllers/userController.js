@@ -66,7 +66,7 @@ function guardarCambiosUser(user) {
         },
         saveUser: (req, res) => {
             let newUser = {
-                id: generateId(),
+                id: generateUserId(),
                 ...req.body,
                 image: req.file.filename,
             }
