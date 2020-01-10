@@ -51,7 +51,7 @@ function guardarCambiosUser(user) {
             //let html = readHTML('productDetail');
             let allUsers = getAllUsers ();
         elUser = allUsers.find( usr => usr.userId == req.params.userId )
-            res.render('userDetail', {title2: 'Detalle del Usuario', user:elUser});
+            res.render('userDetail', {title2: 'Detalle del Usuario', user: elUser});
         },
         createUser: (req, res) => {
             //let html = readHTML('productCart');
@@ -66,7 +66,7 @@ function guardarCambiosUser(user) {
         },
         saveUser: (req, res) => {
             let newUser = {
-                id: generateUserId(),
+                userId: generateUserId(),
                 ...req.body,
                 image: req.file.filename,
             }
