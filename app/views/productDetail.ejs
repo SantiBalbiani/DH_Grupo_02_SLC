@@ -11,18 +11,15 @@
     <%- include('../partials/nav'); %> 
     <%- include('../partials/searchBar'); %>
  <!---breadrcum-->
-
  <ul class="breadcrum"> 
-    <li><a href="#"> Raspberry &#x203A
-      </i></a></li> 
-    <li><a href="#"> Raspberry Pi</a></li> 
-    </ul>
+  <li><a href="#"> Raspberry &#x203A
+    </i></a></li> 
+  <li><a href="#"> Raspberry Pi</a></li> 
+  </ul>
 
-<!---titulo producto-->
-
-<div class="container">
+  <!---producto-->
+ <div class="container">
   <div class="row">
-     
     <div class="col-12 col-sm-6 col-lg-8"> <p class="tituloProducto"> Raspberry Pi 3 B+ Plus Kit 64gb A1 Fuente Gab Disipa E14 Rs</p></div>
     <div class="col-6 col-lg-4"> 
         <span class="fa fa-star checked"></span>
@@ -31,65 +28,70 @@
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star"></span>
         <a href="#" target="blank">Ver Opiniones </a>
-
     </div>
   </div>
-</div>
-
-<div class="container">
-    <div class="row">
-      <div class="col-6 col-lg-4"> <img src="/images/products/<%= prod.image %>"> </div>
-      <div class="col-12 col-sm-6 col-lg-8"> 
-       <p class="tituloDetalle">ESPECIFICACIONES</p> 
-       <ul class="caracteristicasProductos">
-       <li>Marca: Raspberry </li>   
-       <li>Modelo: 3B+ </li> 
-       <li>Voltaje: 5V</li>
-       <li>  <%= prod.prodName %>  </li>
+  
+  <div class="row">
+    <div class="col-6 col-lg-4"> <img src="/images/products/Raspberri_Home.jpg"> </div>
+    <div class="col-12 col-sm-6 col-lg-8"> 
+    <p class="tituloDetalle">ESPECIFICACIONES</p> 
+    <ul class="caracteristicasProductos">
+      <li>Marca: Raspberry </li> <br>
+      <li>Modelo: 3B+ </li>  <br>
+      <li>Voltaje: 5V</li> <br> 
+      <li>Microcontrolador: Cortex-A53 (ARMv8) 64-bit SoC @ 1.4GHz</li><br> <br>
       </ul>
         <p class="tituloDetalle"> DESCRIPCION </p>
         <p class="textoDescripcion">
-          <%= prod.description %>
+        ELEMENT14 o RS PCB GREEN o Edicion Limitada E14 BLUE UK
+        Broadcom BCM2837B0, Cortex-A53 (ARMv8) 64-bit SoC @ 1.4GHz
+        1GB LPDDR2 SDRAM
+        2.4GHz and 5GHz IEEE 802.11.b/g/n/ac wireless LAN, Bluetooth 4.2, BLE
+        Gigabit Ethernet over USB 2.0 (maximum throughput 300 Mbps)
+        Extended 40-pin GPIO header
       </p>
       </div>
-    </div>
-  </div>
 
-<!-- detalle para comprar -->
-<div class="pieDetalle">
+      <!-- detalle para comprar -->
+      <div class="row">
+        <div class="pieDetalle">
+          <!-- precio -->
+          <div class="col-3 col-xs-12">
+          <P class="precio"> $1532,56 </P> 
+          </div>
 
-  <!-- precio -->
-  <div class="col-xs-3 col-md-6">
-   <P class="precio"> $ <%= prod.price %> </P>  
-  </div>
+          <!-- Cantidad -->
+          <div class="col-3 col-xs-12">
+          <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+           Elegir Cantidad
+         <span class="caret"></span></button>
+         <ul class="dropdown-menu">
+           <li>1</li>
+           <li>2</li>
+           <li>3</li>
+         </ul> 
+        </div>
+      </div>
+      <!-- Comprar -->
+      <div class="col-3 col-xs-12">
+        <div class="buttonComprar"> Comprar </div>
+        
+        </div>
 
-<!-- cantidad -->
-<div class="col-xs-3 col-md-6">
-  <div class="dropdown">
-     <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
-      Elegir Cantidad
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-    </ul>
-     </div>
-    </div>
+       <!-- Agregar al carrito -->
+       <div class="col-3 col-xs-12">
+       <div class="buttonCarrito"> Agregar al Carrito </div> 
+       </div>
+ 
+          
+</div> <!-- cierra pieDetalle -->
+</div>  <!-- cierra row -->
+    
 
- <!-- comprar -->
- <div class="col-xs-3 col-md-6">
- <div class="buttonComprar">  Comprar  </div>
-</div>
-
- <!-- agregar al carrito -->
- <div class="col-xs-3 col-md-6">
- <div class="buttonCarrito"> Agregar al Carrito </div> 
-</div>
-
-</div>
-
+</div> <!-- cierra container -->
 <!-- pie -->
+
 <%- include('../partials/footer'); %>
     
 
