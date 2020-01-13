@@ -15,11 +15,11 @@ const controller = {
 		//let html = readHTML('index');
 		res.render('index', {title2: 'SLC Componentes Electrónicos'} );
 	},
-	productDetail: (req, res) => {
+	//productDetail: (req, res) => {
 		//let html = readHTML('productDetail');
 		//res.render('productDetail', {title2: 'Detalle del Producto'});
-		res.render('productDetail');
-	}, 
+		//res.render('productDetail');
+	//}, 
 	productCart: (req, res) => {
 		//let html = readHTML('productCart');
 		res.render('productCart', {title2: 'SLC: Carrito'});

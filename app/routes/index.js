@@ -10,7 +10,7 @@ const mainController = require('../controllers/mainController');
 
 /* GET */
 router.get('/', mainController.root);
-router.get('/productDetail', mainController.productDetail);
+//router.get('/productDetail', mainController.productDetail);
 router.get('/productCart', mainController.productCart);
 router.get('/register', mainController.register);
 router.get('/productAdd', mainController.productAdd);
