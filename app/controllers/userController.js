@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const m = require("../model/model");
 
-const usersFilePath = path.join(__dirname, '../data/users.json');
+const fpath = path.join(__dirname, '../data/users.json');
 
 function getAllUsers () {
 	let usersFileContent = fs.readFileSync(usersFilePath, 'utf-8');
@@ -43,20 +44,21 @@ function guardarCambiosUser(user) {
 	} else {
 		users = JSON.parse(usersContent);
 	}
-	users = users.filter( usr => usr.userId != user.userId);
+	users = users.filter( usr => usr.id != user.id);
 	users.push(user);
 	fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
 	};
 
     const controller = {
         getUsers: (req, res) => {
-            let allUsers = getAllUsers(); 
+            let allUsers = m.loadFile(fpath); 
             res.render('users', {title2: 'Todos los Usuarios', users: allUsers } );
         },
         getUser: (req, res) => {
             //let html = readHTML('productDetail');
-            let allUsers = getAllUsers ();
-        elUser = allUsers.find( usr => usr.userId == req.params.userId )
+            let allUsers = m.loadFile(fpath);
+            elUser = m.getData(allUsers, req.params.id);
+            //allUsers.find( usr => usr.userId == req.params.userId )
             res.render('userDetail', {title2: 'Detalle del Usuario', user: elUser});
         },
         createUser: (req, res) => {
@@ -65,35 +67,45 @@ function guardarCambiosUser(user) {
         },
         editUser: (req, res) => {
         //	let html = readHTML('register');
-        // Buscar producto
-        let allUsers = getAllUsers ();
-        elUser = allUsers.find( usr => usr.userId == req.params.userId )
+        let allUsers = m.loadFile(fpath);
+        elUser = m.getData(allUsers, req.params.id)
             res.render('editUser', { user:elUser, title2: 'Editar Usuario'});
         },
         saveUser: (req, res) => {
             let newUser = {
-                userId: generateUserId(),
+                id: m.genId(fpath),
                 ...req.body,
                 image: req.file.filename,
             }
-            guardarUser(newUser);
+            m.create(newUser, fpath);
+            //guardarUser(newUser);
             res.redirect('/');
         },
         saveChanges: (req, res) => {
         //	let html = readHTML('productAdd2');
     
-        let allUsers = getAllUsers ();
+
+
+        let allUsers = m.loadFile(fpath);
+        
+        let user = {
+			id: parseInt(req.params.id),
+			...req.body,
+			image: req.file.filename,
+		};
+		m.saveChanges(user, fpath);
+        /* 
         elUser = allUsers.find( usr => usr.userId == req.params.userId )
         elUser.nombre = req.body.nombre;
         elUser.apellido = req.body.apellido;
         elUser.email= req.body.email;
         elUser.image = req.file.filename,
-        guardarCambiosUser(elUser);
-        let guardado = "/users/" + elUser.userId + "/edit" 
+        guardarCambiosUser(elUser); */
+        let guardado = "/users/" + user.id + "/edit" 
         res.redirect(guardado);
         },
         deleteUser: (req, res) => {
-            borrarUser(req.params.userId);
+            m.delete_(req.params.id, fpath);
             res.redirect("/");
         },
     };

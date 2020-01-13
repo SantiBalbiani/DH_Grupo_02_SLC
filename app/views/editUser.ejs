@@ -19,7 +19,7 @@
         <div class="col-12 col-sm-6 col-lg-3">
            
             <section class="product-box">
-                <form action="/users/<%= user.userId %>?_method=PUT" enctype="multipart/form-data" method="POST" >
+                <form action="/users/<%= user.id %>?_method=PUT" enctype="multipart/form-data" method="POST" >
                     <div>
                         <label>Nombre de Usuario:</label>
                       
@@ -48,7 +48,7 @@
                     <button type="submit">Guardar Usuario</button>
                 </form>
 
-                <form  action="/users/<%= user.userId %>?_method=DELETE" method="POST" >
+                <form  action="/users/<%= user.id %>?_method=DELETE" method="POST" >
                     <button type="submit">Borrar Usuario</button>
                 
                 </form>

@@ -32,7 +32,7 @@
         <p> Categoría</p>
       </div>
         <div class="form-group col-9">
-        <select id="inputState" class="form-control">
+        <select id="inputState" class="form-control" name="categoria">
           <option selected>Elegir Categoría</option>
           <option>Arduino</option>
           <option>Raspberry</option>
@@ -56,11 +56,11 @@
     <div class="row">
       <div class="form-group col">
         <label for="inputMarca">Marca</label>
-        <input type="text" class="form-control" id="inputMarca">
+        <input type="text" class="form-control" id="inputMarca" name="marca">
       </div>
       <div class="form-group col">
         <label for="inputModelo">Modelo</label>
-        <input type="text" class="form-control" id="inputModelo">
+        <input type="text" class="form-control" id="inputModelo" name="modelo">
       </div>
     </div>
   </div>
@@ -68,11 +68,11 @@
       <div class="row">
         <div class="form-group col">
           <label for="inputMicrocontrolador">Microcontrolador</label>
-          <input type="text" class="form-control" id="inputMicrocontrolador">
+          <input type="text" class="form-control" id="inputMicrocontrolador" name="microcontrolador">
         </div>
         <div class="form-group col">
           <label for="inputVoltaje">Voltaje</label>
-          <input type="text" class="form-control" id="inputVoltaje">
+          <input type="text" class="form-control" id="inputVoltaje" name="voltaje">
         </div>
       </div>
       <div class="row">
@@ -86,9 +86,13 @@
             <label for="Price">Precio</label>
             <input type="text" class="form-control" id="inputMarca" name="price">
           </div>
+          
           <div class="form-group col">
-            <label for="inputModelo">Descripción</label>
-            <input type="text" class="form-control" id="inputModelo" name="description">
+            <label for="validationTextarea">Descripción del Producto</label>
+            <textarea class="form-control is-invalid" id="validationTextarea" name="description" placeholder="Por favor, ingresá una descripción" required></textarea>
+            <div class="invalid-feedback">
+             Es necesaria una descripción
+            </div>
           </div>
         </div>
       

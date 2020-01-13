@@ -20,12 +20,11 @@ let upload = multer({ storage: diskStorage })
 
 router.get('/', userController.getUsers);
 router.get('/create', userController.createUser);
-router.get('/:userId', userController.getUser);
-
-router.get('/:userId/edit', userController.editUser);
+router.get('/:id', userController.getUser);
+router.get('/:id/edit', userController.editUser);
 router.post('/', upload.single('image'), userController.saveUser);
-router.put('/:userId',upload.single('image'), userController.saveChanges);
-router.delete('/:userId', userController.deleteUser);
+router.put('/:id',upload.single('image'), userController.saveChanges);
+router.delete('/:id', userController.deleteUser);
 module.exports = router;
 
 

@@ -6,6 +6,57 @@ const fpath = path.join(__dirname, '../data/products.json');
 //const productsFilePath = path.join(__dirname, '../data/products.json');
 const idx = 'id';
 
+
+function guardarCambiosProducto(prodData) {
+
+	let prodsFileContent = fs.readFileSync(productsFilePath, 'utf-8');
+	let prods;
+	if (prodsFileContent == '') {
+		prods = [];
+	} else {
+		prods = JSON.parse(prodsFileContent);
+	}
+
+	prods = prods.filter( prod => prod.id != prodData.id);
+
+	prods.push(prodData);
+	fs.writeFileSync(productsFilePath, JSON.stringify(prods, null, ' '));
+	};
+
+function borrarProducto(id){
+	let products = loadFile();
+	products = products.filter( prod => prod.id != id);
+	fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+}
+
+function getAllProducts () {
+	let prodsFileContent = fs.readFileSync(fpath, 'utf-8');
+	let prods;
+	if (prodsFileContent == '') {
+		prods = [];
+	} else {
+		prods = JSON.parse(prodsFileContent);
+	}
+	return prods;
+};
+
+function generateId () {
+	let products = getAllProducts();
+	if (products.length == 0) {
+		return 1;
+	}
+	let lastProduct = products.pop();
+	return lastProduct.id + 1;
+}
+function guardarProducto (prodData) {
+let prods = getAllProducts();
+	prods.push(prodData);
+    fs.writeFileSync(productsFilePath, JSON.stringify(prods, null, ' '));
+};
+
+
+
+
 const controller = {
 	root: (req, res) => {
 		let allProducts = m.loadFile(fpath); 

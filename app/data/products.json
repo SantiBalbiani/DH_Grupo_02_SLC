@@ -1,18 +1,34 @@
 [
  {
   "id": 1,
-  "prodName": "Microcontrolador: Cortex-A53 (ARMv8) 64-bit SoC @ 1.4GHz",
-  "description": "ELEMENT14 o RS PCB GREEN o Edicion Limitada E14 BLUE UK Broadcom BCM2837B0, Cortex-A53 (ARMv8) 64-bit SoC @ 1.4GHz 1GB LPDDR2 SDRAM 2.4GHz and 5GHz IEEE 802.11.b/g/n/ac wireless LAN, Bluetooth 4.2, BLE Gigabit Ethernet over USB 2.0 (maximum throughput 300 Mbps) Extended 40-pin GPIO header",
-  "price": 120,
-  "discount": 23,
-  "categoria": "PLC",
-  "image": "plc.jpg"
+  "prodName": "test20",
+  "description": "Producto de Prueba",
+  "price": "99999",
+  "discount": "0.5",
+  "image": "equipo.png"
  },
  {
   "id": 2,
-  "prodName": "taza",
-  "price": "333",
-  "description": "fdfdfd",
-  "image": "raspberry.jpg"
+  "prodName": "Arduino UNO",
+  "categoria": "Arduino",
+  "marca": "Arduino",
+  "modelo": "UNO",
+  "microcontrolador": "ATmega328",
+  "voltaje": "5V",
+  "price": "1400",
+  "description": "Pines de Entradas/Salidas Digital: 14 (De las cuales 6 son salidas PWM)\r\nPines de Entradas Análogas: 6\r\nMemoria Flash: 32 KB (ATmega328) de los cuales 0,5 KB es usado por Bootloader.\r\nSRAM: 2 KB (ATmega328)\r\nEEPROM: 1 KB (ATmega328)\r\nVelocidad del Reloj: 16 MHZ.",
+  "image": "descarga.jpg"
+ },
+ {
+  "id": 3,
+  "prodName": "Raspberry Pi4",
+  "categoria": "Raspberry",
+  "marca": "Raspberry",
+  "modelo": "Pi4",
+  "microcontrolador": "quad-core Cortex-A72 (ARM v8) 64-bit SoC @ 1. 5GHz",
+  "voltaje": "12V",
+  "price": "3000",
+  "description": "Broadcom BCM2711, 2. 4 GHz and 5. 0 GHz IEEE 802. 11b/g/n/ac wireless LAN, Bluetooth 5. 0, BLE\r\n2 × USB 3. 0 ports, 2 x USB 2. 0 Ports\r\n2 × micro HDMI ports supproting up to 4Kp60 video resolution\r\nMicro SD card slot for loading operating system and data storage",
+  "image": "RaspberryPi4.jpg"
  }
 ]

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head'); %>
+    <link rel='stylesheet' href='/stylesheets/styleProductDetail.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  </head>
+
+  <body>
+    <%- include('../partials/nav'); %> 
+    <%- include('../partials/searchBar'); %>
+ <!---breadrcum-->
+
+ <ul class="breadcrum"> 
+    <li><a href="#"> Raspberry &#x203A
+      </i></a></li> 
+    <li><a href="#"> Raspberry Pi</a></li> 
+    </ul>
+
+<!---titulo producto-->
+
+<div class="container">
+  <div class="row">
+     
+    <div class="col-12 col-sm-6 col-lg-8"> <p class="tituloProducto"> Raspberry Pi 3 B+ Plus Kit 64gb A1 Fuente Gab Disipa E14 Rs</p></div>
+    <div class="col-6 col-lg-4"> 
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <a href="#" target="blank">Ver Opiniones </a>
+
+    </div>
+  </div>
+</div>
+
+<div class="container">
+    <div class="row">
+      <div class="col-6 col-lg-4"> <img src="/images/products/<%= prod.image %>"> </div>
+      <div class="col-12 col-sm-6 col-lg-8"> 
+       <p class="tituloDetalle">ESPECIFICACIONES</p> 
+       <ul class="caracteristicasProductos">
+       <li>Marca: Raspberry </li>   
+       <li>Modelo: 3B+ </li> 
+       <li>Voltaje: 5V</li>
+       <li>  <%= prod.prodName %>  </li>
+      </ul>
+        <p class="tituloDetalle"> DESCRIPCION </p>
+        <p class="textoDescripcion">
+          <%= prod.description %>
+      </p>
+      </div>
+    </div>
+  </div>
+
+<!-- detalle para comprar -->
+<div class="pieDetalle">
+
+  <!-- precio -->
+  <div class="col-xs-3 col-md-6">
+   <P class="precio"> $ <%= prod.price %> </P>  
+  </div>
+
+<!-- cantidad -->
+<div class="col-xs-3 col-md-6">
+  <div class="dropdown">
+     <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+      Elegir Cantidad
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+     </div>
+    </div>
+
+ <!-- comprar -->
+ <div class="col-xs-3 col-md-6">
+ <div class="buttonComprar">  Comprar  </div>
+</div>
+
+ <!-- agregar al carrito -->
+ <div class="col-xs-3 col-md-6">
+ <div class="buttonCarrito"> Agregar al Carrito </div> 
+</div>
+
+</div>
+
+<!-- pie -->
+<%- include('../partials/footer'); %>
+    
+
+<!---bootstrap-->
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
