@@ -3,6 +3,7 @@
   <head>
     <%- include('../partials/head'); %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='/stylesheets/styleProductDetailOk.css' />
   </head>
 
   <%- include('../partials/nav'); %> 
@@ -12,7 +13,7 @@
 <div class="container">
   <div class="row">
      
-    <div class="col-12 col-sm-6 col-lg-8"> <p class="tituloProducto">Linus Torvalds</p></div>
+    <div class="col-12 col-sm-6 col-lg-8"> <p class="tituloProducto"><%= user.nombre %> <%= user.apellido %></p></div>
     <div class="col-6 col-lg-4"> 
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -31,9 +32,9 @@
       <div class="col-12 col-sm-6 col-lg-8"> 
        <p class="tituloDetalle">Detalles de usuario</p> 
        <ul class="caracteristicasProductos">
-       <li>Nombre: <%= user.nombre %> </li>   
-       <li>Apellido:  <%= user.apellido %> </li> 
-       <li>Email: <%= user.email %>></li>
+       <div>Nombre: <%= user.nombre %> </div>   
+       <div>Apellido:  <%= user.apellido %> </div> 
+       <div>Email: <%= user.email %></div>
       </ul>
     
       </p>

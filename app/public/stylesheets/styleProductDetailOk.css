@@ -150,11 +150,11 @@ a {
 /*Pie de Detalle Compra*/
 .pieDetalle {
   border:solid 1px lightslategrey;
-  padding-top: 20px;
-  margin-top: 60px;
+  padding-top: 3%; 
+  margin-top: 10%;
   display: flex;
   justify-content:space-around;
-  padding-bottom: 10px;
+  padding-bottom: 1%;
 }
 
 .precio {
@@ -204,3 +204,4 @@ a {
 .footer-navbar a {
   color:#597ff9;
 }
+

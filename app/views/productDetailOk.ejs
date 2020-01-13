@@ -2,8 +2,8 @@
 <html>
   <head>
     <%- include('../partials/head'); %>
-    <link rel='stylesheet' href='/stylesheets/styleProductDetail.css' />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='/stylesheets/styleProductDetailOk.css' />
+    
   
   </head>
 
@@ -23,7 +23,7 @@
 <div class="container">
   <div class="row">
      
-    <div class="col-12 col-sm-6 col-lg-8"> <p class="tituloProducto"> Raspberry Pi 3 B+ Plus Kit 64gb A1 Fuente Gab Disipa E14 Rs</p></div>
+    <div class="col-12 col-sm-6 col-lg-8"> <p class="tituloProducto"> <%= prod.prodName%></p></div>
     <div class="col-6 col-lg-4"> 
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -34,9 +34,9 @@
 
     </div>
   </div>
-</div>
 
-<div class="container">
+
+
     <div class="row">
       <div class="col-6 col-lg-4"> <img src="/images/products/<%= prod.image %>"> </div>
       <div class="col-12 col-sm-6 col-lg-8"> 
@@ -53,18 +53,18 @@
       </p>
       </div>
     </div>
-  </div>
+  
 
 <!-- detalle para comprar -->
 <div class="pieDetalle">
-
+<div class="row">
   <!-- precio -->
-  <div class="col-xs-3 col-md-6">
+  <div class="col-xl-3 col-lg-3 col-xs-3 col-md-3">
    <P class="precio"> $ <%= prod.price %> </P>  
   </div>
 
 <!-- cantidad -->
-<div class="col-xs-3 col-md-6">
+<div class="col-xl-3 col-lg-3 col-xs-3 col-md-3">
   <div class="dropdown">
      <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
       Elegir Cantidad
@@ -78,17 +78,18 @@
     </div>
 
  <!-- comprar -->
- <div class="col-xs-3 col-md-6">
+ <div class="col-xl-3 col-lg-3 col-xs-3 col-md-3">
  <div class="buttonComprar">  Comprar  </div>
 </div>
 
  <!-- agregar al carrito -->
- <div class="col-xs-3 col-md-6">
+ <div class="col-xl-3 col-lg-3 col-xs-3 col-md-3">
  <div class="buttonCarrito"> Agregar al Carrito </div> 
 </div>
 
 </div>
-
+</div>
+</div>
 <!-- pie -->
 <%- include('../partials/footer'); %>
     
