@@ -29,7 +29,9 @@ app.use('/products', productsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+  res.render('notFound');
+  //next(createError(404));
+  next();
 });
 
 // error handler
