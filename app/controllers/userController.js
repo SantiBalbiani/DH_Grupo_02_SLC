@@ -23,8 +23,9 @@ const fpath = path.join(__dirname, '../data/users.json');
         editUser: (req, res) => {
         //	let html = readHTML('register');
         let allUsers = m.loadFile(fpath);
-        elUser = m.getData(allUsers, req.params.id)
-            res.render('editUser', { user:elUser, title2: 'Editar Usuario'});
+        //elUser = m.getData(allUsers, req.params.id);
+        elUser = allUsers.find( usr => usr.id == req.params.id );
+        res.render('editUser', { user: elUser, title2: 'Editar Usuario', msg:'Modifique datos y presione guardar'});
         },
         saveUser: (req, res) => {
             let newUser = {
@@ -44,7 +45,7 @@ const fpath = path.join(__dirname, '../data/users.json');
 			image: req.file.filename,
 		};
 		m.saveChanges(user, fpath);
-        let guardado = "/users/" + user.id + "/edit" 
+        let guardado = "/users/" + user.id + "/edit";
         res.redirect(guardado);
         },
         deleteUser: (req, res) => {

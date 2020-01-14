@@ -1,13 +1,5 @@
 [
  {
-  "id": 1,
-  "prodName": "test20",
-  "description": "Producto de Prueba",
-  "price": "99999",
-  "discount": "0.5",
-  "image": "equipo.png"
- },
- {
   "id": 2,
   "prodName": "Arduino UNO",
   "categoria": "Arduino",
@@ -30,5 +22,13 @@
   "price": "3000",
   "description": "Broadcom BCM2711, 2. 4 GHz and 5. 0 GHz IEEE 802. 11b/g/n/ac wireless LAN, Bluetooth 5. 0, BLE\r\n2 × USB 3. 0 ports, 2 x USB 2. 0 Ports\r\n2 × micro HDMI ports supproting up to 4Kp60 video resolution\r\nMicro SD card slot for loading operating system and data storage",
   "image": "RaspberryPi4.jpg"
+ },
+ {
+  "id": 1,
+  "prodName": "test34",
+  "description": "Producto de Prueba",
+  "price": "99999",
+  "discount": "0.5",
+  "image": "equipo.png"
  }
 ]

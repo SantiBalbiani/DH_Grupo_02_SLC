@@ -26,7 +26,7 @@ const controller = {
 		//	let html = readHTML('register');
 		let todosProd = m.loadFile(fpath);
 		elProd = todosProd.find( prod => prod.id == req.params.id )
-		res.render('editProduct', { prod:elProd, title2: 'Editar Producto'});
+		res.render('editProduct', { prod:elProd, title2: 'Editar Producto', msg: 'Modificar Producto'});
 	},
 	saveProduct: (req, res) => {
 		let newProduct = {
@@ -45,7 +45,8 @@ const controller = {
 			image: req.file.filename,
 		};
 		m.saveChanges(newProduct, fpath);
-		let guardado = "/products/" + elProd.id + "/edit" 
+		let guardado = "/products/" + elProd.id + "/edit"; 
+		
 		res.redirect(guardado);
 	},
 	deleteProduct: (req, res) => {

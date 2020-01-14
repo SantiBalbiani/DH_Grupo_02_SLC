@@ -1,12 +1,5 @@
 [
  {
-  "id": 1,
-  "nombre": "Jose",
-  "apellido": "Hernandez",
-  "email": "jo@jo.com",
-  "image": "face1.jpg"
- },
- {
   "id": 2,
   "nombre": "Juana",
   "apellido": "Hernandez",
@@ -19,5 +12,12 @@
   "apellido": "Test22",
   "email": "test@test.com",
   "image": "equipo.png"
+ },
+ {
+  "id": 1,
+  "nombre": "Jose",
+  "apellido": "Hernandez",
+  "email": "jo@jo.com",
+  "image": "face1.jpg"
  }
 ]
