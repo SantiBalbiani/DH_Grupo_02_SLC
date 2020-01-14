@@ -12,7 +12,7 @@
   "image": "descarga.jpg"
  },
  {
-  "id": 3,
+  "id": 1,
   "prodName": "Raspberry Pi4",
   "categoria": "Raspberry",
   "marca": "Raspberry",
@@ -22,38 +22,5 @@
   "price": "3000",
   "description": "Broadcom BCM2711, 2. 4 GHz and 5. 0 GHz IEEE 802. 11b/g/n/ac wireless LAN, Bluetooth 5. 0, BLE\r\n2 × USB 3. 0 ports, 2 x USB 2. 0 Ports\r\n2 × micro HDMI ports supproting up to 4Kp60 video resolution\r\nMicro SD card slot for loading operating system and data storage",
   "image": "RaspberryPi4.jpg"
- },
- {
-  "id": 1,
-  "categoria": "Arduino",
-  "prodName": "test35",
-  "description": "Producto de Prueba",
-  "price": "99999",
-  "discount": "0.5",
-  "image": "PLC Siemens Di8.jpg"
- },
- {
-  "id": 2,
-  "prodName": "TestPLC",
-  "categoria": "PLC",
-  "marca": "aaa",
-  "modelo": "aaa",
-  "microcontrolador": "aaa",
-  "voltaje": "aaa",
-  "price": "3434",
-  "description": "sdasdas",
-  "image": "PLC Siemens Di8.jpg"
- },
- {
-  "id": 3,
-  "prodName": "Arduino UNO + Raspberry Pi4",
-  "categoria": "Combos y Ofertas",
-  "marca": "s",
-  "modelo": "s",
-  "microcontrolador": "s",
-  "voltaje": "s",
-  "price": "3",
-  "description": "3",
-  "image": "descarga.jpg"
  }
 ]
