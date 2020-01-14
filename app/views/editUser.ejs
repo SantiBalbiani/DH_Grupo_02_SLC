@@ -20,19 +20,19 @@
         <div class="col-12 col-sm-6 col-lg-3">
            
             <section class="product-box">
-                <form action="/users/<%= user.id %>/edit?_method=PUT" enctype="multipart/form-data" method="POST" >
+                <form action="/users/<%= elUser.id %>/edit?_method=PUT" enctype="multipart/form-data" method="POST" >
                     <div>
                         <label>Nombre de Usuario:</label>
                       
-                        <input type="text" name="nombre" value="<%= user.nombre %>" >
+                        <input type="text" name="nombre" value="<%= elUser.nombre %>" >
                     </div>
                     <div>
                         <label>Apellido:</label>
-                        <input type="text" name="apellido" value="<%= user.apellido %>">
+                        <input type="text" name="apellido" value="<%= elUser.apellido %>">
                     </div>
                     <div>
                         <label>Email:</label>
-                        <input type="text" name="email" value="<%= user.email %>">
+                        <input type="text" name="email" value="<%= elUser.email %>">
                     </div>
                   <!--   <div>
                         <label>Descuento:</label>
@@ -40,7 +40,7 @@
                     </div> -->
                     <div>
                         <label>Imagen Actual:</label>
-                        <img src="/images/users/<%= user.image %>">
+                        <img src="/images/users/<%= elUser.image %>">
                     </div>
                     <div>
                         <label>Avatar del usuario:</label>
@@ -49,7 +49,7 @@
                     <button type="submit">Guardar Usuario</button>
                 </form>
 
-                <form  action="/users/<%= user.id %>?_method=DELETE" method="POST" >
+                <form  action="/users/<%= elUser.id %>?_method=DELETE" method="POST" >
                     <button type="submit">Borrar Usuario</button>
                 
                 </form>
