@@ -5,11 +5,13 @@
  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="/stylesheets/products.css">
+
   </head>
   
   <body>
     <%- include('../partials/nav'); %> 
     <%- include('../partials/searchBar'); %>
+    <link rel='stylesheet' href='/stylesheets/styleProductDetail.css' />
 <!-- main-content -->
 
 <div class="container products-wrapper">
@@ -17,25 +19,24 @@
         <div class="col-12">
             <h2 class="products-title">Todos los productos</h2>
         </div>
-    
-        <div class="col-12 col-sm-6 col-lg-3">
-            <% prods.forEach( prd => { %>
+        <% prods.forEach( prd => { %>
+        <div class="col-xl-4 col-lg-4 col-12 col-sm-6 col-lg-3">
+            
             <section class="product-box">
-                <a href="/products/detail/<%= prd.image %>">
+                <a href="/products/<%= prd.id %>">
                     <figure class="product-box_image">
                         <img src="/images/products/<%= prd.image %>" alt="imagen de producto">
                     </figure>
                     <article class="product-box_data">
+                        <h4><%= prd.prodName %> </h4>
                         <h2>$<%= prd.price %> </h2>
-                        <span><%= prd.discount %>% OFF</span>
-                        <p><%= prd.name %></p>
-                        <i class="fas fa-truck"></i>
+                        <!-- <span><%= prd.discount %>% OFF</span> -->
                     </article>
                 </a>
             </section>
-            <% }); %>
+        
         </div>
-    
+        <% }); %>
     </div>
 </div>
 
