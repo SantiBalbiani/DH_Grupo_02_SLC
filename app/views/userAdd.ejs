@@ -10,35 +10,22 @@
   <body>
     <div class="container-header">
       <%- include('../partials/nav'); %> 
-  <h3 class="tituloPagina"> Cargar Usuario</h3>
-  <h6> Paso 1 de 2</h6>
+  <h3 class="tituloPagina">Crear Cuenta</h3>
   <div class="container"> 
     <form action="/users" enctype="multipart/form-data" method="POST" class="cabezalPagina">
     <div class="row">
   
-
+    <div class="col-xl-12 col-lg-12 col-12">
+      <p class="tituloDetalle"> Datos de Usuario </p>
+    </div>
   
+    
     <div class="row">
       <div class="col-3">
-        <p>Categoría</p>
-      </div>
-        <div class="form-group col-9">
-        <select id="inputState" class="form-control">
-          <option selected>Elegir Genero</option>
-          <option>Hombre</option>
-          <option>Mujer</option>
-        </select>
-        <label>Imagen del Usuario:</label>
-      <input type="file" name="image">
+        <h2>Sobre vos:</h2>
       </div>
       
-      
-        <div class="col-xl-12 col-lg-12 col-12">
-          <p class="tituloDetalle"> Datos de Usuario </p>
-        </div>
-      
-      
-        <div class="row">
+      <div class="row">
           <div class="form-group col">
             <label for="nombre">Nombre</label>
             <input type="text" class="form-control" id="inputMarca" name="nombre">
@@ -47,11 +34,85 @@
             <label for="inputModelo">Apellido</label>
             <input type="text" class="form-control" id="inputModelo" name="apellido">
           </div>
+          <div class="form-group col-9">
+            <select id="inputState" class="form-control">
+              <option selected>Elegir Genero</option>
+              <option>Hombre</option>
+              <option>Mujer</option>
+            </select>
+            <label>Imagen del Usuario:</label>
+          <input type="file" name="image">
+            </div> 
+        <div class="form-group col">
+          <select id="inputState" class="form-control">
+            <option selected>Elegir tipo de Documento</option>
+            <option>DNI</option>
+            <option>Libreta</option>
+            <option>Pasaporte</option>
+          </select>
+            <label for="inputModelo">Numero de Documento</label>
+
+            <input type="text" class="form-control" id="inputModelo" name="numeroDoc">
+
+          </div>
+        </div>  
+
+        <div class="col-xl-12 col-lg-12 col-12">
+          <h2> Para ingresar a tu cuenta </h2>
+        </div>
+
+        <div class="row">
         <div class="form-group col">
             <label for="inputModelo">Email</label>
             <input type="text" class="form-control" id="inputModelo" name="email">
           </div>
-        </div>  
+          <div class="form-group col">
+            <label for="inputModelo">Contraseña</label>
+            <input type="password" class="form-control" id="inputModelo" name="pwd">
+          </div>
+        </div>
+
+      </div>
+      <h2>Datos de contacto</h2>
+      <div class="cuartodiv">
+       <form>
+  
+        <input type="tel" name="telefono" value="Telefono 1">
+        <input type="tel" name="telefono" value="Telefono 2">
+       </form>
+       </div>
+
+       <h3>Ubicacion</h3>
+    <form>
+     <div>
+
+        <input type="text" name="calle" value="Calle">
+        <input type="text" name="numero" value="Numero">
+     </div>
+     <div>
+        <input type="text" name="city" value="Ciudad">
+        <input type="text" name="cp" value="Codigo Postal">
+        <input type="text" name="state" value="Provincia">
+     </div>
+    </form>
+
+    <h3>Perfil como vendedor</h3>
+    <div>
+
+     <input type="text" name="nickname" value="Nombre Fantasia/Apodo">
+     <label><input type="checkbox" id="cbox1" value="first_checkbox">Utilizar mi nombre y apellido como nombre fantasia/apodo</label>
+    </div>
+    <div>
+    <div>
+      <input type="text" name="nombredelacaja" value="Escribi una descripcion sobre tu tienda o los productos que ofrecen">
+    </div> 
+    <div>
+        <label><input type="checkbox" id="cbox1" value="first_checkbox"><b>No quiero activar ahora mi perfil de vendedor</b></label>
+     </div>
+     <div>
+      <label><input type="checkbox" id="cbox1" value="first_checkbox">Al registrarme acepto los <a>terminos y condiciones y la Politica de Privacidad de SLC Componentes Electronicos SA</a></label>
+      <a href=/register>Registrarme</a>
+    </div>
 
       <div class="containerBoton"> 
         <div class="row">

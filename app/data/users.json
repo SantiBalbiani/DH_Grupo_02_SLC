@@ -1,12 +1,5 @@
 [
  {
-  "id": 1,
-  "nombre": "Jose",
-  "apellido": "Hernandez",
-  "email": "jo@jo.com",
-  "image": "face1.jpg"
- },
- {
   "id": 2,
   "nombre": "Juana",
   "apellido": "Hernandez",
@@ -18,6 +11,32 @@
   "nombre": "Test",
   "apellido": "Test22",
   "email": "test@test.com",
+  "image": "equipo.png"
+ },
+ {
+  "id": 1,
+  "nombre": "Jose",
+  "apellido": "Hernandez",
+  "email": "jo@jo.com",
+  "image": "face1.jpg"
+ },
+ {
+  "id": 2,
+  "nombre": "sdas",
+  "apellido": "dasda",
+  "genero": "Hombre",
+  "numeroDoc": "4343",
+  "nombreUsuario": "434",
+  "contrasena": "343",
+  "email": "343",
+  "telefono": "Telefono 1343",
+  "telefono2": "Telefono 2",
+  "calle": "Calle",
+  "numero": "Numero",
+  "city": "Ciudad",
+  "cp": "Codigo Postal",
+  "state": "Provincia",
+  "nomVendedor": "Nombre Fantasia/Apodo",
   "image": "equipo.png"
  }
 ]

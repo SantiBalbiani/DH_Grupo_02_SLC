@@ -21,6 +21,7 @@ router.get('/', productsController.root);
 router.get('/create', productsController.createProduct);
 router.get('/:id', productsController.getProduct);
 router.get('/:id/edit', productsController.editProduct);
+router.get('/category/:category', productsController.getProdsByCat);
 router.post('/', upload.single('image'), productsController.saveProduct);
 router.put('/:id/edit', upload.single('image'), productsController.saveEditProduct);
 router.delete('/:id', productsController.deleteProduct);

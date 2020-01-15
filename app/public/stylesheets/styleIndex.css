@@ -160,4 +160,8 @@ text-decoration: underline;
     width: auto\9; /* ie8 
 } 
 */
-
+@media (max-width: 460px){
+  .combos{
+    width: 118%;
+  }
+}
