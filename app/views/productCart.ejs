@@ -5,7 +5,7 @@
     
     <link rel='stylesheet' href='/stylesheets/productCart.css' />
     <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
-    <link rel='stylesheet' href='/stylesheets/styleProductDetail.css' />
+    <link rel='stylesheet' href='/stylesheets/styleProductDetailOk.css' />
   </head>
   
   <body>
@@ -14,50 +14,71 @@
       <div class="titulo">
         Carrito de Compras
       </div>
+
       <div class="compras">
-          
-        <div class="unItem"> 
-          <div class="prodImagen">
+         <div class="unItem"> 
+              <div class="prodImagen">
               <img src="/images/raspberry.JPG" alt="una compra" class="imagen"> 
               </div>
-          <div class="tituloYCantPrecio">
-              <div class="tituloProducto">Raspberry Pi 3 Plus con descripcion super larga aaaa</div>
-              <div class="precioCant">
-                  <input class="form-control col-xl-2 col-sm-12 col-12" type="number" value="2" min="1" max="999">
-                  <div class="col-xl-2  col-12">$1532.56</div> </div>
-          </div>
-        </div>
-        
-        <div class="unItem"> 
-            <div class="prodImagen">
-                <img src="/images/puenteRect.JPG" alt="una compra" class="imagen"> 
-                </div>
             <div class="tituloYCantPrecio">
-                <div class="tituloProducto">Puente Rectificador 1.5A con descripción super larga</div>
-                <div class="precioCant">
-                  <input class="form-control col-xl-2 col-sm-12 col-12" type="number" value="2" min="1" max="999">
-                    
-                    <div class="col-xl-2  col-12">$232.26</div> </div>
+              <div class="tituloProducto">Raspberry Pi 3 Plus con descripcion super larga aaaa
+              </div>
+              <div class="precioCant">
+              <input class="form-control col-xl-2  col-12"  type="number" value="2" min="1" max="999">
+                <div class="col-xl-2  col-12">$1532.56
+                </div> 
+              </div>
             </div>
-          </div>
-   
-        <div class="container">
-          <div class="row">
-              <div class="col-xl-4 col-lg-3 col-md-5 col-sm-6 col-12">
-              <span class="seguiComprando"> <a href="/"> seguir comprando </a></span>
+            </div>
+        
+            <div class="unItem"> 
+                <div class="prodImagen">
+                  <img src="/images/puenteRect.JPG" alt="una compra" class="imagen"> 
+                </div>
+
+                <div class="tituloYCantPrecio">
+                    <div class="tituloProducto">Puente Rectificador 1.5A con descripción super larga
+                    </div>
+
+                  <div class="precioCant">
+                  <input class="form-control col-xl-2  col-12" type="number" value="2" min="1" max="999">
+                     <div class="col-xl-2  col-12">$232.26
+                      </div> 
+                  </div>
+                </div>
+            </div>
+
+   <div class="container">       
+        <div class="row">
+          <div class="col-12">
+            <div class="pieDetalle">
+              <div class="row align-items-center">
+
+                <div class="col-12 col-lg-3">
+                  <h2 class="precio"> TOTAL  $1764.82</h2> 
+                </div>
+
+
+                <div class="col-12 col-md-4 col-lg-4">
+                  <a href="/" class="buttonCarrito"> Seguir Comprando </a> 
+                </div>
+
+                
+                <div class="col-12 col-md-4 col-lg-4">
+                <a href="/" class="buttonComprar">  Comprar  </a>
+                </div>
+
+                
+          
+
+                  </div>
+                </div>
               </div>
-              <div class="col-xl-1 col-lg-3 col-md-5 col-sm-6 col-6">
-              <span class="resaltarTexto"> TOTAL   </span>
-              </div>
-              <div class="col-xl-2 col-lg-3 col-md-5 col-sm-6 col-12">
-              <span class="superResaltarTexto"> $1764.82</span>
-              </div>
-              <div class="col-xl-2 col-lg-3 col-md-5 col-sm-6 col-6">
-              <button type="submit" class="btn btn-primary">Comprar</button> 
-              </div>
-          </div>
-        </div>
-          </div>
+            </div>           
+          </div> 
+
+    
+        
           <%- include('../partials/footer'); %>
   </body>
   <script src="/js/jquery-3.4.1.min.js"></script>

@@ -1,26 +1,32 @@
 [
  {
+  "id": 1,
+  "prodName": "Raspberry Pi4",
+  "categoria": "Raspberry",
+  "modelo": "Pi4",
+  "voltaje": "12V",
+  "price": "3000",
+  "description": "Broadcom BCM2711, 2. 4 GHz and 5. 0 GHz IEEE 802. 11b/g/n/ac wireless LAN, Bluetooth 5. 0, BLE\r\n2 × USB 3. 0 ports, 2 x USB 2. 0 Ports\r\n2 × micro HDMI ports supproting up to 4Kp60 video resolution\r\nMicro SD card slot for loading operating system and data storage",
+  "image": "RaspberryPi4.jpg"
+ },
+ {
   "id": 2,
   "prodName": "Arduino UNO",
   "categoria": "Arduino",
-  "marca": "Arduino",
   "modelo": "UNO",
-  "microcontrolador": "ATmega328",
   "voltaje": "5V",
   "price": "1400",
   "description": "Pines de Entradas/Salidas Digital: 14 (De las cuales 6 son salidas PWM)\r\nPines de Entradas Análogas: 6\r\nMemoria Flash: 32 KB (ATmega328) de los cuales 0,5 KB es usado por Bootloader.\r\nSRAM: 2 KB (ATmega328)\r\nEEPROM: 1 KB (ATmega328)\r\nVelocidad del Reloj: 16 MHZ.",
   "image": "descarga.jpg"
  },
  {
-  "id": 1,
-  "prodName": "Raspberry Pi4",
+  "id": 3,
+  "prodName": "Raspberry Pi 4 B 4gb Ram E14 Kit 128gb Carcasa Fuente Fan ",
   "categoria": "Raspberry",
-  "marca": "Raspberry",
-  "modelo": "Pi4",
-  "microcontrolador": "quad-core Cortex-A72 (ARM v8) 64-bit SoC @ 1. 5GHz",
-  "voltaje": "12V",
-  "price": "3000",
-  "description": "Broadcom BCM2711, 2. 4 GHz and 5. 0 GHz IEEE 802. 11b/g/n/ac wireless LAN, Bluetooth 5. 0, BLE\r\n2 × USB 3. 0 ports, 2 x USB 2. 0 Ports\r\n2 × micro HDMI ports supproting up to 4Kp60 video resolution\r\nMicro SD card slot for loading operating system and data storage",
-  "image": "RaspberryPi4.jpg"
+  "modelo": " Raspberry Pi 4 4gb ",
+  "voltaje": "5.1 V",
+  "price": "13069",
+  "description": "·····: Starware :·····\r\nRASPBERRY PI 4 B 4GB RAM KIT ELEMENT14 COMPLETO 128GB DUAL FAN COOLER\r\n-[ Código Tienda.Starware 1883 ]-\r\n\r\n** ¡ HAY STOCK ! + Envíos en el DÍA + Factura A o B **\r\n++ CUOTAS SIN INTERÉS .:. Por tiempo limitado! ++\r\n\r\n** ESTA OFERTA INCLUYE **\r\nIncluye:\r\n1x PLACA SBC ELEMENT14 RASPBERRY PI 4 MODEL B 4GB RAM (SKU1804)\r\n1x GABINETE CARCASA RASPBERRY PI 4 ALUMINIO DOBLE FAN (SKU1849)\r\n1x MEMORIA MICROSD SANDISK ULTRA A1 128GB SDXC CLASE 10 100MB/S FHD (SKU1622)\r\n1x FUENTE SWITCHING 5V4.2A QC SMART TIPO C (SKU1882)\r\n1x ADAPTADOR HDMI MICRO HDMI CABLE-M A HDMI CABLE-H 10CM (SKU1860)",
+  "image": "raspberry-pi-4.jpg"
  }
 ]
