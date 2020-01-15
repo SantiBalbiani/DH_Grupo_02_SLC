@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel='stylesheet' href='/stylesheets/styleProductDetailOk.css' />
         <link rel='stylesheet' href='/stylesheets/userForm.css' />
+        
       </head>
     
   <body>
@@ -26,14 +27,16 @@
             <option>Mujer</option>
           </select></p>
          
-          <p> <label>Foto:</label>
-            <input type="file" name="image" placeholder="test"></p>
+          
+            <p> <label for="imageUpload" class="btn btn-primary btn-block btn-outlined">Cargá tu Foto</label>
+              <input type="file" id="imageUpload" accept="image/*" style="display: none"> </p>
             <p><select id="inputState" class="form-control">
               <option selected>Tipo de Documento</option>
               <option>DNI</option>
               <option>Libreta</option>
               <option>Pasaporte</option>
             </select></p>
+            
             <p>
               <input type="text" class="form-control" id="inputModelo" placeholder="Número de documento..." name="numeroDoc"></p>
 
