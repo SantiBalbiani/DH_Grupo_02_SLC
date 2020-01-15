@@ -20,6 +20,10 @@ const fpath = path.join(__dirname, '../data/users.json');
             //let html = readHTML('productCart');
             res.render('userAdd', {title2: 'SLC: Crear Usuario'});
         },
+        createUser2: (req, res) => {
+            //let html = readHTML('productCart');
+            res.render('userForm', {title2: 'SLC: Crear Usuario'});
+        },
         editUser: (req, res) => {
         //	let html = readHTML('register');
         let allUsers = m.loadFile(fpath);
