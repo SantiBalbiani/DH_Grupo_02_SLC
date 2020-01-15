@@ -2,7 +2,10 @@
 <html>
   <head>
     <%- include('../partials/head'); %> 
-    <link rel='stylesheet' href='/stylesheets/styleProductDetailOk.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel='stylesheet' href='/stylesheets/styleProductDetailOk.css' />
+        <link rel='stylesheet' href='/stylesheets/userForm.css' />
   </head>
   
   <body>
@@ -10,60 +13,50 @@
     <%- include('../partials/searchBar'); %>
 <!-- main-content -->
 
-<div class="container products-wrapper">
-    <div class="row">
-        <div class="col-12">
-            <h2 class="products-title"> <%= title2 %> </h2>
-        </div>
-
-    
-        <div class="col-12 col-sm-6 col-lg-3">
-           
-            <section class="product-box">
-                <form action="/users/<%= elUser.id %>/edit?_method=PUT" enctype="multipart/form-data" method="POST" >
-                    <div>
-                        <label>Nombre de Usuario:</label>
-                      
-                        <input type="text" name="nombre" value="<%= elUser.nombre %>" >
-                    </div>
-                    <div>
-                        <label>Apellido:</label>
-                        <input type="text" name="apellido" value="<%= elUser.apellido %>">
-                    </div>
-                    <div>
-                        <label>Email:</label>
-                        <input type="text" name="email" value="<%= elUser.email %>">
-                    </div>
-                  <!--   <div>
-                        <label>Descuento:</label>
-                        <input type="text" name="discount" value="">
-                    </div> -->
-                    <div>
-                        <label>Imagen Actual:</label>
-                        <img src="/images/users/<%= elUser.image %>">
-                    </div>
-                    <div>
-                        <label>Avatar del usuario:</label>
-                        <input type="file" name="image">
-                    </div>
-                    <button type="submit">Guardar Usuario</button>
-                </form>
-
-                <form  action="/users/<%= elUser.id %>?_method=DELETE" method="POST" >
-                    <button type="submit">Borrar Usuario</button>
-                
-                </form>
-            </section>
-            
-        </div>
+<form action="/users/<%= elUser.id %>/edit?_method=PUT" enctype="multipart/form-data" method="POST" ></form>
+        <h2 class="products-title"> <%= title2 %> </h2>
+       
         <h5 class="products-title"> <%= msg %> </h5>
+        
+        <section class="product-box">
+            <div class="editarCampo">
+                <div>
+                <label>Nombre de Usuario:</label>
+                <input type="text" name="nombre" value="<%= elUser.nombre %>" >
+                </div>
+                <div>
+                <label>Apellido:</label>
+                <input type="text" name="apellido" value="<%= elUser.apellido %>">
+                </div>
+                <div>
+                <label>Email:</label>
+                <input type="text" name="email" value="<%= elUser.email %>">
+                </div>
+
+                <div>
+                <label>Imagen Actual:</label>
+                <img src="/images/users/<%= elUser.image %>">
+                
+
+                <div class="form-group col"> <label for="imageUpload" class="btn btn-primary btn-block btn-outlined">Cargá tu nueva imagen</label>
+                    <input type="file" id="imageUpload" accept="image/*" style="display: none">
+                </div>
+                </div>
+
+            </div>
+        </section>
+        
+        <button type="submit">Guardar Usuario</button>
+                
+    </form> 
+    
+    <form  action="/users/<%= elUser.id %>?_method=DELETE" method="POST" >
+   <!-- <button type="submit">Borrar Usuario</button> -->
+   <div class="form-group col"> <label for="imageUpload" class="btn btn-primary btn-block btn-outlined">Borrar Usuario</label>
     </div>
-</div>
-
-</div>
-
-</section>
-
+   </form>
+            
+            
 
     <!-- pie -->
 <%- include('../partials/footer'); %>
