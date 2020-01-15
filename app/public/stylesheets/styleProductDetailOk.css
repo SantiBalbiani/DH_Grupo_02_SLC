@@ -150,40 +150,61 @@ a {
 /*Pie de Detalle Compra*/
 .pieDetalle {
   border:solid 1px lightslategrey;
-  padding-top: 3%; 
   margin-top: 10%;
-  display: flex;
-  justify-content:space-around;
-  padding-bottom: 1%;
+  padding: 0 15px;
 }
 
 .precio {
   font-weight: bold;
   font-size: 18px;
+  margin: 15px 0;
+}
+
+.drop-own {
+  margin-bottom: 15px;
+}
+
+.drop-own button {
+  width: 100%;
 }
 
 .buttonComprar {
   background-color: #597ff9;
   border: none;
   color: white;
-  padding: 5px 50px;
+  padding: 7px 50px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  border-radius: 5%;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 15px;
 }
 .buttonCarrito {
   background-color: white ;
   border: none;
   color: #597ff9;
-  padding: 5px 10px;
+  padding: 7px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   border: solid 1px #597ff9 ;
-  border-radius: 5%;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+@media (min-width: 992px) {
+  .pieDetalle {
+    padding: 15px;
+  }
+  .buttonComprar,
+  .buttonCarrito,
+  .drop-own {
+    margin-bottom: 0;
+  }
 }
 
 /*Pie*/

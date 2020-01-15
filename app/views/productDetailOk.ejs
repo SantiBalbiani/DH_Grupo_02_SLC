@@ -12,78 +12,75 @@
     <%- include('../partials/searchBar'); %>
  <!---breadrcum-->
 
- <ul class="breadcrum"> 
-    <li><a href="#"> Raspberry &#x203A
-      </i></a></li> 
+  <ul class="breadcrum"> 
+    <li><a href="#"> Raspberry &#x203A</a></li> 
     <li><a href="#"> Raspberry Pi</a></li> 
-    </ul>
+  </ul>
 
 <!---titulo producto-->
 
 <div class="container">
   <div class="row">
-     
-    <div class="col-12 col-sm-6 col-lg-8"> <p class="tituloProducto"> <%= prod.prodName%></p></div>
+    <div class="col-12 col-sm-6 col-lg-8"> 
+      <p class="tituloProducto"> <%= prod.prodName%></p>
+    </div>
     <div class="col-6 col-lg-4"> 
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
-        <a href="#" target="blank">Ver Opiniones </a>
-
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <a href="#" target="blank">Ver Opiniones </a>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-6 col-lg-4"> 
+      <img src="/images/products/<%= prod.image %>">
+    </div>
+    <div class="col-12 col-sm-6 col-lg-8"> 
+      <p class="tituloDetalle"> DESCRIPCION </p>
+      <p class="textoDescripcion"> <%= prod.description %></p>
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-12">
+      <div class="pieDetalle">
+        <div class="row align-items-center">
+          <div class="col-12 col-lg-3">
+            <h2 class="precio"> $ <%= prod.price %> </h2> 
+          </div>
 
+          <div class="col-12 col-md-4 col-lg-3">
+            <div class="dropdown drop-own">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+                Elegir Cantidad <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+              </ul>
+            </div>
+          </div>
 
-    <div class="row">
-      <div class="col-6 col-lg-4"> <img src="/images/products/<%= prod.image %>"> </div>
-      <div class="col-12 col-sm-6 col-lg-8"> 
-        <p class="tituloDetalle"> DESCRIPCION </p>
-        <p class="textoDescripcion">
-          <%= prod.description %>
-      </p>
+          <div class="col-12 col-md-4 col-lg-3">
+            <a href="/" class="buttonComprar">  Comprar  </a>
+          </div>
+
+          <div class="col-12 col-md-4 col-lg-3">
+            <a href="/" class="buttonCarrito"> Agregar al Carrito </a> 
+          </div>
+        </div>
       </div>
     </div>
+  </div>
   
 
-<!-- detalle para comprar -->
-<div class="pieDetalle">
-<div class="row">
-  <!-- precio -->
-  <div class="col-xl-3 col-lg-3 col-xs-3 col-md-3">
-   <P class="precio"> $ <%= prod.price %> </P>  
-  </div>
-
-<!-- cantidad -->
-<div class="col-xl-3 col-lg-3 col-xs-3 col-md-3">
-  <div class="dropdown">
-     <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
-      Elegir Cantidad
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-    </ul>
-     </div>
-    </div>
-
- <!-- comprar -->
- <div class="col-xl-3 col-lg-3 col-xs-3 col-md-3">
- <div class="buttonComprar">  Comprar  </div>
-</div>
-
- <!-- agregar al carrito -->
- <div class="col-xl-3 col-lg-3 col-xs-3 col-md-3">
- <div class="buttonCarrito"> Agregar al Carrito </div> 
-</div>
-
-</div>
-</div>
-</div>
 <!-- pie -->
+
+
 <%- include('../partials/footer'); %>
     
 

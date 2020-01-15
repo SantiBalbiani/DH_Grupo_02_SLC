@@ -1,13 +1,5 @@
 [
  {
-  "id": 1,
-  "prodName": "test20",
-  "description": "Producto de Prueba",
-  "price": "99999",
-  "discount": "0.5",
-  "image": "equipo.png"
- },
- {
   "id": 2,
   "prodName": "Arduino UNO",
   "categoria": "Arduino",
