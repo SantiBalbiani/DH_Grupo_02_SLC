@@ -65,10 +65,10 @@ const fpath = path.join(__dirname, '../data/users.json');
             res.redirect("/");
         },
         logIn:(req, res) => {
-        console.log(req.body.email);
+        
         
         let elUser = m.find_("email", req.body.email, fpath);
-        console.log(elUser);
+        
         
         let logSuccessfull = bcrypt.compareSync( req.body.contrasena , elUser.contrasena);
 
