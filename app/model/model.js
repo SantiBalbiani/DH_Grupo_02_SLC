@@ -67,9 +67,9 @@ const model = {
         let newContent = model.exclude(content, id);
         model.save(newContent, fpath);
     },
-    find_:(attr_, value_) =>{
-        let file = model.loadFile(fpath);
-        return data.find( reg => reg[attr_] == value_ );
+    find_:(attr_, value_, fpath) =>{
+        let data_ = model.loadFile(fpath);        
+        return data_.find( reg => reg[attr_] == value_ );
     }
 
 }

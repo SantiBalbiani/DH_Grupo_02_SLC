@@ -65,9 +65,14 @@ const fpath = path.join(__dirname, '../data/users.json');
             res.redirect("/");
         },
         logIn:(req, res) => {
-        let elUser = m.find_("email", req.params.email);
+        console.log(req.body.email);
+        let elUser = m.find_("email", req.body.email, fpath);
+        
+        
+        let logSuccessfull = bcrypt.compareSync( req.body.contrasena ,elUser.contrasena);
 
-           res.send('logueado');
+        logSuccessfull? res.send('logueado') : res.send('rajaDaca');
+        
         }
     };
     

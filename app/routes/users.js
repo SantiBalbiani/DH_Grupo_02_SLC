@@ -18,7 +18,7 @@ let upload = multer({ storage: diskStorage })
 
 /* GET users listing. */
 router.get('/', userController.getUsers);
-router.get('/login', userController.logIn)
+router.post('/login', userController.logIn);
 router.get('/create', userController.createUser);
 router.get('/create2', userController.createUser2);
 
