@@ -54,8 +54,8 @@ const controller = {
 		};
 		m.saveChanges(newProduct, fpath);
 
-
-		res.render('editProduct', {title2: "detalle de producto", msg: "Producto guardado con éxito!"} );
+		let prod = newProduct;
+		res.render('editProduct', {title2: "detalle de producto", msg: "Producto guardado con éxito!", elProd:prod} );
 		//let guardado = "/products/" + newProduct.id + "/edit";  //elProd???
 		
 		//return res.redirect(guardado);
