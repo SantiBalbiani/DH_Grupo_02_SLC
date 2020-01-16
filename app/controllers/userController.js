@@ -17,11 +17,11 @@ const fpath = path.join(__dirname, '../data/users.json');
             //allUsers.find( usr => usr.userId == req.params.userId )
             res.render('userDetail', {title2: 'Detalle del Usuario', user: elUser});
         },
+        // createUser: (req, res) => {
+        //     //let html = readHTML('productCart');
+        //     res.render('userAdd', {title2: 'SLC: Crear Usuario'});
+        // },
         createUser: (req, res) => {
-            //let html = readHTML('productCart');
-            res.render('userAdd', {title2: 'SLC: Crear Usuario'});
-        },
-        createUser2: (req, res) => {
             //let html = readHTML('productCart');
             res.render('userForm', {title2: 'SLC: Crear Usuario'});
         },
@@ -74,7 +74,11 @@ const fpath = path.join(__dirname, '../data/users.json');
 
         logSuccessfull? res.render('editUser', {title2: "Bienvenido " + elUser.nombre + "!", msg:'Acceso exitoso!', elUser}) : res.render('register', {title2: 'SLC: Registro', msg: "Su contraseña es incorrecta. Intente de nuevo"});
         
-        }
+        },
+        register: (req, res) => {
+            //	let html = readHTML('register');
+                res.render('register', {title2: 'SLC: Registro', msg: "Hola :) Ingresá con tu email y contraseña"});
+            },
     };
     
     module.exports = controller

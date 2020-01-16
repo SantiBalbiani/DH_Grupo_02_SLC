@@ -8,37 +8,12 @@
  },
  {
   "id": 3,
-  "nombre": "Jose",
+  "nombre": "Jose Manuel",
   "apellido": "Hernandez",
+  "numeroDoc": "",
   "email": "jo@jo.com",
-  "image": "face1.jpg"
- },
- {
-  "id": 4,
-  "nombre": "TestEdit",
-  "apellido": "s",
-  "numeroDoc": "33",
-  "email": "22",
-  "telefono": "22",
-  "telefono2": "2",
-  "image": "face1.jpg"
- },
- {
-  "id": 5,
-  "nombre": "Jose",
-  "apellido": "Hernandez",
-  "genero": "Hombre",
-  "numeroDoc": "33",
-  "nombreUsuario": "1234",
-  "contrasena": "$2a$11$sqjQBIUl/8YIlG7YFyuoNuT2MlC8xC7ymzjJzYyKDCmnxq6yzsj8O",
-  "email": "1",
-  "telefono": "1",
-  "telefono2": "1",
-  "calle": "1",
-  "city": "11",
-  "cp": "1",
-  "provincia": "1",
-  "nomVendedor": "123",
+  "telefono": "",
+  "telefono2": "",
   "image": "face1.jpg"
  }
 ]
