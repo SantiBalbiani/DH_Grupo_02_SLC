@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const m = require("../model/model");
+const bcrypt = require('bcryptjs');
 
 const fpath = path.join(__dirname, '../data/users.json');
 
@@ -32,6 +33,9 @@ const fpath = path.join(__dirname, '../data/users.json');
         res.render('editUser', { user: elUser, title2: 'Editar Usuario', msg:'Modifique datos y presione guardar'});
         },
         saveUser: (req, res) => {
+
+            req.body.contrasena = bcrypt.hashSync(req.body.contrasena, 11);
+
             let newUser = {
                 id: m.genId(fpath),
                 ...req.body,
@@ -60,6 +64,11 @@ const fpath = path.join(__dirname, '../data/users.json');
             m.delete_(req.params.id, fpath);
             res.redirect("/");
         },
+        logIn:(req, res) => {
+        let elUser = m.find_("email", req.params.email);
+
+           res.send('logueado');
+        }
     };
     
     module.exports = controller

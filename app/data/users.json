@@ -12,5 +12,23 @@
   "apellido": "Hernandez",
   "email": "jo@jo.com",
   "image": "face1.jpg"
+ },
+ {
+  "id": 4,
+  "nombre": "TestPass",
+  "apellido": "s",
+  "genero": "Hombre",
+  "numeroDoc": "33",
+  "nombreUsuario": "nombreUser",
+  "contrasena": "$2a$11$rsE/24nL4UP91ZZc98ZViO80lpmBvNSUFbLmWKy61/aHvO5iFKPfm",
+  "email": "22",
+  "telefono": "22",
+  "telefono2": "2",
+  "calle": "222",
+  "city": "222",
+  "cp": "22",
+  "provincia": "22",
+  "nomVendedor": "NomFantasy",
+  "image": "equipo.png"
  }
 ]
