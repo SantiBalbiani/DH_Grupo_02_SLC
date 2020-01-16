@@ -66,12 +66,13 @@ const fpath = path.join(__dirname, '../data/users.json');
         },
         logIn:(req, res) => {
         console.log(req.body.email);
+        
         let elUser = m.find_("email", req.body.email, fpath);
+        console.log(elUser);
         
-        
-        let logSuccessfull = bcrypt.compareSync( req.body.contrasena ,elUser.contrasena);
+        let logSuccessfull = bcrypt.compareSync( req.body.contrasena , elUser.contrasena);
 
-        logSuccessfull? res.send('logueado') : res.send('rajaDaca');
+        logSuccessfull? res.render('editUser', {title2: "Bienvenido " + elUser.nombre + "!", msg:'Acceso exitoso!', elUser}) : res.render('register', {title2: 'SLC: Registro', msg: "Su contraseña es incorrecta. Intente de nuevo"});
         
         }
     };

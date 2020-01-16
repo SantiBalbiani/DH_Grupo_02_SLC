@@ -26,7 +26,7 @@ const controller = {
 	},
 	register: (req, res) => {
 	//	let html = readHTML('register');
-		res.render('register', {title2: 'SLC: Registro'});
+		res.render('register', {title2: 'SLC: Registro', msg: "Hola :) Ingresá con tu email y contraseña"});
 	},
 	productAdd: (req, res) => {
 	//	let html = readHTML('productAdd');
