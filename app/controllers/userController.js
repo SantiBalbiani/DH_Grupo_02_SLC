@@ -43,14 +43,18 @@ const fpath = path.join(__dirname, '../data/users.json');
         },
         saveChanges: (req, res) => {
         //	let html = readHTML('productAdd2');
-        let user = {
+        let elUser = {
 			id: parseInt(req.params.id),
 			...req.body,
 			image: req.file.filename,
 		};
-		m.saveChanges(user, fpath);
-        let guardado = "/users/" + user.id + "/edit";
-        res.redirect(guardado);
+		m.saveChanges(elUser, fpath);
+        //let guardado = "/users/" + user.id + "/edit";
+
+        res.render('editUser', { title2: "Modificar mis Datos",  msg: "Datos actualizados!", elUser});
+
+
+        //res.redirect(guardado);
         },
         deleteUser: (req, res) => {
             m.delete_(req.params.id, fpath);

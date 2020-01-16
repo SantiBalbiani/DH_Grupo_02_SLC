@@ -5,10 +5,10 @@ const isSavingUsr =  /^(?=.*\busers\b)(?=.*\bedit\b)(?=.*\method=PUT\b).*$/gm;
 const messages = 
 function (req, res, next) {
   
-   if (isSavingUsr.test(req.originalUrl))
+/*    if (isSavingUsr.test(req.originalUrl))
     {
-      res.render('editUser', {title2: "Modificar mis Datos",  msg: "Datos actualizados!"} );
-    } 
+   //   res.render('editUser', {title2: "Modificar mis Datos",  msg: "Datos actualizados!"} );
+    }  */
 
   /*   if (isSavingPrd.test(req.originalUrl))
     {
