@@ -28,5 +28,25 @@
   "price": "13069",
   "description": "·····: Starware :·····\r\nRASPBERRY PI 4 B 4GB RAM KIT ELEMENT14 COMPLETO 128GB DUAL FAN COOLER\r\n-[ Código Tienda.Starware 1883 ]-\r\n\r\n** ¡ HAY STOCK ! + Envíos en el DÍA + Factura A o B **\r\n++ CUOTAS SIN INTERÉS .:. Por tiempo limitado! ++\r\n\r\n** ESTA OFERTA INCLUYE **\r\nIncluye:\r\n1x PLACA SBC ELEMENT14 RASPBERRY PI 4 MODEL B 4GB RAM (SKU1804)\r\n1x GABINETE CARCASA RASPBERRY PI 4 ALUMINIO DOBLE FAN (SKU1849)\r\n1x MEMORIA MICROSD SANDISK ULTRA A1 128GB SDXC CLASE 10 100MB/S FHD (SKU1622)\r\n1x FUENTE SWITCHING 5V4.2A QC SMART TIPO C (SKU1882)\r\n1x ADAPTADOR HDMI MICRO HDMI CABLE-M A HDMI CABLE-H 10CM (SKU1860)",
   "image": "raspberry-pi-4.jpg"
+ },
+ {
+  "id": 4,
+  "prodName": "Combo Soldador De 40w + Estaño + Desoldador+kit 31 En 1+test ",
+  "categoria": "Combos y Ofertas",
+  "modelo": " DSF-1482 ",
+  "voltaje": " 40 W ",
+  "price": "810",
+  "description": "-Soldador Lapicero De Punta\r\n-Rápido, Cómodo y Seguro\r\n-Ideal Para Soldaduras Con Estaño En Artículos Electrónicos\r\n-Potencia: 40w\r\n-Largo: 20 Cm\r\n-Alimentación 220v\r\n\r\n\r\n-Estaño Alambrico Para Electrónica Con Resina\r\n-Bobina x 100Grs\r\n-Diámetro 0,8mm\r\n-Flux Code Cf20\r\n\r\n\r\n-Desoldador a Pistón\r\n-Extractor De Estaño a Succión, Desoldador.\r\n-Practica y Económica Herramienta Para Retirar Particulas De Estaño En Tareas De Electrónica, Microsoldadura, Etc.\r\n\r\n\r\n-Set 31 Destornilladores\r\n-31 piezas.\r\n-Pala: 1.0, 1.3, 1.5, 2.0, 2.5, 3.0, 4.0\r\n-Cruz: PH00, PH0, PH1, Ph2.\r\n-Estrella: T4, T5, T6, T7, T8, T10, T15, T20\r\n-Hexágono: H1.5, H2.0, H2.5, H3, H3.5, H4\r\n-Triangulo: 3.0\r\n-Y: 3.0\r\n-H: 2.6\r\n-O: 1.0\r\n-Estrella: 2.0\r\n-Destornillador.\r\n-Mango ergonómico antideslizante.\r\n-Estuche en plástico con tapa transparente.\r\n-Práctico empaque compacto y liviano.\r\n\r\n\r\n-Tester Digital Mod. Dt-830b Profesional\r\n-Mide Voltage En Ac - Dc, Resistencia, Amperes Dca, Hfe, Diosos, Continuidad.\r\n-Funciona Con Bateria 9v (No Viene Incluida)",
+  "image": "combo.PNG"
+ },
+ {
+  "id": 5,
+  "prodName": "Combo Soldador De 40w + Estaño + Desoldador+kit 31",
+  "categoria": "PLC",
+  "modelo": "DSF-1482",
+  "voltaje": "30v",
+  "price": "34567",
+  "description": "varios productos",
+  "image": "combo.PNG"
  }
 ]
