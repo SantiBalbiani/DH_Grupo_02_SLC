@@ -10,12 +10,10 @@ function (req, res, next) {
       res.render('editUser', {title2: "Modificar mis Datos",  msg: "Datos actualizados!"} );
     } 
 
-    if (isSavingPrd.test(req.originalUrl))
+  /*   if (isSavingPrd.test(req.originalUrl))
     {
       res.render('editProduct', {title2: "detalle de producto", msg: "Producto guardado con éxito!"} );
-    }
-    
-    
+    } */
 
     next();
   };

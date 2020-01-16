@@ -13,7 +13,7 @@
     <%- include('../partials/searchBar'); %>
 <!-- main-content -->
 
-<form action="/users/<%= elUser.id %>/edit?_method=PUT" enctype="multipart/form-data" method="POST" ></form>
+<form action="/users/<%= elUser.id %>/edit?_method=PUT" enctype="multipart/form-data" method="POST" >
         <h2 class="products-title"> <%= title2 %> </h2>
        
         <h5 class="products-title"> <%= msg %> </h5>
@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="form-group col"> <label for="imageUpload" class="btn btn-outline-primary">Cargá tu nueva imagen</label>
-                 <input type="file" id="imageUpload" accept="image/*" style="display: none">
+                 <input type="file" id="imageUpload" name="image" accept="images/*" style="display: none">
                 </div>
                 
 

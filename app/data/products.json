@@ -21,16 +21,6 @@
  },
  {
   "id": 3,
-  "prodName": "Raspberry Pi 4 B 4gb Ram E14 Kit 128gb Carcasa Fuente Fan ",
-  "categoria": "Raspberry",
-  "modelo": " Raspberry Pi 4 4gb ",
-  "voltaje": "5.1 V",
-  "price": "13069",
-  "description": "·····: Starware :·····\r\nRASPBERRY PI 4 B 4GB RAM KIT ELEMENT14 COMPLETO 128GB DUAL FAN COOLER\r\n-[ Código Tienda.Starware 1883 ]-\r\n\r\n** ¡ HAY STOCK ! + Envíos en el DÍA + Factura A o B **\r\n++ CUOTAS SIN INTERÉS .:. Por tiempo limitado! ++\r\n\r\n** ESTA OFERTA INCLUYE **\r\nIncluye:\r\n1x PLACA SBC ELEMENT14 RASPBERRY PI 4 MODEL B 4GB RAM (SKU1804)\r\n1x GABINETE CARCASA RASPBERRY PI 4 ALUMINIO DOBLE FAN (SKU1849)\r\n1x MEMORIA MICROSD SANDISK ULTRA A1 128GB SDXC CLASE 10 100MB/S FHD (SKU1622)\r\n1x FUENTE SWITCHING 5V4.2A QC SMART TIPO C (SKU1882)\r\n1x ADAPTADOR HDMI MICRO HDMI CABLE-M A HDMI CABLE-H 10CM (SKU1860)",
-  "image": "raspberry-pi-4.jpg"
- },
- {
-  "id": 4,
   "prodName": "Combo Soldador De 40w + Estaño + Desoldador+kit 31 En 1+test ",
   "categoria": "Combos y Ofertas",
   "modelo": " DSF-1482 ",
@@ -40,13 +30,11 @@
   "image": "combo.PNG"
  },
  {
-  "id": 5,
-  "prodName": "Combo Soldador De 40w + Estaño + Desoldador+kit 31",
-  "categoria": "PLC",
-  "modelo": "DSF-1482",
-  "voltaje": "30v",
-  "price": "34567",
-  "description": "varios productos",
-  "image": "combo.PNG"
+  "id": 4,
+  "prodName": "22242",
+  "description": "2",
+  "price": "2",
+  "discount": "",
+  "image": "descarga.jpg"
  }
 ]

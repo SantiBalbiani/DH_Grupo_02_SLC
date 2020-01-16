@@ -1,6 +1,6 @@
 [
  {
-  "id": 2,
+  "id": 1,
   "nombre": "Juana",
   "apellido": "Hernandez",
   "email": "jojojo@jo.com",
@@ -8,13 +8,6 @@
  },
  {
   "id": 3,
-  "nombre": "Test",
-  "apellido": "Test22",
-  "email": "test@test.com",
-  "image": "equipo.png"
- },
- {
-  "id": 1,
   "nombre": "Jose",
   "apellido": "Hernandez",
   "email": "jo@jo.com",

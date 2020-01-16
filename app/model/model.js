@@ -47,7 +47,7 @@ const model = {
     create: (data, fpath) => {
         let file = model.loadFile(fpath);
         file.push(data);
-        file.sort((a, next) => a.id > next.id );
+      //  file.sort((a, next) => a.id > next.id );
         console.log(file);
         model.save(file, fpath);
     },
@@ -58,7 +58,7 @@ const model = {
         let content = model.loadFile(fpath);
         let newFile = model.exclude(content, data[idx]);
         newFile.push(data);
-        newFile.sort((a, next) => a.id < next.id );
+        newFile.sort((a, next) => a.id > next.id );
         model.save(newFile, fpath);
     },
 

@@ -33,7 +33,7 @@ const controller = {
 	editProduct: (req, res) => {
 		//	let html = readHTML('register');
 		let todosProd = m.loadFile(fpath);
-		elProd = todosProd.find( prod => prod.id == req.params.id )
+		elProd = todosProd.find( prod => prod.id == req.params.id );
 		res.render('editProduct', { prod:elProd, title2: 'Editar Producto', msg: 'Modificar Producto'});
 	},
 	saveProduct: (req, res) => {
@@ -53,9 +53,14 @@ const controller = {
 			image: req.file.filename,
 		};
 		m.saveChanges(newProduct, fpath);
-		let guardado = "/products/" + elProd.id + "/edit"; 
+
+
+		res.render('editProduct', {title2: "detalle de producto", msg: "Producto guardado con éxito!"} );
+		//let guardado = "/products/" + newProduct.id + "/edit";  //elProd???
 		
-		res.redirect(guardado);
+		//return res.redirect(guardado);
+
+		 //res.end();
 	},
 	deleteProduct: (req, res) => {
 		m.delete_(req.params.id, fpath);
