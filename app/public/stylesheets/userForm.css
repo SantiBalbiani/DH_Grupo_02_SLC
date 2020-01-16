@@ -46,3 +46,7 @@
   .step.finish {
     background-color: #597ff9;
   }
+
+  .imagenActualUsuario {
+    padding: 10px;
+  }
