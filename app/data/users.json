@@ -3,17 +3,80 @@
   "id": 1,
   "nombre": "Juana",
   "apellido": "Hernandez",
+  "numeroDoc": "31234567",
   "email": "jojojo@jo.com",
-  "image": "face2.jpg"
+  "telefono": "55555555",
+  "telefono2": "999999999",
+  "image": "ladymormont.jpg"
  },
  {
   "id": 3,
   "nombre": "Jose Manuel",
   "apellido": "Hernandez",
-  "numeroDoc": "",
+  "numeroDoc": "345678922",
   "email": "jo@jo.com",
-  "telefono": "",
-  "telefono2": "",
-  "image": "face1.jpg"
+  "telefono": "2345678",
+  "telefono2": "24465768980",
+  "image": "tyron.jpg"
+ },
+ {
+  "id": 4,
+  "nombre": "Antonio",
+  "apellido": "Navarro",
+  "numeroDoc": "34567890",
+  "email": "antonio@navarro.com",
+  "telefono": "123456",
+  "telefono2": "12345678",
+  "image": "alfonso navarro.jpg"
+ },
+ {
+  "id": 5,
+  "nombre": "Soledad",
+  "apellido": "Barreira",
+  "numeroDoc": "34235609",
+  "email": "soledad@barreira.com",
+  "telefono": "34567890",
+  "telefono2": "4567833",
+  "image": "Soledad Barreira.jpg"
+ },
+ {
+  "id": 6,
+  "nombre": "Mariela",
+  "apellido": "Sarasino",
+  "numeroDoc": "4641889",
+  "email": "mariela@gmail.com",
+  "telefono": "55555555",
+  "telefono2": "33333333",
+  "image": "MarielaSarasino.jpg"
+ },
+ {
+  "id": 7,
+  "nombre": "Diego",
+  "apellido": "Ciongo",
+  "numeroDoc": "2345986",
+  "email": "diego@live.com",
+  "telefono": "99999999",
+  "telefono2": "154367890",
+  "image": "diego ciongo.jpg"
+ },
+ {
+  "id": 8,
+  "nombre": "Carolina",
+  "apellido": "Perez",
+  "numeroDoc": "43876521",
+  "email": "carol@gmail.com",
+  "telefono": "44444444444",
+  "telefono2": "1533444667",
+  "image": "carolina perez.jpg"
+ },
+ {
+  "id": 9,
+  "nombre": "Jaime",
+  "apellido": "Lannister",
+  "numeroDoc": "4567890234",
+  "email": "jaime@casalannister.com",
+  "telefono": "34567866",
+  "telefono2": "154326789",
+  "image": "jaime lannister.jpg"
  }
 ]

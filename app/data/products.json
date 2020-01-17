@@ -28,5 +28,55 @@
   "price": "810",
   "description": "-Soldador Lapicero De Punta\r\n-Rápido, Cómodo y Seguro\r\n-Ideal Para Soldaduras Con Estaño En Artículos Electrónicos\r\n-Potencia: 40w\r\n-Largo: 20 Cm\r\n-Alimentación 220v\r\n\r\n\r\n-Estaño Alambrico Para Electrónica Con Resina\r\n-Bobina x 100Grs\r\n-Diámetro 0,8mm\r\n-Flux Code Cf20\r\n\r\n\r\n-Desoldador a Pistón\r\n-Extractor De Estaño a Succión, Desoldador.\r\n-Practica y Económica Herramienta Para Retirar Particulas De Estaño En Tareas De Electrónica, Microsoldadura, Etc.\r\n\r\n\r\n-Set 31 Destornilladores\r\n-31 piezas.\r\n-Pala: 1.0, 1.3, 1.5, 2.0, 2.5, 3.0, 4.0\r\n-Cruz: PH00, PH0, PH1, Ph2.\r\n-Estrella: T4, T5, T6, T7, T8, T10, T15, T20\r\n-Hexágono: H1.5, H2.0, H2.5, H3, H3.5, H4\r\n-Triangulo: 3.0\r\n-Y: 3.0\r\n-H: 2.6\r\n-O: 1.0\r\n-Estrella: 2.0\r\n-Destornillador.\r\n-Mango ergonómico antideslizante.\r\n-Estuche en plástico con tapa transparente.\r\n-Práctico empaque compacto y liviano.\r\n\r\n\r\n-Tester Digital Mod. Dt-830b Profesional\r\n-Mide Voltage En Ac - Dc, Resistencia, Amperes Dca, Hfe, Diosos, Continuidad.\r\n-Funciona Con Bateria 9v (No Viene Incluida)",
   "image": "combo.PNG"
+ },
+ {
+  "id": 4,
+  "prodName": "Estacion De Soldado 908 Hony Combo Limpieza Soldadura",
+  "categoria": "Combos y Ofertas",
+  "modelo": "HY-908",
+  "voltaje": "50 W",
+  "price": "9550",
+  "description": "ESTACION DE SOLDADO HONY ORIGINAL 908\r\nKIT ELECTRONICA LIMPIEZA Y DESOLDADO.\r\n-------------------------- IMPORTANTE!-----------------------------------------\r\n\r\nANTES DE USAR ESTE PRODUCTO RETIRE LOS TORNILLOS PLATEADOS QUE SE ENCUENTRAN EN LA BASE. NO QUITARLOS PUEDE PROVOCAR QUE LA ESTACIÓN SE ROMPA, ANULANDO LA GARANTÍA Y TODA POSIBILIDAD DE CAMBIO.",
+  "image": "combo estacion soldado.PNG"
+ },
+ {
+  "id": 5,
+  "prodName": "Modulo Transceptor Rf Hc-11 433mhz Cc1101 Uart Arduino Plc",
+  "categoria": "PLC",
+  "modelo": "HC-11",
+  "voltaje": "3.6-5VDC",
+  "price": "750",
+  "description": "Caracteristicas del modulo:\r\nAlimentacion: 3.6 a 5V\r\nDimensiones: 13.5 x 28.2mm\r\nDistancia de transmicion: Hasta 200m. (con linea de vision)\r\nConector para antena externa: U.FL o Antena soldada\r\nComunicacion: UART\r\nVelocidad: Configurable mediante comandos AT por defecto: 9600 (2400, 4800, 9600, 19200, 38400, 57600, 115200)\r\nDireccion del dispositivo: Configurable mediante comandos AT por defecto: 000 (000 - 255)\r\nCanal de frecuencia: Configurable mediante comandos AT por defecto: 001 (001 - 127)\r\n\r\n\r\nPin-Out\r\n\r\nSET: Pin de configuracion\r\nTX: Pin de Salida de datos TTL\r\nRX: Pin de Entrada de datos TTL\r\nGND: Pin de Masa\r\nVCC: Pin de Alimentación",
+  "image": "plc.PNG"
+ },
+ {
+  "id": 6,
+  "prodName": "Plc Siemens Logo8 Di8/do4 24v Transistor 6ed1052-1cc08-0ba0",
+  "categoria": "PLC",
+  "modelo": "6ED1052-1CC01-0BA8",
+  "voltaje": "24V DC",
+  "price": "12915",
+  "description": "Display: SI\r\nInstalacion Montaje: Riel DIN 35mm (4 modulos)\r\nVoltaje Entrada: 24V DC\r\nRango Minimo 20.4V DC\r\nRango Maximo 28.8V DC\r\n\r\nTime switching clocks\r\nNumber 190\r\nPower reserve 480 h\r\n\r\nDigital inputs\r\nNumber of digital inputs 8;\r\nOf which 4 can be used in analog mode (0 to 10 V)\r\n\r\nDigital outputs\r\nNumber of digital outputs 4; Transistor\r\n\r\nOutput current\r\nfor signal \"1\" permissible range for 0 to 55 °C,\r\nmax. 0.3 A\r\n\r\nAmbient temperature during operation\r\nmin. 0 °C; LOGO! 8 FS04 and higher: -20 °C\r\nmax. 55 °C\r\n\r\nDimensions\r\nWidth 71.5 mm\r\nHeight 90 mm\r\nDepth 60 mm",
+  "image": "plc 2.PNG"
+ },
+ {
+  "id": 7,
+  "prodName": "Driver Motor Arduino Drv8825 Pololu Stepstick",
+  "categoria": "Arduino",
+  "modelo": "Drv8825",
+  "voltaje": "3.3V - 5V",
+  "price": "139",
+  "description": "DRIVER MOTOR ARDUINO DRV8825 POLOLU STEPSTICK\r\n-[ Código Tienda.Starware 1676 ]-\r\n\r\n** ¡ HAY STOCK ! + Envíos en el DÍA + Factura A o B **\r\n\r\n** ESTA OFERTA INCLUYE **\r\n1X DRIVER\r\n\r\nControlador de motores paso a paso\r\nPara más información y especificaciones técnicas por favor visita el sitio web del fabricante.\r\nLas imagenes de la publicación son de carácter ilustrativo.",
+  "image": "arduino2.PNG"
+ },
+ {
+  "id": 8,
+  "prodName": "Raspberry Pi 3 Camara V2 8mpix 1080 Emakers",
+  "categoria": "Raspberry",
+  "modelo": "CAMERA V2",
+  "voltaje": "5 V",
+  "price": "3376",
+  "description": "Raspberry Pi 3 Pi 4 Camara V2 ***Emakers***\r\n\r\nLa Raspberry Pi Camera v2 es una Cámara de alta calidad de 8 megapíxeles, incluye el sensor de imagen IMX219 de Sony diseñado para Raspberry Pi, con lente de enfoque fijo.\r\nEs capaz de tomar imágenes estáticas de 3280 x 2464 píxeles, y también es compatible con resoluciones de video 1080p30, 720p60 y 640x480p60 / 90.\r\nSe conecta a Pi a través de uno de los pequeños enchufes en la superficie superior de la placa y utiliza la interfaz CSi dedicada, diseñada especialmente para la interfaz con cámaras.\r\nEs pequeña, mide 25 mm x 23 mm x 9 mm aprox. También pesa solo 3 g, lo que lo hace perfecto para aplicaciones móviles o de otro tipo en las que el tamaño y el peso son importantes.\r\nSe conecta a Raspberry Pi por medio de un cable plano corto. El sensor de imagen Sony IMX219 de alta calidad tiene una resolución nativa de 8 megapíxeles y tiene una lente de enfoque fijo.\r\nTodo el software es compatible con la última versión del sistema operativo Raspbian\r\n\r\nAplicaciones: cámara de seguridad CCTV, detección de movimiento, fotografía de lapso de tiempo\r\nCompatible con todos los modelos de Raspberry Pi 1, 2 ,3 y 4.",
+  "image": "raspberry2.PNG"
  }
 ]
