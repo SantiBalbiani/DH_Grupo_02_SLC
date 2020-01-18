@@ -15,6 +15,7 @@ const fpath = path.join(__dirname, '../data/users.json');
             let allUsers = m.loadFile(fpath);
             elUser = m.getData(allUsers, req.params.id);
             //allUsers.find( usr => usr.userId == req.params.userId )
+            elUser == undefined? res.render('notFound', {msg:"Usuario Inexistente"}):
             res.render('userDetail', {title2: 'Detalle del Usuario', user: elUser});
         },
         // createUser: (req, res) => {

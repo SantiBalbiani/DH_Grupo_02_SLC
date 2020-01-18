@@ -21,6 +21,7 @@ const controller = {
 		let todosProd = m.loadFile(fpath);
 		elProd = m.getData(todosProd, req.params.id);
 		//elProd2 = todosProd.find( prod => prod.id == req.params.id )
+		elProd==undefined? res.render('notFound', {msg:"Producto Inexistente"}):
 		res.render('productDetailOk', {title2: 'Detalle del Producto', prod: elProd});
 	},
 

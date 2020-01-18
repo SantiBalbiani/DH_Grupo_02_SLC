@@ -2,12 +2,25 @@
 <html>
   <head>
     <title>Términos y condiciones de uso del Sitio</title>
-    <link rel='stylesheet' href='/stylesheets/styleIndex.css' />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/styleProductDetail.css' />
+    <meta charset="utf-8">
+    <meta name= "viewport" content="width= device-width">
+    <style>
+    ul,
+    ol {
+      padding: 0;
+      margin: 0;
+      list-style: none; 
+    }
+  </style>
   </head>
   <body>
-    <h1 class="destacados">La página ingresada no existe </h1>
-    <p>Oh vaya! Al parecer a ingresado a una página inexistente. Por favor ingrese nuevamente desde el inicio.</p>
+    <%- include('../partials/nav'); %> 
+    <h1 class="destacados"> <%= msg %> </h1>
+    <h5>Oh vaya! Al parecer a ingresado a una página inexistente. Por favor ingrese nuevamente desde el inicio.</h5>
     <br> 
-    <img src="/images/notFound.jpg">
+    <img src="/images/notFound.jpg" style="margin-left:15%; width: auto;">
+  
   </body>
 </html>
