@@ -50,11 +50,15 @@ const fpath = path.join(__dirname, '../data/users.json');
         
         let allUsers = m.loadFile(fpath);
         oldUser = m.getData(allUsers, req.params.id);
+        let file = 'file';
+        let image;
 
+        (req.hasOwnProperty(file))?  image = req.file.filename : image = oldUser.image;
+        
         let elUser = {
 			id: parseInt(req.params.id),
 			...req.body,
-			image: req.file.filename,
+			image: image,
         };
         
         (req.body.contrasena == '')?  elUser.contrasena = oldUser.contrasena : elUser.contrasena =  bcrypt.hashSync(req.body.contrasena, 11);

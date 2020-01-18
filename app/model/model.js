@@ -60,10 +60,8 @@ const model = {
         let content = model.loadFile(fpath);
         let newFile = model.exclude(content, data[idx]);
         newFile.push(data);
-        console.log(newFile);
         // newFile.sort((a, next) => a[idx] > next[idx] );
         newFile.sort((a, b) => a[idx]-b[idx]);
-        console.log(newFile);
         model.save(newFile, fpath);
     },
 
