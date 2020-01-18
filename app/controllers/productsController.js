@@ -48,10 +48,20 @@ const controller = {
 	},
 	saveEditProduct: (req, res) => {
 	//	let html = readHTML('productAdd2');
+
+
+	let allProds = m.loadFile(fpath);
+     let   oldProd = m.getData(allProds, req.params.id);
+
+	let file = 'file';
+	let image;
+
+	(req.hasOwnProperty(file))?  image = req.file.filename : image = oldProd.image;
+
 		let newProduct = {
 			id: parseInt(req.params.id),
 			...req.body,
-			image: req.file.filename,
+			image: image,
 		};
 		m.saveChanges(newProduct, fpath);
 
