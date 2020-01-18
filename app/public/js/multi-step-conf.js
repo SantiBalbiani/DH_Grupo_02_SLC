@@ -46,6 +46,21 @@ function validateForm() {
   return valid; 
 }
 
+function valNext(){
+  var x, y, i = true;
+  var notValid = false;
+  x = document.getElementsByTagName("input");
+  for ( i = 0; i < x.length; i++){
+    if (x[i] == ''){
+      notValid = true;
+    }
+  }
+  if(notValid){
+   // alert()
+     return false;
+  } 
+}
+
 function fixStepIndicator(n) {
  
   var i, x = document.getElementsByClassName("step");
@@ -54,3 +69,4 @@ function fixStepIndicator(n) {
   }
   x[n].className += " active";
 }
+

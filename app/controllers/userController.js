@@ -77,14 +77,16 @@ const fpath = path.join(__dirname, '../data/users.json');
         },
         logIn:(req, res) => {
         
-        
         let elUser = m.find_("email", req.body.email, fpath);
         
+        if (elUser != undefined){
         
         let logSuccessfull = bcrypt.compareSync( req.body.contrasena , elUser.contrasena);
-
-        logSuccessfull? res.render('editUser', {title2: "Bienvenido " + elUser.nombre + "!", msg:'Acceso exitoso!', elUser}) : res.render('register', {title2: 'SLC: Registro', msg: "Su contraseña es incorrecta. Intente de nuevo"});
         
+        logSuccessfull? res.render('editUser', {title2: "Bienvenido " + elUser.nombre + "!", msg:'Acceso exitoso!', elUser}) : res.render('register', {title2: 'SLC: Registro', msg: "Su contraseña es incorrecta. Intente de nuevo"});
+        }else{
+            res.render('register', {title2: 'SLC: Registro', msg: "Usuario y/o contraseña inexistentes"});
+        }
         },
         register: (req, res) => {
             //	let html = readHTML('register');

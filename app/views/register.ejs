@@ -17,15 +17,15 @@
     </div>
     <div class="col-12">
       <div class = "elImput">
-      <input class="unInput" type="text" name="email" size="40" placeholder="Correo Electronico">
-      <input class="unInput" type="password" name="contrasena" size="40" placeholder="Contraseña">
+      <input class="unInput" type="text" name="email" size="40" placeholder="Correo Electronico" required>
+      <input class="unInput" type="password" name="contrasena" size="40" placeholder="Contraseña" required>
     </div>
     </div>
     <div class="col-12">
         
-              <!-- <a class="crearCta" href="/index" type="submit" value="Ingresá"> -->
+              <div class="crearCta"> 
                 <button class="ingreso" type="submit" > Ingresá </button>
-                <!-- </a> -->
+                 </div> 
        
       </div>
     </div>
@@ -33,7 +33,7 @@
     <div class="row">
       <div class="col-12">
         <div class="crearCta">
-           <div>¿No tenes una cuenta?</div>
+           <p>¿No tenes una cuenta?</p>
     </div>
       </div>
     </div>
@@ -47,6 +47,6 @@
     
     </div>
     <%- include('../partials/footer'); %>
-
+    <script src="/js/multi-step-conf.js"></script>
   </body>
 </html>

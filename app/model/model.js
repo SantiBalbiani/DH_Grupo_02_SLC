@@ -42,25 +42,18 @@ const model = {
         return content.filter( reg => reg[idx] != index );
     },
 
-    //Refactor create
-
     create: (data, fpath) => {
         let file = model.loadFile(fpath);
         file.push(data);
-      //  file.sort((a, next) => a.id > next.id );
         model.save(file, fpath);
     },
 
-    // Refactor Edit
-    
-    // compare: (a, b) => a.id-b.id,
     compare: (a, b) => a[idx]-b[idx],
 
     saveChanges: (data,fpath) => {
         let content = model.loadFile(fpath);
         let newFile = model.exclude(content, data[idx]);
         newFile.push(data);
-        // newFile.sort((a, next) => a[idx] > next[idx] );
         newFile.sort((a, b) => a[idx]-b[idx]);
         model.save(newFile, fpath);
     },
