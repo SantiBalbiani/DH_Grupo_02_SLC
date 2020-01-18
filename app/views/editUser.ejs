@@ -84,7 +84,7 @@
                   <input type="text" name="nombreUsuario" value="<%= elUser.nombreUsuario%>">
 
                   <label>Contraseña</label>
-                  <input type="password" name="contrasena" value="<%= elUser.contrasena%>">
+                  <input type="password" name="contrasena" value="">
                 </div>
 
 
@@ -110,10 +110,8 @@
 
         <div class="form-group col"> <button type="submit" class="btn btn-success">Guardar Usuario</button>
         </div>
-     
-                
-    </form> 
-    
+
+</form>
     <form  action="/users/<%= elUser.id %>?_method=DELETE" method="POST" >
     <div class="form-group col"> <button type="DELETE" class="btn btn-danger">Borrar Usuario </button>  
     </div>
@@ -121,6 +119,5 @@
             
  <!-- pie -->
 <%- include('../partials/footer'); %>
-
 </body>
 </html>

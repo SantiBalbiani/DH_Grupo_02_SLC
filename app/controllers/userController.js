@@ -47,11 +47,18 @@ const fpath = path.join(__dirname, '../data/users.json');
         },
         saveChanges: (req, res) => {
         //	let html = readHTML('productAdd2');
+        
+        let allUsers = m.loadFile(fpath);
+        oldUser = m.getData(allUsers, req.params.id);
+
         let elUser = {
 			id: parseInt(req.params.id),
 			...req.body,
 			image: req.file.filename,
-		};
+        };
+        
+        (req.body.contrasena == '')?  elUser.contrasena = oldUser.contrasena : elUser.contrasena =  bcrypt.hashSync(req.body.contrasena, 11);
+
 		m.saveChanges(elUser, fpath);
         //let guardado = "/users/" + user.id + "/edit";
 
