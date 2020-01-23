@@ -9,6 +9,8 @@ var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 const methodOverride = require("method-override");
 const messages = require('./middlewares/messages');
+const session = require('express-session');
+
 var app = express();
 
 // view engine setup
@@ -33,7 +35,11 @@ app.use(function(req, res, next) {
   next();
 });
 
-
+app.use(session({
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: true
+}));
 
 // error handler
 app.use(function(err, req, res, next) {
