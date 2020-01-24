@@ -6,7 +6,6 @@ const localsMiddleware = (req, res, next)  => {
 		res.locals.logged = true;
 		res.locals.user = req.session.user;
     };
-    console.log('pasé');
 	next();
 }
 module.exports = localsMiddleware;

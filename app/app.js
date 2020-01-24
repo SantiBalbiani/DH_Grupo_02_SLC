@@ -37,7 +37,6 @@ app.use(messages);
 app.use(userCookieMiddleware);
 app.use(localsMiddleware);
 
-
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
