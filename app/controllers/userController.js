@@ -84,7 +84,17 @@ const fpath = path.join(__dirname, '../data/users.json');
         
         let logSuccessfull = bcrypt.compareSync( req.body.contrasena , elUser.contrasena);
         
-        logSuccessfull? res.render('editUser', {title2: "Bienvenido " + elUser.nombre + "!", msg:'Acceso exitoso!', elUser}) : res.render('register', {title2: 'SLC: Registro', msg: "Su contraseña es incorrecta. Intente de nuevo"});
+            if (logSuccessfull) {
+                req.session.user = elUser;
+
+                if (req.body.recordar) {
+					res.cookie('user', elUser.id, { maxAge: 180000});
+				}
+
+                res.render('editUser', {title2: "Bienvenido " + elUser.nombre + "!", msg:'Acceso exitoso!', elUser})
+            }else{
+                res.render('register', {title2: 'SLC: Registro', msg: "Su contraseña es incorrecta. Intente de nuevo"});
+            }
         }else{
             res.render('register', {title2: 'SLC: Registro', msg: "Usuario y/o contraseña inexistentes"});
         }
@@ -93,6 +103,12 @@ const fpath = path.join(__dirname, '../data/users.json');
             //	let html = readHTML('register');
                 res.render('register', {title2: 'SLC: Registro', msg: "Hola :) Ingresá con tu email y contraseña"});
             },
+
+        logOut: (req, res) => {
+		req.session.destroy();
+		res.cookie('user', null, { maxAge: -1 });
+		return res.redirect('/');
+        },
     };
     
     module.exports = controller

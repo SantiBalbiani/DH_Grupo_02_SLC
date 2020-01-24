@@ -14,7 +14,7 @@ function (req, res, next) {
     {
       res.render('editProduct', {title2: "detalle de producto", msg: "Producto guardado con éxito!"} );
     } */
-
+    console.log('message middleware');
     next();
   };
 

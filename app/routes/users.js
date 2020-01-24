@@ -21,6 +21,7 @@ router.get('/', userController.getUsers);
 router.post('/login', userController.logIn);
 router.get('/create', userController.createUser);
 router.get('/register', userController.register);
+router.get('/logout', userController.logOut);
 router.get('/:id', userController.getUser);
 router.get('/:id/edit', userController.editUser);
 router.post('/', upload.single('image'), userController.saveUser);

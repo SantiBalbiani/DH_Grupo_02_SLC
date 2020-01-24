@@ -19,10 +19,21 @@
       <nav class="right-navbar">
         <ul>
             <li><a href="/">Inicio</a></li>
+            <% if (!logged){ %>
             <li><a href="/users/register" target="blank">Ingresá</a></li>
             <li><a href="/users/create" target="blank">Registrate</a></li>
+            <% }else{ %>
+            <li><a href="/users/dashboard" target="blank">Mis Compras/Ventas</a></li>
+            <% } %>
             <li><a href="/productCart" target="blank"> <img src="/images/carrito16px.png"></a></li>
+            <% if(logged){ %>
+              <li><a href="/users/logOut" target="blank">Salir</a></li>
+            <li><a href="/profile" target="blank"> <img src="/images/users/<%= user.image %>" alt="avatar" with="25px" height="25px"></a></li>
+            <% } %>
         </ul>
+        
+        
+        
       </nav>
     </div>
     </header>

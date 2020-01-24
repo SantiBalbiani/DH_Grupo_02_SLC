@@ -9,6 +9,8 @@ var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 const methodOverride = require("method-override");
 const messages = require('./middlewares/messages');
+const userCookieMiddleware = require('./middlewares/userCookie');
+const localsMiddleware = require('./middlewares/localsMiddleware');
 const session = require('express-session');
 
 var app = express();
@@ -24,7 +26,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({
+  secret: 'secretlala',
+  resave: true,
+  saveUninitialized: true
+}));
+
 app.use(messages);
+app.use(userCookieMiddleware);
+app.use(localsMiddleware);
+
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
@@ -35,11 +48,9 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use(session({
-  secret: 'secret',
-  resave: false,
-  saveUninitialized: true
-}));
+
+
+
 
 // error handler
 app.use(function(err, req, res, next) {

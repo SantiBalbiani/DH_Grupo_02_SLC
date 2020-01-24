@@ -13,6 +13,7 @@ function readHTML (fileName) {
 const controller = {
 	root: (req, res) => {
 		//let html = readHTML('index');
+		
 		res.render('index', {title2: 'SLC Componentes Electrónicos'} );
 	},
 	//productDetail: (req, res) => {
