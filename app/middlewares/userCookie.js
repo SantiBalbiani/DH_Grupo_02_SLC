@@ -11,13 +11,14 @@ function userCookie (req, res, next) {
         data = model.loadFile(userFilePath);
         data.forEach( user => {
             
-            finded = bcrypt.compareSync( user.id.toString(), req.cookies.user  );
+            finded = bcrypt.compareSync( user.id.toString(), req.cookies.user.toString()  );
             
+            if (finded){
+                req.session.user = model.find_("id", user.id, userFilePath);
+                
+                next();
+                }
         } );
-        
-        if (finded){
-        req.session.user = model.find_("id", req.cookies.user, userFilePath);
-        }
     }
     next();
 };

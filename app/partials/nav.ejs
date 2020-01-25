@@ -27,8 +27,9 @@
             <% } %>
             <li><a href="/productCart" target="blank"> <img src="/images/carrito16px.png"></a></li>
             <% if(logged){ %>
+              <li><a href="/users/userProfile/<%= user.id %>" target="blank"> <img src="/images/users/<%= user.image %>" alt="avatar" with="25px" height="25px"></a></li>
               <li><a href="/users/logOut" target="blank">Salir</a></li>
-            <li><a href="/profile" target="blank"> <img src="/images/users/<%= user.image %>" alt="avatar" with="25px" height="25px"></a></li>
+           
             <% } %>
         </ul>
         

@@ -88,7 +88,7 @@ const fpath = path.join(__dirname, '../data/users.json');
                 req.session.user = elUser;
 
                 if (req.body.recordar) {
-					res.cookie('user', elUser.id, { maxAge: 180000});
+					res.cookie('user', bcrypt.hashSync(elUser.id.toString(), 12), { maxAge: 180000});
 				}
 
                 res.render('editUser', {title2: "Bienvenido " + elUser.nombre + "!", msg:'Acceso exitoso!', elUser})
@@ -109,6 +109,14 @@ const fpath = path.join(__dirname, '../data/users.json');
 		res.cookie('user', null, { maxAge: -1 });
 		return res.redirect('/');
         },
+        profile: (req, res) => {
+
+            let allUsers = m.loadFile(fpath);
+            elUser = m.getData(allUsers, req.params.id);
+            //allUsers.find( usr => usr.userId == req.params.userId )
+            elUser == undefined? res.render('notFound', {msg:"Usuario Inexistente"}):
+            res.render('userProfile', {title2: 'Detalle del Usuario', user: elUser});
+        }
     };
     
     module.exports = controller
