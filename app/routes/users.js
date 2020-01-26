@@ -3,6 +3,8 @@ const router = express.Router();
 const userController = require('../controllers/userController');
 const multer = require('multer');
 const path = require('path');
+const { check, validationResult, body } = require('express-validator');
+
 
 let diskStorage = multer.diskStorage({
 	destination: function (req, file, cb) {
@@ -16,6 +18,29 @@ let diskStorage = multer.diskStorage({
 
 let upload = multer({ storage: diskStorage })
 
+const messages = 
+function (req, res, next) {
+  console.log(req.originalUrl);
+
+     
+      let err = validationResult(req);
+
+            if (!err.isEmpty()){
+              res.render('userForm', {title2: 'SLC: Crear Usuario',ers: err.errors});
+                
+            }
+
+   //   res.render('editUser', {title2: "Modificar mis Datos",  msg: "Datos actualizados!"} );
+    
+
+  /*   if (isSavingPrd.test(req.originalUrl))
+    {
+      res.render('editProduct', {title2: "detalle de producto", msg: "Producto guardado con éxito!"} );
+    } */
+    console.log("No hay errores");
+    next();
+  };
+
 /* GET users listing. */
 router.get('/', userController.getUsers);
 router.post('/login', userController.logIn);
@@ -25,7 +50,7 @@ router.get('/logout', userController.logOut);
 router.get('/userProfile/:id', userController.profile)
 router.get('/:id', userController.getUser);
 router.get('/:id/edit', userController.editUser);
-router.post('/', upload.single('image'), userController.saveUser);
+router.post('/', upload.single('image'), [check('contrasena').not().isEmpty().isLength({min: 4}).withMessage( 'La contraseña debe tener mínimo 4 caracteres.'),  check("email").isEmail().withMessage('Ingresar un email válido.')],  messages  , userController.saveUser);
 router.put('/:id/edit',upload.single('image'), userController.saveChanges);
 router.delete('/:id', userController.deleteUser);
 

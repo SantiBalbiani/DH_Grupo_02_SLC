@@ -17,7 +17,14 @@
 
         <h1>Registro</h1>
         
-    
+          <ul>
+            <% if(ers != undefined){ %>
+              <div> Por favor corregir los errores:</div>
+            <% ers.forEach( err => { %>
+            <li> <%= err.msg %> </li>
+           <% })}; %>
+          </ul>
+
         <div class="tab">Sobre vos:
           <p><input placeholder="Nombre..." name="nombre" oninput="this.className = ''"></p>
           <p><input placeholder="Apellido..." name="apellido" oninput="this.className = ''"></p>

@@ -8,7 +8,6 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 const methodOverride = require("method-override");
-const messages = require('./middlewares/messages');
 const userCookieMiddleware = require('./middlewares/userCookie');
 const localsMiddleware = require('./middlewares/localsMiddleware');
 const session = require('express-session');
@@ -33,7 +32,7 @@ app.use(session({
   saveUninitialized: true
 }));
 
-app.use(messages);
+
 app.use(userCookieMiddleware);
 app.use(localsMiddleware);
 

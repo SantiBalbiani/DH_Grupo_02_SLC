@@ -3,6 +3,7 @@ const path = require('path');
 const m = require("../model/model");
 const bcrypt = require('bcryptjs');
 
+
 const fpath = path.join(__dirname, '../data/users.json');
 
     const controller = {
@@ -24,7 +25,7 @@ const fpath = path.join(__dirname, '../data/users.json');
         // },
         createUser: (req, res) => {
             //let html = readHTML('productCart');
-            res.render('userForm', {title2: 'SLC: Crear Usuario'});
+            res.render('userForm', {title2: 'SLC: Crear Usuario', ers: undefined});
         },
         editUser: (req, res) => {
         //	let html = readHTML('register');
@@ -34,6 +35,7 @@ const fpath = path.join(__dirname, '../data/users.json');
         res.render('editUser', { user: elUser, title2: 'Editar Usuario', msg:'Modifique datos y presione guardar'});
         },
         saveUser: (req, res) => {
+
 
             req.body.contrasena = bcrypt.hashSync(req.body.contrasena, 11);
 
@@ -121,3 +123,5 @@ const fpath = path.join(__dirname, '../data/users.json');
     
     module.exports = controller
 
+
+    
