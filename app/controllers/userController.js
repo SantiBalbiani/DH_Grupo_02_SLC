@@ -45,8 +45,9 @@ const fpath = path.join(__dirname, '../data/users.json');
                 image: req.file.filename,
             }
             m.create(newUser, fpath);
-            //guardarUser(newUser);
-            res.redirect('/');
+            
+            res.render('register', {title2: 'SLC: Registro', msg: "Usuario creado con éxito! :) Ingresá con tu email y contraseña"});
+          //  res.redirect('/');
         },
         saveChanges: (req, res) => {
         //	let html = readHTML('productAdd2');
@@ -92,8 +93,10 @@ const fpath = path.join(__dirname, '../data/users.json');
                 if (req.body.recordar) {
 					res.cookie('user', bcrypt.hashSync(elUser.id.toString(), 12), { maxAge: 180000});
 				}
-
-                res.render('editUser', {title2: "Bienvenido " + elUser.nombre + "!", msg:'Acceso exitoso!', elUser})
+                res.locals.logged = true;
+                res.locals.user = elUser;
+                res.render('userProfile', {title2: "Bienvenido " + elUser.nombre + "!", elUser});
+               // res.render('editUser', {title2: "Bienvenido " + elUser.nombre + "!", msg:'Acceso exitoso!', elUser})
             }else{
                 res.render('register', {title2: 'SLC: Registro', msg: "Su contraseña es incorrecta. Intente de nuevo"});
             }
@@ -115,9 +118,10 @@ const fpath = path.join(__dirname, '../data/users.json');
 
             let allUsers = m.loadFile(fpath);
             elUser = m.getData(allUsers, req.params.id);
+            var user = elUser;
             //allUsers.find( usr => usr.userId == req.params.userId )
             elUser == undefined? res.render('notFound', {msg:"Usuario Inexistente"}):
-            res.render('userProfile', {title2: 'Detalle del Usuario', user: elUser});
+            res.render('userProfile', {title2: 'Perfil de' + user.nombre,  user});
         }
     };
     
