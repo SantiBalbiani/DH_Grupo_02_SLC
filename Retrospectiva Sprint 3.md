@@ -7,11 +7,11 @@ __1. Comenzar a hacer__
 
 *Leer la documentación oficial para complementar
 
-__2. Hacer más
+__2. Hacer más__
 
 *Compartir más buenas prácticas con compañeros del curso
 
-__3. Continuar haciendo
+__3. Continuar haciendo__
 
 *Compartir información y benchmark sobre el mercado
 
@@ -22,10 +22,10 @@ Por ejemplo, examenes de la facultad.
 
 *Pedir más feedback sobre el código
 
-__4. Hacer menos
+__4. Hacer menos__
 
 *Buscar la forma perfecta en línea con los wires y tratar de ajustar a lo que estamos pudiendo construir, con las herramientas que tenemos.
 
-__5. Dejar de hacer
+__5. Dejar de hacer__
 
 *Trabajar en el espacio de clase porque se pierde prioridad de los temas
