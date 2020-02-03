@@ -5,22 +5,22 @@ Enlace a Tablero de Trello https://trello.com/b/lbqA3Q5L
 
 __1. Comenzar a hacer__
 
-*Leer la documentación oficial para complementar
+* Leer la documentación oficial para complementar
 
 __2. Hacer más__
 
-*Compartir más buenas prácticas con compañeros del curso
+* Compartir más buenas prácticas con compañeros del curso
 
 __3. Continuar haciendo__
 
-*Compartir información y benchmark sobre el mercado
+* Compartir información y benchmark sobre el mercado
 
-*Setear expectativas con el resto del grupo sobre lo que podemos hacer durante el siguiente sprint, para poder repartir las tareas.
+* Setear expectativas con el resto del grupo sobre lo que podemos hacer durante el siguiente sprint, para poder repartir las tareas.
 Por ejemplo, examenes de la facultad. 
 
-*Avisar cuando se hicieron mejoras para que el resto haga pull.
+* Avisar cuando se hicieron mejoras para que el resto haga pull.
 
-*Pedir más feedback sobre el código
+* Pedir más feedback sobre el código
 
 __4. Hacer menos__
 
@@ -28,4 +28,4 @@ __4. Hacer menos__
 
 __5. Dejar de hacer__
 
-*Trabajar en el espacio de clase porque se pierde prioridad de los temas
+* Trabajar en el espacio de clase porque se pierde prioridad de los temas
