@@ -5,7 +5,7 @@ Enlace a Tablero de Trello https://trello.com/b/lbqA3Q5L
 
 1. Comenzar a hacer
 
-*
+*Leer la documentación oficial para complementar
 
 2. Hacer más
 
