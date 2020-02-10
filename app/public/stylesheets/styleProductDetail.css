@@ -205,4 +205,11 @@ a {
   color:#597ff9;
 }
 
+div label {
+  width: 100%;
+  font-weight: bold;
+}
+div input {
+  width: 100%;
+}
 

@@ -8,61 +8,86 @@
   <body>
     <%- include('../partials/nav'); %> 
     <%- include('../partials/searchBar'); %>
+
 <!-- main-content -->
 
+<form action="/products/<%= elProd.id %>/edit?_method=PUT" enctype="multipart/form-data" method="POST" >
 <div class="container products-wrapper">
     <div class="row">
         <div class="col-12">
             <% if(msg == undefined) { var title = "Modificar Producto"} else { var title = "Producto Modificado! :)" } %>
             <h2 class="products-title">  <%= msg %> </h2>
         </div>
-    
-        <div class="col-12 col-sm-6 col-lg-3">
-           
-            <section class="product-box">
-                <form action="/products/<%= elProd.id %>/edit?_method=PUT" enctype="multipart/form-data" method="POST" >
-                    <div>
-                        <label>Nombre Producto:</label>
-                        <!-- value="<%= elProd.prodName %>" -->
-                        <input type="text" name="prodName" value="<%= elProd.prodName %>" >
-                    </div>
-                    <div>
-                        <label>Descripcion:</label>
-                        <input type="text" name="description" value="<%= elProd.description %>">
-                    </div>
-                    <div>
-                        <label>Precio:</label>
-                        <input type="text" name="price" value="<%= elProd.price %>">
-                    </div>
-                    <div>
-                        <label>Descuento:</label>
-                        <input type="text" name="discount" value="<%= elProd.discount %>">
-                    </div>
-                    <div>
-                        <label>Imagen Actual:</label>
-                        <img src="/images/products/<%= elProd.image %>">
-                    </div>
-                    <div>
-                        <label>Imagen del Producto:</label>
-                        <input type="file" name="image">
-                    </div>
-                    <button type="submit">Guardar</button>
-                </form>
-
-                <form  action="/products/<%= elProd.id %>?_method=DELETE" method="POST" >
-                    <button type="submit">Borrar Producto</button>
-                
-                </form>
-            </section>
-          
-        </div>
-    
     </div>
 </div>
 
-</div>
+    <section class="product-box"> 
+            <div>
+                <label>Nombre Producto:</label>
+                <!-- value="<%= elProd.prodName %>" -->
+                <input type="text" name="prodName" value="<%= elProd.prodName %>" >
+            </div>
+            <br>
+            <div>
+                <label>Descripcion:</label>
+                <input type="text" name="description" value="<%= elProd.description %>">
+            </div>
+            <br>
+            <div>
+                <label>Precio:</label>
+                <input type="text" name="price" value="<%= elProd.price %>">
+            </div>
+            <br>
+            <div>
+                <label>Categoría:</label>
+                    <select id="inputState" class="form-control" name="categoria">
+                    <option selected="<%= elProd.categoría %>"></option>
+                    <option>Arduino</option>
+                    <option>Raspberry</option>
+                    <option>PLC</option>
+                    <option>Combos y Ofertas</option>
+                  </select>
+            </div>
+            <br>
+            <div>
+                <label>Modelo:</label>
+                <input type="text" name="modelo" value="<%= elProd.modelo %>">
+            </div>
+            <br>
+            <div>
+                <label>Voltaje:</label>
+                <input type="text" name="voltaje" value="<%= elProd.voltaje %>">
+            </div>
+            <br>
+            <div>
+                <label>Imagen Actual:</label>
+                <img src="/images/products/<%= elProd.image %>">
+            </div>
+            <br>
+            <div>
+                <label>Cambiar imagen</label>
+                <input type="file" name="image" class="btn btn-outline-primary">
+            </div>
+
+        
+            <br>
+            <button type="submit" class="btn btn-success">Guardar</button>
+
+               
+    </section>
+
 
 </section>
+
+</form>
+<br>
+<form  action="/products/<%= elProd.id %>?_method=DELETE" method="POST" >
+    <button type="submit" class="btn btn-danger">Borrar Producto</button>
+
+</form>
+
+
+
 
 
     <!-- pie -->

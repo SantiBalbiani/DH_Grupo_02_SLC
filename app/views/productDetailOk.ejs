@@ -13,7 +13,7 @@
  <!---breadrcum-->
 
   <ul class="breadcrum"> 
-    <li><a href="#"> Raspberry &#x203A</a></li> 
+    <li><a href="#"><%= elProd.categoría %></a></li> 
     <li><a href="#"> Raspberry Pi</a></li> 
   </ul>
 
@@ -39,8 +39,11 @@
       <img src="/images/products/<%= prod.image %>">
     </div>
     <div class="col-12 col-sm-6 col-lg-8"> 
-      <p class="tituloDetalle"> DESCRIPCION </p>
+      <p class="tituloDetalle"> Características del Producto </p>
+      <p class="tituloDetalle"> Voltaje: <%= prod.voltaje %></p>
+      <p class="tituloDetalle"> Modelo: <%= prod.modelo %></p>
       <p class="textoDescripcion"> <%= prod.description %></p>
+
     </div>
   </div>
 

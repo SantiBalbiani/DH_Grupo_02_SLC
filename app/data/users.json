@@ -160,5 +160,23 @@
   "provincia": "Capital Federal",
   "nomVendedor": "martell",
   "image": "PedroPascal.jpg"
+ },
+ {
+  "id": 20,
+  "nombre": "Arya",
+  "apellido": "Stark",
+  "genero": "Mujer",
+  "numeroDoc": "24563891",
+  "nombreUsuario": "arya_stark",
+  "contrasena": "$2a$11$M8H4DUE5FHmM164gvTRSEO6bRSsGXmVDFCV1Yoocjc2vHS7TtGt.6",
+  "email": "arya@stark.com",
+  "telefono": "99999999",
+  "telefono2": "88888888",
+  "calle": "Lima 111",
+  "city": "Capital Federal",
+  "cp": "1107",
+  "provincia": "Capital Federal",
+  "nomVendedor": "arya_stark",
+  "image": "AryaStark.jpg"
  }
 ]
