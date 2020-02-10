@@ -24,6 +24,8 @@
     "mysql2": "^2.1.0",
     "node-gyp": "^6.1.0",
     "nodemon": "^2.0.2",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "sequelize": "^5.21.4",
+    "sequelize-cli": "^5.5.1"
   }
 }
