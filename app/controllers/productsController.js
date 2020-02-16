@@ -1,6 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const m = require("../model/model");
+const db = require ("../database/models/");
+const Products = db.products;
+
 
 const fpath = path.join(__dirname, '../data/products.json');
 //const productsFilePath = path.join(__dirname, '../data/products.json');
@@ -8,8 +11,18 @@ const idx = 'id';
 
 const controller = {
 	root: (req, res) => {
-		let allProducts = m.loadFile(fpath); 
-		res.render('products', {title2: 'Todos los Productos', prods: allProducts } );
+		Products
+			.findAll()
+			.then(products => {
+				return res.render('products', { 
+					title2: 'Todos los Productos',
+					products
+				});
+			})
+			.catch(error => res.send(error));
+	
+		//let allProducts = m.loadFile(fpath); 
+		//res.render('products', {title2: 'Todos los Productos', prods: allProducts } );
 	},
 	getProdsByCat: (req, res) =>{
 		let allProducts = m.loadFile(fpath);

@@ -38,7 +38,7 @@ Usuarios:
 create table Users (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 email VARCHAR(50) NOT NULL, 
-password VARBINARY(50) NOT NULL,
+password VARBINARY(500) NOT NULL,
 state VARCHAR (25),
 createdAt timestamp NULL DEFAULT NULL,
 updatedAt timestamp NULL DEFAULT NULL);
@@ -46,46 +46,57 @@ updatedAt timestamp NULL DEFAULT NULL);
 Maestro de Usuarios:
 create table masterUsers (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-name VARCHAR(30) NOT NULL, 
-surname VARCHAR(30) NOT NULL, 
+name VARCHAR(50) NOT NULL, 
+surname VARCHAR(50) NOT NULL, 
 gender VARCHAR(30) NOT NULL,
 typeDocument VARCHAR(30) NOT NULL,
-document INT(10) NOT NULL, 
-telephone INT,
+document VARCHAR(30), NOT NULL, 
+telephone INT(50),
 email VARCHAR(50) NOT NULL, 
 street VARCHAR(100) NOT NULL,
 city VARCHAR(50) NOT NULL,
 CP varchar(10) NOT NULL,
 province VARCHAR(50) NOT NULL,
 userID INT NOT NULL,
+avatarName VARCHAR(50),
 FOREIGN KEY (UserID) REFERENCES Users(ID));
+
+Categorías:
+create table  categories (
+id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+categoryName VARCHAR(30) NOT NULL);
+
 
 Compradores:
 create table buyers (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 userID INT NOT NULL,
+idCart INT DEFAULT NULL,
+historyBuyer INT DEFAULT NULL,
 FOREIGN KEY (UserID) REFERENCES Users(ID));
-
-Carrito:
-create table cart (
-id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-state INT,
-idBuyer INT,
-idTrx INT,
-FOREIGN KEY (idBuyer) REFERENCES buyers(ID),
-FOREIGN KEY (idTrx) REFERENCES transaction(ID),
-createdAt timestamp NULL DEFAULT NULL,
-updatedAt timestamp NULL DEFAULT NULL);
-
-ALTER TABLE buyers
-ADD FOREIGN KEY (idCart) REFERENCES cart(ID);
 
 Vendedores:
 create table sellers (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 userID INT NOT NULL,
-historySeller INT,
+historySeller INT DEFAULT NULL,
 FOREIGN KEY (UserID) REFERENCES Users(ID));
+
+Productos:
+create table  Products (
+id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+prodName VARCHAR(500) NOT NULL,
+idCategory INT,
+idBuyer INT,
+model VARCHAR(30),
+voltage VARCHAR(30),
+price decimal (6,2) NOT NULL,
+description VARCHAR(5000) DEFAULT NULL,
+imageName VARCHAR(256) NULL DEFAULT NULL ,
+FOREIGN KEY (idBuyer) REFERENCES buyers(ID),
+FOREIGN KEY (idCategory) REFERENCES categories(ID),
+createdAt timestamp NULL DEFAULT NULL,
+updatedAt timestamp NULL DEFAULT NULL);
 
 Transacciones:
 create table transaction (
@@ -99,15 +110,33 @@ FOREIGN KEY (idSeller) REFERENCES sellers(ID),
 createdAt timestamp NULL DEFAULT NULL,
 updatedAt timestamp NULL DEFAULT NULL);
 
+
 Transacciones por usuario:
 CREATE TABLE trxByUser (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 idTrx INT NOT NULL,
 FOREIGN KEY (idTrx) REFERENCES transaction(ID));
 
+Carrito:
+create table cart (
+id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+state INT,
+idBuyer INT,
+idTrx INT,
+FOREIGN KEY (idBuyer) REFERENCES buyers(ID),
+FOREIGN KEY (idTrx) REFERENCES transaction(ID),
+createdAt timestamp NULL DEFAULT NULL,
+updatedAt timestamp NULL DEFAULT NULL);
+
+Agregar FK idCart a tabla Vendedores
 ALTER TABLE buyers
 ADD FOREIGN KEY (idCart) REFERENCES cart(ID);
 
+Agregar FK historia de trx a tabla Vendedores
+ALTER TABLE buyers
+ADD FOREIGN KEY (historyBuyer) REFERENCES trxbyuser(ID);
+
+Agregar FK historia de trx a tabla Compradores
 ALTER TABLE sellers
 ADD FOREIGN KEY (historySeller) REFERENCES trxbyuser(ID);
 
@@ -132,24 +161,9 @@ FOREIGN KEY (idProduct) REFERENCES products(ID),
 FOREIGN KEY (idCart) REFERENCES cart(ID));
 
 
-Categorías:
-create table  category (
-id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-categoryName VARCHAR(30) NOT NULL);
 
-Productos:
-create table  Products (
-id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-prodName VARCHAR(30) NOT NULL,
-FOREIGN KEY (idCategory) REFERENCES category(ID)
-model VARCHAR(30),
-voltage VARCHAR(30),
-price decimal (6,2) NOT NULL,
-description VARCHAR(500) NOT NULL,
-image varbinary(8000) NOT NULL,
-FOREIGN KEY (idBuyer) REFERENCES buyers(ID),
-createdAt timestamp NULL DEFAULT NULL,
-updatedAt timestamp NULL DEFAULT NULL,);
+
+
 
 
 
