@@ -13,7 +13,7 @@
 <div class="container">
   <div class="row">
      
-    <div class="col-12 col-sm-6 col-lg-8"> <p class="tituloProducto"><%= user.nombre %> <%= user.apellido %></p></div>
+    <div class="col-12 col-sm-6 col-lg-8"> <p class="tituloProducto"><%= masterusers.name %> <%= masterusers.surname %></p></div>
     <div class="col-6 col-lg-4"> 
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -28,13 +28,14 @@
 
 <div class="container">
     <div class="row">
-      <div class="col-6 col-lg-4"> <img src="/images/users/<%= user.image %>"> </div>
+      <div class="col-6 col-lg-4"> <img src="/images/users/<%= masterusers.avatarName %>"> </div>
       <div class="col-12 col-sm-6 col-lg-8"> 
        <p class="tituloDetalle">Detalles de usuario</p> 
        <ul class="caracteristicasProductos">
-       <div>Nombre: <%= user.nombre %> </div>   
-       <div>Apellido:  <%= user.apellido %> </div> 
-       <div>Email: <%= user.email %></div>
+       <div>Nombre: <%= masterusers.name %> </div>   
+       <div>Apellido:  <%= masterusers.surname %> </div> 
+       <div>Email: <%= masterusers.email %></div>
+       <div>Ciudad: <%= masterusers.city %></div>
       </ul>
     
       </p>

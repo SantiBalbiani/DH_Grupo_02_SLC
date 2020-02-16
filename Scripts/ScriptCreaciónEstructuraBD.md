@@ -59,12 +59,16 @@ CP varchar(10) NOT NULL,
 province VARCHAR(50) NOT NULL,
 userID INT NOT NULL,
 avatarName VARCHAR(50),
+createdAt timestamp NULL DEFAULT NULL,
+updatedAt timestamp NULL DEFAULT NULL,
 FOREIGN KEY (UserID) REFERENCES Users(ID));
 
 Categorías:
 create table  categories (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-categoryName VARCHAR(30) NOT NULL);
+categoryName VARCHAR(30) NOT NULL,
+createdAt timestamp NULL DEFAULT NULL,
+updatedAt timestamp NULL DEFAULT NULL);
 
 
 Compradores:

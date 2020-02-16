@@ -13,8 +13,8 @@
  <!---breadrcum-->
 
   <ul class="breadcrum"> 
-    <li><a href="#"><%= elProd.categoría %></a></li> 
-    <li><a href="#"> Raspberry Pi</a></li> 
+    <li><a href="#"><%= product.categories.categoryName  %></a></li> 
+    <li> Detalle de producto </li> 
   </ul>
 
 <!---titulo producto-->
@@ -22,7 +22,7 @@
 <div class="container">
   <div class="row">
     <div class="col-12 col-sm-6 col-lg-8"> 
-      <p class="tituloProducto"> <%= prod.prodName%></p>
+      <p class="tituloProducto"> <%= product.prodName%></p>
     </div>
     <div class="col-6 col-lg-4"> 
       <span class="fa fa-star checked"></span>
@@ -36,13 +36,13 @@
   
   <div class="row">
     <div class="col-6 col-lg-4"> 
-      <img src="/images/products/<%= prod.image %>">
+      <img src="/images/products/<%= product.imageName %>">
     </div>
     <div class="col-12 col-sm-6 col-lg-8"> 
       <p class="tituloDetalle"> Características del Producto </p>
-      <p class="tituloDetalle"> Voltaje: <%= prod.voltaje %></p>
-      <p class="tituloDetalle"> Modelo: <%= prod.modelo %></p>
-      <p class="textoDescripcion"> <%= prod.description %></p>
+      <p class="tituloDetalle"> Voltaje: <%= product.voltage %></p>
+      <p class="tituloDetalle"> Modelo: <%= product.model %></p>
+      <p class="textoDescripcion"> <%= product.description%></p>
 
     </div>
   </div>
@@ -52,7 +52,7 @@
       <div class="pieDetalle">
         <div class="row align-items-center">
           <div class="col-12 col-lg-3">
-            <h2 class="precio"> $ <%= prod.price %> </h2> 
+            <h2 class="precio"> $ <%= product.price %> </h2> 
           </div>
 
           <div class="col-12 col-md-4 col-lg-3">

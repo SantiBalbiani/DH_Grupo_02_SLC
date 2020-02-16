@@ -3,7 +3,7 @@ const path = require('path');
 const m = require("../model/model");
 const db = require ("../database/models/");
 const Products = db.products;
-
+const Categories = db.categories;
 
 const fpath = path.join(__dirname, '../data/products.json');
 //const productsFilePath = path.join(__dirname, '../data/products.json');
@@ -30,26 +30,40 @@ const controller = {
 		res.render('products', { title2: (" Productos de tipo " + req.params.category) , prods: allProducts  })
 	},
 	getProduct: (req, res) => {
-		//let html = readHTML('productDetail');
-		let todosProd = m.loadFile(fpath);
-		elProd = m.getData(todosProd, req.params.id);
-		//elProd2 = todosProd.find( prod => prod.id == req.params.id )
-		elProd==undefined? res.render('notFound', {msg:"Producto Inexistente"}):
-		res.render('productDetailOk', {title2: 'Detalle del Producto', prod: elProd});
-	},
-
+		Products
+			.findByPk(req.params.id, {
+			include: ['categories']
+			})
+			.then(product => {
+				return res.render('productDetailOk', { 
+					title2: `Detail of ${product.prodName}`,
+					product
+				});
+			})
+			.catch(error => res.send(error));
 	
+	
+		
+		// ya estaba con // let html = readHTML('productDetail');
+		//let todosProd = m.loadFile(fpath);
+		//elProd = m.getData(todosProd, req.params.id);
+		// ya estaba con // elProd2 = todosProd.find( prod => prod.id == req.params.id )
+		//elProd==undefined? res.render('notFound', {msg:"Producto Inexistente"}):
+		//res.render('productDetailOk', {title2: 'Detalle del Producto', prod: elProd});
+	},
 
 	createProduct: (req, res) => {
 		//let html = readHTML('productCart');
 		res.render('productAdd', {title2: 'SLC: Carrito'});
 	},
+
 	editProduct: (req, res) => {
 		//	let html = readHTML('register');
 		let todosProd = m.loadFile(fpath);
 		elProd = todosProd.find( prod => prod.id == req.params.id );
 		res.render('editProduct', { prod:elProd, title2: 'Editar Producto', msg: 'Modificar Producto'});
 	},
+
 	saveProduct: (req, res) => {
 		let newProduct = {
 			id: m.genId(fpath),

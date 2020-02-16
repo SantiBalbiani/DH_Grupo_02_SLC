@@ -2,22 +2,48 @@ const fs = require('fs');
 const path = require('path');
 const m = require("../model/model");
 const bcrypt = require('bcryptjs');
+const db = require ("../database/models/");
+const Masterusers = db.masterusers;
+
 
 
 const fpath = path.join(__dirname, '../data/users.json');
 
     const controller = {
         getUsers: (req, res) => {
-            let allUsers = m.loadFile(fpath); 
-            res.render('users', {title2: 'Todos los Usuarios', users: allUsers } );
+            Masterusers
+			.findAll()
+			.then(masterusers => {
+				return res.render('users', { 
+					title2: 'Todos los Usuarios',
+					masterusers
+				});
+			})
+			.catch(error => res.send(error));
+                //let allUsers = m.loadFile(fpath); 
+            //res.render('users', {title2: 'Todos los Usuarios', users: allUsers } );
         },
         getUser: (req, res) => {
-            //let html = readHTML('productDetail');
-            let allUsers = m.loadFile(fpath);
-            elUser = m.getData(allUsers, req.params.id);
-            //allUsers.find( usr => usr.userId == req.params.userId )
-            elUser == undefined? res.render('notFound', {msg:"Usuario Inexistente"}):
-            res.render('userDetail', {title2: 'Detalle del Usuario', user: elUser});
+            Masterusers
+			.findByPk(req.params.id, {
+			include: ['users']
+			})
+			.then(masterusers => {
+				return res.render('userDetail', { 
+					title2: `Detalle de ${masterusers.name}`,
+					masterusers
+				});
+			})
+			.catch(error => res.send(error));
+	
+	
+		
+            // ya estaba con //let html = readHTML('productDetail');
+           // let allUsers = m.loadFile(fpath);
+            //elUser = m.getData(allUsers, req.params.id);
+            // ya estaba con ////allUsers.find( usr => usr.userId == req.params.userId )
+            //elUser == undefined? res.render('notFound', {msg:"Usuario Inexistente"}):
+            //res.render('userDetail', {title2: 'Detalle del Usuario', user: elUser});
         },
         // createUser: (req, res) => {
         //     //let html = readHTML('productCart');
