@@ -11,57 +11,65 @@
 
 <!-- main-content -->
 
-<form action="/products/<%= elProd.id %>/edit?_method=PUT" enctype="multipart/form-data" method="POST" >
+<form action="/products/<%=product.id %>/edit?_method=PUT" enctype="multipart/form-data" method="POST" >
 <div class="container products-wrapper">
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-12">
-            <% if(msg == undefined) { var title = "Modificar Producto"} else { var title = "Producto Modificado! :)" } %>
+            <% if(msg == undefined) { var title = "Modificar Producto"} else { var title = "Producto Modificado! :)" } %> 
             <h2 class="products-title">  <%= msg %> </h2>
         </div>
-    </div>
+    </div>  -->
 </div>
 
     <section class="product-box"> 
             <div>
                 <label>Nombre Producto:</label>
-                <!-- value="<%= elProd.prodName %>" -->
-                <input type="text" name="prodName" value="<%= elProd.prodName %>" >
+               
+                <input type="text" name="prodName" value="<%= product.prodName %>" >
             </div>
             <br>
             <div>
                 <label>Descripcion:</label>
-                <input type="text" name="description" value="<%= elProd.description %>">
+                <input type="text" name="description" value="<%= product.description %>">
             </div>
             <br>
             <div>
                 <label>Precio:</label>
-                <input type="text" name="price" value="<%= elProd.price %>">
+                <input type="text" name="price" value="<%= product.price %>">
             </div>
             <br>
             <div>
                 <label>Categoría:</label>
-                    <select id="inputState" class="form-control" name="categoria">
-                    <option selected="<%= elProd.categoría %>"></option>
-                    <option>Arduino</option>
-                    <option>Raspberry</option>
-                    <option>PLC</option>
-                    <option>Combos y Ofertas</option>
+                    <select id="inputState" class="form-control" name="idCategory">
+                    <option value="">Elegí una categoría</option>
+                    <% categories.forEach(category => { %>
+                        <option 
+                            value="<%= category.id%>"
+                            <%= category.id == product.idCategory ? 'selected' : null %>
+                            >
+                            <%= category.categoryName %>
+                        </option>
+                        <% }) %>
                   </select>
+
+                  
+               
+
             </div>
             <br>
             <div>
                 <label>Modelo:</label>
-                <input type="text" name="modelo" value="<%= elProd.modelo %>">
+                <input type="text" name="model" value="<%= product.model %>">
             </div>
             <br>
             <div>
                 <label>Voltaje:</label>
-                <input type="text" name="voltaje" value="<%= elProd.voltaje %>">
+                <input type="text" name="voltage" value="<%= product.voltage %>">
             </div>
             <br>
             <div>
                 <label>Imagen Actual:</label>
-                <img src="/images/products/<%= elProd.image %>">
+                <img src="/images/products/<%= product.imageName %>">
             </div>
             <br>
             <div>
@@ -81,7 +89,7 @@
 
 </form>
 <br>
-<form  action="/products/<%= elProd.id %>?_method=DELETE" method="POST" >
+<form  action="/products/<%= product.id %>?_method=DELETE" method="POST" >
     <button type="submit" class="btn btn-danger">Borrar Producto</button>
 
 </form>

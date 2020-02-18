@@ -39,7 +39,7 @@ create table Users (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 email VARCHAR(50) NOT NULL, 
 password VARBINARY(500) NOT NULL,
-state VARCHAR (25),
+state INT DEFAULT 1,
 createdAt timestamp NULL DEFAULT NULL,
 updatedAt timestamp NULL DEFAULT NULL);
 
@@ -97,6 +97,7 @@ voltage VARCHAR(30),
 price decimal (6,2) NOT NULL,
 description VARCHAR(5000) DEFAULT NULL,
 imageName VARCHAR(256) NULL DEFAULT NULL ,
+state INT DEFAULT 1,
 FOREIGN KEY (idBuyer) REFERENCES buyers(ID),
 FOREIGN KEY (idCategory) REFERENCES categories(ID),
 createdAt timestamp NULL DEFAULT NULL,

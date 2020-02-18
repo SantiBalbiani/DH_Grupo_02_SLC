@@ -2,11 +2,11 @@
  {
   "id": 1,
   "prodName": "Raspberry Pi4",
-  "categoria": "Raspberry",
-  "modelo": "Pi4",
-  "voltaje": "12V",
-  "price": "3000",
-  "description": "Broadcom BCM2711, 2. 4 GHz and 5. 0 GHz IEEE 802. 11b/g/n/ac wireless LAN, Bluetooth 5. 0, BLE\r\n2 × USB 3. 0 ports, 2 x USB 2. 0 Ports\r\n2 × micro HDMI ports supproting up to 4Kp60 video resolution\r\nMicro SD card slot for loading operating system and data storage",
+  "description": "Broadcom BCM2711, 2. 4 GHz and 5. 0 GHz IEEE 802. 11b/g/n/ac wireless LAN, Bluetooth 5. 0, BLE 2 × USB 3. 0 ports, 2 x USB 2. 0 Ports n2 × micro HDMI ports supproting up to 4Kp60 video resolution Micro SD card slot for loading operating system and data storage",
+  "price": "3500.00",
+  "idCategory": "2",
+  "model": "Pi4",
+  "voltage": "12V",
   "image": "RaspberryPi4.jpg"
  },
  {
