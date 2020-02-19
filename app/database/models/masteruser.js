@@ -20,6 +20,8 @@ module.exports = (sequelize, DataTypes) => {
       province: DataTypes.STRING,
       userID: DataTypes.INTEGER,
       avatarName: DataTypes.STRING,
+      state: DataTypes.INTEGER,
+      password: DataTypes.STRING,
   
   };
   let config = {

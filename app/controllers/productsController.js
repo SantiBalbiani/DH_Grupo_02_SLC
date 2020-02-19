@@ -13,8 +13,12 @@ const idx = 'id';
 const controller = {
 	root: (req, res) => {
 		Products
-			.findAll( 
-				
+			.findAll( 	
+				{
+					where: {
+						state:1
+					}
+			  	}
 			)
 			.then(products => {
 				return res.render('products', { 
@@ -33,13 +37,13 @@ const controller = {
 				{
 					where: {
 						idCategory: req.params.category,
-						
+						state:1
 					}
 			  	}
 			)
 			.then(products => {
 				return res.render('products', { 
-				title2: "Todos los productos de la categoría ",
+				title2: "Productos por categoría" ,
 				products
 				});
 			})
@@ -74,9 +78,20 @@ const controller = {
 	},
 
 	createProduct: (req, res) => {
-		//let html = readHTML('productCart');
-		res.render('productAdd', {title2: 'SLC: Carrito'});
-	},
+        Categories
+            .findAll()
+            .then(categories => {
+                res.render('productAdd', {
+					title2: 'Product Create',
+					categories
+                     
+                });
+            })
+            .catch(error => res.send(console.log(error)));
+        //ya estaba// let html = readHTML('productCart');
+        //res.render('productAdd', {title2: 'SLC: Carrito'});
+    },
+
 
 	editProduct: (req, res) => {
 		sequelize
@@ -103,6 +118,14 @@ const controller = {
 	},
 
 	saveProduct: (req, res) => {
+		Products
+			.create (req.body)
+			.then(product => {
+				return res.redirect ("/products");
+				})
+			.catch (error => res.send(console.log(error)));
+
+
 		//let newProduct = {
 		//	id: m.genId(fpath),
 		//	...req.body,

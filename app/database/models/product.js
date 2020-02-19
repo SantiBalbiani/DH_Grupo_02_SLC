@@ -14,7 +14,8 @@ module.exports = (sequelize, DataTypes) => {
         price: DataTypes.INTEGER,
         description: DataTypes.STRING,
 		imageName: DataTypes.STRING,
-		idCategory: DataTypes.INTEGER
+		idCategory: DataTypes.INTEGER,
+		state: DataTypes.INTEGER,
     };
     /*let config = {
 		tableName: 'products',

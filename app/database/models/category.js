@@ -21,6 +21,13 @@ module.exports = (sequelize, DataTypes) => {
 
   categories.associate = function(models) {
     // associations can be defined here
+    // hasMany
+      categories.hasMany(models.products, {
+        as: 'products',
+        foreignKey: 'idCategory'
+      })
+    
+
   };
   return categories;
 };

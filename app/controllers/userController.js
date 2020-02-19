@@ -12,7 +12,12 @@ const fpath = path.join(__dirname, '../data/users.json');
     const controller = {
         getUsers: (req, res) => {
             Masterusers
-			.findAll()
+			.findAll(
+                {
+                where: {
+                    state:1
+                }
+                })
 			.then(masterusers => {
 				return res.render('users', { 
 					title2: 'Todos los Usuarios',
@@ -54,56 +59,93 @@ const fpath = path.join(__dirname, '../data/users.json');
             res.render('userForm', {title2: 'SLC: Crear Usuario', ers: undefined});
         },
         editUser: (req, res) => {
-        //	let html = readHTML('register');
-        let allUsers = m.loadFile(fpath);
-        //elUser = m.getData(allUsers, req.params.id);
-        elUser = allUsers.find( usr => usr.id == req.params.id );
-        res.render('editUser', { user: elUser, title2: 'Editar Usuario', msg:'Modifique datos y presione guardar'});
+            Masterusers
+			.findByPk(req.params.id, {
+			include: ['users']
+			})
+			.then(masterusers => {
+				return res.render('editUser', { 
+                    title2: 'Editar Usuario',
+                    msg:'Modifique datos y presione guardar',
+					masterusers
+				});
+			})
+			.catch(error => res.send(error));
+
+        //ya estaba//	let html = readHTML('register');
+        //let allUsers = m.loadFile(fpath);
+        //ya estaaba// elUser = m.getData(allUsers, req.params.id);
+        //elUser = allUsers.find( usr => usr.id == req.params.id );
+        //res.render('editUser', { user: elUser, title2: 'Editar Usuario', msg:'Modifique datos y presione guardar'});
         },
+
+
         saveUser: (req, res) => {
+            Masterusers
+			.create(req.body)
+			.then(() => res.redirect('/users'))
+		.catch(error => res.send(console.log(error)));
 
+            //req.body.contrasena = bcrypt.hashSync(req.body.contrasena, 11);
 
-            req.body.contrasena = bcrypt.hashSync(req.body.contrasena, 11);
-
-            let newUser = {
-                id: m.genId(fpath),
-                ...req.body,
-                image: req.file.filename,
-            }
-            m.create(newUser, fpath);
+            //let newUser = {
+            //    id: m.genId(fpath),
+            //    ...req.body,
+            //    image: req.file.filename,
+            //}
+            //m.create(newUser, fpath);
             
-            res.render('register', {title2: 'SLC: Registro', msg: "Usuario creado con éxito! :) Ingresá con tu email y contraseña"});
+            //res.render('register', {title2: 'SLC: Registro', msg: "Usuario creado con éxito! :) Ingresá con tu email y contraseña"});
           //  res.redirect('/');
         },
         saveChanges: (req, res) => {
-        //	let html = readHTML('productAdd2');
-        
-        let allUsers = m.loadFile(fpath);
-        oldUser = m.getData(allUsers, req.params.id);
-        let file = 'file';
-        let image;
+            Masterusers
+			.update(req.body, {
+				where: {
+					id: req.params.id
+						}
+		})
+		.then(() => res.redirect('/'))
+		.catch(error => res.send(error));
 
-        (req.hasOwnProperty(file))?  image = req.file.filename : image = oldUser.image;
+        //ya estaba//	let html = readHTML('productAdd2');
         
-        let elUser = {
-			id: parseInt(req.params.id),
-			...req.body,
-			image: image,
-        };
+        //let allUsers = m.loadFile(fpath);
+        //oldUser = m.getData(allUsers, req.params.id);
+        //let file = 'file';
+        //let image;
+
+        //(req.hasOwnProperty(file))?  image = req.file.filename : image = oldUser.image;
         
-        (req.body.contrasena == '')?  elUser.contrasena = oldUser.contrasena : elUser.contrasena =  bcrypt.hashSync(req.body.contrasena, 11);
+        //let elUser = {
+		//	id: parseInt(req.params.id),
+		//	...req.body,
+		//	image: image,
+        //};
+        
+        //(req.body.contrasena == '')?  elUser.contrasena = oldUser.contrasena : elUser.contrasena =  bcrypt.hashSync(req.body.contrasena, 11);
 
-		m.saveChanges(elUser, fpath);
-        //let guardado = "/users/" + user.id + "/edit";
+		//m.saveChanges(elUser, fpath);
+        //ya estaba// let guardado = "/users/" + user.id + "/edit";
 
-        res.render('editUser', { title2: "Modificar mis Datos",  msg: "Datos actualizados!", elUser});
+        //res.render('editUser', { title2: "Modificar mis Datos",  msg: "Datos actualizados!", elUser});
 
 
         //res.redirect(guardado);
         },
         deleteUser: (req, res) => {
-            m.delete_(req.params.id, fpath);
-            res.redirect("/");
+            Masterusers
+			.update (
+				{state: 0},
+				{where: { id: req.params.id }}
+				)
+			.then(
+				res.redirect("/users")
+			)
+			.catch(error => res.send(error));
+
+            //m.delete_(req.params.id, fpath);
+            //res.redirect("/");
         },
         logIn:(req, res) => {
         
@@ -141,13 +183,25 @@ const fpath = path.join(__dirname, '../data/users.json');
 		return res.redirect('/');
         },
         profile: (req, res) => {
-
-            let allUsers = m.loadFile(fpath);
-            elUser = m.getData(allUsers, req.params.id);
-            var user = elUser;
-            //allUsers.find( usr => usr.userId == req.params.userId )
-            elUser == undefined? res.render('notFound', {msg:"Usuario Inexistente"}):
-            res.render('userProfile', {title2: 'Perfil de' + user.nombre,  user});
+            Masterusers
+			.findByPk(req.params.id, {
+			include: ['users']
+			})
+			.then(masterusers => {
+                return masterusers== undefined? res.render('notFound', {msg:"Usuario Inexistente"}):
+                res.render('userProfile', { 
+					title2: `Perfil de ${masterusers.name}`,
+					masterusers
+				});
+			})
+            .catch(error => res.send(console.log(error)));
+            
+            //let allUsers = m.loadFile(fpath);
+            //elUser = m.getData(allUsers, req.params.id);
+            //var user = elUser;
+            //ya estaba// allUsers.find( usr => usr.userId == req.params.userId )
+            //elUser == undefined? res.render('notFound', {msg:"Usuario Inexistente"}):
+            //res.render('userProfile', {title2: 'Perfil de' + user.nombre,  user});
         }
     };
     

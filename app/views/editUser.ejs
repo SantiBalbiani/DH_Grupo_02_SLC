@@ -13,7 +13,7 @@
     <%- include('../partials/searchBar'); %>
 <!-- main-content -->
 
-<form action="/users/<%= elUser.id %>/edit?_method=PUT" enctype="multipart/form-data" method="POST" >
+<form action="/users/<%= masterusers.id %>/edit?_method=PUT" enctype="multipart/form-data" method="POST" >
         <h2 class="products-title"> <%= title2 %> </h2>
        
         <h5 class="products-title"> <%= msg %> </h5>
@@ -22,86 +22,75 @@
             <div class="editarCampo">
                 <div>
                   <label>Nombre:</label>
-                  <input type="text" name="nombre" value="<%= elUser.nombre %>" >
+                  <input type="text" name="name" value="<%= masterusers.name %>" >
                 </div>
                 <div>
                   <label>Apellido:</label>
-                  <input type="text" name="apellido" value="<%= elUser.apellido %>">
+                  <input type="text" name="surname" value="<%= masterusers.surname %>">
                 </div>
                 <div>
                   <label>Genéro:</label>
-                  <input type="text" name="genero" value="<%= elUser.genero%>">
+                  <input type="text" name="gender" value="<%= masterusers.gender%>">
                 </div>
                 <div>
                   <br>
+                  <label>Tipo de Documento</label>
                   <p><select id="inputState" class="form-control">
-                    <option selected>Tipo de Documento</option>
+                    <option selected><%= masterusers.typeDocument%></option>
                     <option>DNI</option>
                     <option>Libreta</option>
                     <option>Pasaporte</option>
                   </select></p>
                   <label>N° de Documento:</label>
-                  <input type="text" name="numeroDoc" value="<%= elUser.numeroDoc%>">
-                </div>
-                <div>
-                  <label>Email:</label>
-                  <input type="text" name="email" value="<%= elUser.email %>">
+                  <input type="text" name="document" value="<%= masterusers.document%>">
                 </div>
                 <div>
                   <label>Teléfono:</label>
-                  <input type="text" name="telefono" value="<%= elUser.telefono%>">
-                </div>
-                <div>
-                  <label>Teléfono alternativo:</label>
-                  <input type="text" name="telefono2" value="<%= elUser.telefono2%>">
+                  <input type="text" name="telephone" value="<%= masterusers.telephone%>">
                 </div>
                 <div>
                   <br>
                   <h5>Domicilio</h5>
                   <label>Calle y Número </label>
-                  <input type="text" name="calle" value="<%= elUser.calle%>">
+                  <input type="text" name="street" value="<%= masterusers.street%>">
                 </div>
 
                 <div>
                   <label>Ciudad</label>
-                  <input type="text" name="city" value="<%= elUser.city%>">
+                  <input type="text" name="city" value="<%= masterusers.city%>">
                 </div>
 
                 <div>
                   <label>CP</label>
-                  <input type="text" name="cp" value="<%= elUser.cp%>">
+                  <input type="text" name="CP" value="<%= masterusers.CP%>">
                 </div>
 
                 <div>
                   <label>Provincia</label>
-                  <input type="text" name="provincia" value="<%= elUser.provincia%>">
+                  <input type="text" name="province" value="<%= masterusers.province%>">
                 </div>
 
                 <div>
                   <br>
                   <h5>Datos de ingreso</h5>
-                  <label>Usuario</label>
-                  <input type="text" name="nombreUsuario" value="<%= elUser.nombreUsuario%>">
+                  <label>Email:</label>
+                  <input type="text" name="email" value="<%= masterusers.email %>">
+                  
 
                   <label>Contraseña</label>
-                  <input type="password" name="contrasena" value="">
+                  <input type="password" name="contrasena" value="<%= masterusers.password %>">
                 </div>
 
-
-                <div>
-                  <br>
-                  <h5>Datos de Vendedor</h5>
-                  <label>Usuario</label>
-                  <input type="text" name="nomVendedor" value="<%= elUser.nomVendedor%>">
-                </div>
 
                 <div class="imagenActualUsuario">
                   <label>Imagen Actual:</label>
-                  <img src="/images/users/<%= elUser.image %>">
+                  <img src="/images/users/<%= masterusers.avatarName %>">
                 </div>
 
-                <div class="form-group col"> <label for="imageUpload" class="btn btn-outline-primary">Cargá tu nueva imagen</label>
-                 <input type="file" id="imageUpload" name="image" accept="images/*" style="display: none">
+                <div class="form-group col"> <label for="avatarName" class="btn btn-outline-primary">Cargá tu nueva imagen</label>
+                 <input type="file" id="avatarName" name="avatarName" accept="images/*" style="display: none">
+
+  
                 </div>
                 
 
@@ -112,7 +101,7 @@
         </div>
 
 </form>
-    <form  action="/users/<%= elUser.id %>?_method=DELETE" method="POST" >
+    <form  action="/users/<%= masterusers.id %>?_method=DELETE" method="POST" >
     <div class="form-group col"> <button type="DELETE" class="btn btn-danger">Borrar Usuario </button>  
     </div>
    </form>

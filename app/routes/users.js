@@ -50,8 +50,8 @@ router.get('/logout', userController.logOut);
 router.get('/userProfile/:id', userController.profile)
 router.get('/:id', userController.getUser);
 router.get('/:id/edit', userController.editUser);
-router.post('/', upload.single('image'), [check('contrasena').not().isEmpty().isLength({min: 4}).withMessage( 'La contraseña debe tener mínimo 4 caracteres.'),  check("email").isEmail().withMessage('Ingresar un email válido.')],  messages  , userController.saveUser);
-router.put('/:id/edit',upload.single('image'), userController.saveChanges);
+router.post('/', upload.single('avatarName'), [check('password').not().isEmpty().isLength({min: 4}).withMessage( 'La contraseña debe tener mínimo 4 caracteres.'),  check("email").isEmail().withMessage('Ingresar un email válido.')],  messages  , userController.saveUser);
+router.put('/:id/edit',upload.single('avatarName'), userController.saveChanges);
 router.delete('/:id', userController.deleteUser);
 
 
