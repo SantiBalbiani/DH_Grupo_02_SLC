@@ -30,12 +30,17 @@
                 </div>
                 <div>
                   <label>Genéro:</label>
-                  <input type="text" name="gender" value="<%= masterusers.gender%>">
+                  <p><select id="inputState" name="gender" class="form-control">
+                      <option selected><%= masterusers.gender%></option>
+                      <option>Hombre</option>
+                      <option>Mujer</option>
+                      <option>Prefiero no decirlo</option>
+                  </select></p>
                 </div>
                 <div>
                   <br>
                   <label>Tipo de Documento</label>
-                  <p><select id="inputState" class="form-control">
+                  <p><select id="inputState" name="typeDocument" class="form-control">
                     <option selected><%= masterusers.typeDocument%></option>
                     <option>DNI</option>
                     <option>Libreta</option>
