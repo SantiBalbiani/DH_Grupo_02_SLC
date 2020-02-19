@@ -34,15 +34,6 @@ __2. Tipos de datos de los campos y sus restricciones__
 *Base de datos: CREATE DATABASE DB_SLC;
 
 *Tablas: 
-Usuarios:
-create table Users (
-id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-email VARCHAR(50) NOT NULL, 
-password VARBINARY(500) NOT NULL,
-state INT DEFAULT 1,
-createdAt timestamp NULL DEFAULT NULL,
-updatedAt timestamp NULL DEFAULT NULL);
-
 Maestro de Usuarios:
 create table masterUsers (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -57,12 +48,11 @@ street VARCHAR(100) NOT NULL,
 city VARCHAR(50) NOT NULL,
 CP varchar(10) NOT NULL,
 province VARCHAR(50) NOT NULL,
-password VARBINARY(500) NOT NULL,
-state INT DEFAULT 1
 avatarName VARCHAR(50),
+password VARBINARY(500) NOT NULL,
+state INT DEFAULT 1,
 createdAt timestamp NULL DEFAULT NULL,
-updatedAt timestamp NULL DEFAULT NULL,
-FOREIGN KEY (UserID) REFERENCES Users(ID));
+updatedAt timestamp NULL DEFAULT NULL);
 
 Categorías:
 create table  categories (
@@ -78,14 +68,14 @@ id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 userID INT NOT NULL,
 idCart INT DEFAULT NULL,
 historyBuyer INT DEFAULT NULL,
-FOREIGN KEY (UserID) REFERENCES Users(ID));
+FOREIGN KEY (UserID) REFERENCES masterusers(ID));
 
 Vendedores:
 create table sellers (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 userID INT NOT NULL,
 historySeller INT DEFAULT NULL,
-FOREIGN KEY (UserID) REFERENCES Users(ID));
+FOREIGN KEY (UserID) REFERENCES masterusers(ID));
 
 Productos:
 create table  Products (

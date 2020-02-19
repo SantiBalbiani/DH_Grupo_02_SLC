@@ -30,9 +30,7 @@ const fpath = path.join(__dirname, '../data/users.json');
         },
         getUser: (req, res) => {
             Masterusers
-			.findByPk(req.params.id, {
-			include: ['users']
-			})
+			.findByPk(req.params.id)
 			.then(masterusers => {
 				return res.render('userDetail', { 
 					title2: `Detalle de ${masterusers.name}`,
@@ -60,9 +58,7 @@ const fpath = path.join(__dirname, '../data/users.json');
         },
         editUser: (req, res) => {
             Masterusers
-			.findByPk(req.params.id, {
-			include: ['users']
-			})
+			.findByPk(req.params.id)
 			.then(masterusers => {
 				return res.render('editUser', { 
                     title2: 'Editar Usuario',
@@ -172,6 +168,7 @@ const fpath = path.join(__dirname, '../data/users.json');
             res.render('register', {title2: 'SLC: Registro', msg: "Usuario y/o contraseña inexistentes"});
         }
         },
+
         register: (req, res) => {
             //	let html = readHTML('register');
                 res.render('register', {title2: 'SLC: Registro', msg: "Hola :) Ingresá con tu email y contraseña"});
@@ -182,11 +179,10 @@ const fpath = path.join(__dirname, '../data/users.json');
 		res.cookie('user', null, { maxAge: -1 });
 		return res.redirect('/');
         },
+        
         profile: (req, res) => {
             Masterusers
-			.findByPk(req.params.id, {
-			include: ['users']
-			})
+			.findByPk(req.params.id)
 			.then(masterusers => {
                 return masterusers== undefined? res.render('notFound', {msg:"Usuario Inexistente"}):
                 res.render('userProfile', { 

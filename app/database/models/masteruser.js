@@ -18,25 +18,21 @@ module.exports = (sequelize, DataTypes) => {
       city: DataTypes.STRING,
       CP: DataTypes.STRING,
       province: DataTypes.STRING,
-      userID: DataTypes.INTEGER,
       avatarName: DataTypes.STRING,
       state: DataTypes.INTEGER,
       password: DataTypes.STRING,
   
   };
-  let config = {
-  tableName: 'masterusers',
-  timestamps: false, // createdAt - updatedAt
-  };
-    const masteruser = sequelize.define(alias, columns, config);
+  //let config = {
+  //tableName: 'masterusers',
+  //timestamps: false, // createdAt - updatedAt
+  //};
+    const masteruser = sequelize.define(alias, columns);
   
     masteruser.associate = function(models) {
       // associations can be defined here
-      masteruser.belongsTo(models.users, {
-        as: 'users',
-        foreignKey: 'userID'
-      });
     };
+
     return masteruser;
   };
   

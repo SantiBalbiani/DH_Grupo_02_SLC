@@ -27,30 +27,16 @@ values
 ("Raspberry Pi 3 Camara V2 8mpix 1080 Emakers",2,"CAMERA V2","5 V",3376,"Raspberry Pi 3 Pi 4 Camara V2 Emakers  La Raspberry Pi Camera v2 es una Cámara de alta calidad de 8 megapíxeles, incluye el sensor de imagen IMX219 de Sony diseñado para Raspberry Pi, con lente de enfoque fijo. Es capaz de tomar imágenes estáticas de 3280 x 2464 píxeles, y también es compatible con resoluciones de video 1080p30, 720p60 y 640x480p60 / 90. Se conecta a Pi a través de uno de los pequeños enchufes en la superficie superior de la placa y utiliza la interfaz CSi dedicada, diseñada especialmente para la interfaz con cámaras. Es pequeña, mide 25 mm x 23 mm x 9 mm aprox. También pesa solo 3 g, lo que lo hace perfecto para aplicaciones móviles o de otro tipo en las que el tamaño y el peso son importantes. Se conecta a Raspberry Pi por medio de un cable plano corto. El sensor de imagen Sony IMX219 de alta calidad tiene una resolución nativa de 8 megapíxeles y tiene una lente de enfoque fijo. Todo el software es compatible con la última versión del sistema operativo Raspbian  Aplicaciones: cámara de seguridad CCTV, detección de movimiento, fotografía de lapso de tiempo Compatible con todos los modelos de Raspberry Pi 1, 2 ,3 y 4.","raspberry2.PNG"),
 ("Driver Motor Arduino Drv8825 Pololu Stepstick",1,"DSF-1482","3.3V - 5V",139,"DRIVER MOTOR ARDUINO DRV8825 POLOLU STEPSTICK-[ Código Tienda.Starware 1676 ]-** ¡ HAY STOCK ! + Envíos en el DÍA + Factura A o B **** ESTA OFERTA INCLUYE **1X DRIVERControlador de motores paso a pasoPara más información y especificaciones técnicas por favor visita el sitio web del fabricante.Las imagenes de la publicación son de carácter ilustrativo.","arduino2.PNG");
 
-Usuarios
-insert into users (email, password)
+Maestro de Usuarios
+insert into masterUsers (name,surname,gender,typeDocument,document,email,telephone,street,city,CP,province,avatarName,password)
 values 
-("lady@mormont.com", "$2a$11$rg7/P2Sm7UVa/.5peW1q3OzNCckd/CiIwnSqPm2q44O0DgpiVQHei"),
-("tyron@lannister.com", "$2a$11$CG09j5QRUvC1mGW5GJCFTeBrx.v9bFmRGa2k71ScC6tMhv3NIQX9q"),
-("juan@gmail.com", "$2a$11$uaXFiqKrkjwaueRGixWfxeR6S3qfbJCNwZFqhCgGsgGiNaeJyK3Pa"),
-("jaime@casalannister.com", "$2a$11$Ei70JAXasmK1mquwVzpTBeLykoDyk9hS7daLhIUhtyodgQMmpKt26"),
-("emilia@live.com.ar", "$2a$11$58da8GJ38ektTEv3BJRyruCkOXRcvqHIzonvWZzcCn.vFjZOgR3Ii"),
-("cecilia@gmail.com", "$2a$11$NkoP45mkMHvSmwo6K/uOlOj6WY5zRQwUHbyURt4robN/M50wjvVzO"),
-("eduardo@stark.com.ar", "$2a$11$Lp6VKx/JWGq6rPcJOkGvh.X/j2lpVhyZMnQb7cw/N99HHuNB/GAu2"),
-("sofia@live.com", "$2a$11$yP1RgX//HCOrJ3Tf6k7HV.zd8qAM1yUezkh4cUXJ0b0hicIYhVXkq"),
-("pedro@casamartell.com", "$2a$11$TQOtmzzD219KrqFXFL2u5e0jQcKggc2Ip/tm7vpmgNyImWcSvRER."),
-("arya@stark.com", "$2a$11$M8H4DUE5FHmM164gvTRSEO6bRSsGXmVDFCV1Yoocjc2vHS7TtGt.6");
-
-Maestro deUsuarios
-insert into masterUsers (name,surname,gender,typeDocument,document,email,telephone,street,city,CP,province,avatarName,userID)
-values 
-("Juana","Mormont","Mujer","DNI",34123456,"lady@mormont.com",99999999,"Lima 111","Capital Federal","1107","Capital Federal","ladymormont.jpg", 1),
-("Juan Manuel","Lannister","Hombre","Pasaporte",1234567,"tyron@lannister.com",99999999,"Lima 111","Capital Federal","1107","Capital Federal","tyron.jpg", 2),
-("Juan","Snow","Hombre","DNI",45890765,"juan@gmail.com",88888888,"Lima 111","Capital Federal","1107","Capital Federal","JuanSnow.jpg", 3),
-("Jaime","Lannister","Hombre","DNI",22227890,"jaime@casalannister.com",88888888,"Lima 111","Capital Federal","1107","Capital Federal","jaime lannister.jpg",4),
-("Emilia","Clarke","Mujer","DNI",34567876,"emilia@live.com.ar",99999999,"Lima 111","Capital Federal","1107","Capital Federal","EmiliaClarke.jpg", 5),
-("Cecilia","Lannister","Mujer","DNI",44556677,"cecilia@gmail.com",99999999,"Lima 111","Capital Federal","1107","Capital Federal","CeciliaLannister.jpg", 6),
-("Eduardo","Stark","Hombre","DNI",4546734,"eduardo@stark.com.ar",88888888,"Lima 111","Capital Federal","1107","Capital Federal","EduardoStark.jpg", 7),
-("Sofia","Stark","Mujer","DNI",28285411,"sofia@live.com",88888888,"Lima 111","Capital Federal","1107","Capital Federal","SofiaStark.jpg", 8),
-("Pedro","Pascal","Hombre","DNI",34567890,"pedro@casamartell.com",88888888,"Lima 111","Capital Federal","1107","Capital Federal","PedroPascal.jpg",9),
-("Arya","Stark","Mujer","DNI",24563891,"arya@stark.com",99999999,"Lima 111","Capital Federal","1107","Capital Federal","AryaStark.jpg", 10);
+("Juana","Mormont","Mujer","DNI",34123456,"lady@mormont.com",99999999,"Lima 111","Capital Federal","1107","Capital Federal","ladymormont.jpg", "$2a$11$rg7/P2Sm7UVa/.5peW1q3OzNCckd/CiIwnSqPm2q44O0DgpiVQHei"),
+("Juan Manuel","Lannister","Hombre","Pasaporte",1234567,"tyron@lannister.com",99999999,"Lima 111","Capital Federal","1107","Capital Federal","tyron.jpg", "$2a$11$CG09j5QRUvC1mGW5GJCFTeBrx.v9bFmRGa2k71ScC6tMhv3NIQX9q"),
+("Juan","Snow","Hombre","DNI",45890765,"juan@gmail.com",88888888,"Lima 111","Capital Federal","1107","Capital Federal","JuanSnow.jpg", "$2a$11$uaXFiqKrkjwaueRGixWfxeR6S3qfbJCNwZFqhCgGsgGiNaeJyK3Pa"),
+("Jaime","Lannister","Hombre","DNI",22227890,"jaime@casalannister.com",88888888,"Lima 111","Capital Federal","1107","Capital Federal","jaime lannister.jpg", "$2a$11$Ei70JAXasmK1mquwVzpTBeLykoDyk9hS7daLhIUhtyodgQMmpKt26"),
+("Emilia","Clarke","Mujer","DNI",34567876,"emilia@live.com.ar",99999999,"Lima 111","Capital Federal","1107","Capital Federal","EmiliaClarke.jpg", "$2a$11$58da8GJ38ektTEv3BJRyruCkOXRcvqHIzonvWZzcCn.vFjZOgR3Ii"),
+("Cecilia","Lannister","Mujer","DNI",44556677,"cecilia@gmail.com",99999999,"Lima 111","Capital Federal","1107","Capital Federal","CeciliaLannister.jpg", "$2a$11$NkoP45mkMHvSmwo6K/uOlOj6WY5zRQwUHbyURt4robN/M50wjvVzO"),
+("Eduardo","Stark","Hombre","DNI",4546734,"eduardo@stark.com.ar",88888888,"Lima 111","Capital Federal","1107","Capital Federal","EduardoStark.jpg", "$2a$11$Lp6VKx/JWGq6rPcJOkGvh.X/j2lpVhyZMnQb7cw/N99HHuNB/GAu2"),
+("Sofia","Stark","Mujer","DNI",28285411,"sofia@live.com",88888888,"Lima 111","Capital Federal","1107","Capital Federal","SofiaStark.jpg", "$2a$11$yP1RgX//HCOrJ3Tf6k7HV.zd8qAM1yUezkh4cUXJ0b0hicIYhVXkq"),
+("Pedro","Pascal","Hombre","DNI",34567890,"pedro@casamartell.com",88888888,"Lima 111","Capital Federal","1107","Capital Federal","PedroPascal.jpg","$2a$11$TQOtmzzD219KrqFXFL2u5e0jQcKggc2Ip/tm7vpmgNyImWcSvRER."),
+("Arya","Stark","Mujer","DNI",24563891,"arya@stark.com",99999999,"Lima 111","Capital Federal","1107","Capital Federal","AryaStark.jpg", "$2a$11$M8H4DUE5FHmM164gvTRSEO6bRSsGXmVDFCV1Yoocjc2vHS7TtGt.6");
