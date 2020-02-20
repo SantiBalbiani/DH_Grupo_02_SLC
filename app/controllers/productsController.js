@@ -118,8 +118,12 @@ const controller = {
 	},
 
 	saveProduct: (req, res) => {
+		data = {
+			imageName: req.file.filename,
+			...req.body
+		}
 		Products
-			.create (req.body)
+			.create (data)
 			.then(product => {
 				return res.redirect ("/products");
 				})
@@ -135,8 +139,12 @@ const controller = {
 		//res.redirect('/');
 	},
 	saveEditProduct: (req, res) => {
+		data = {
+			imageName: req.file.filename,
+			...req.body
+		}
 		Products
-			.update(req.body, {
+			.update(data, {
 				where: {
 					id: req.params.id
 						}
@@ -182,6 +190,25 @@ const controller = {
 		//m.delete_(req.params.id, fpath);
 		//res.redirect("/");
 	},
+	search: (req, res) => {
+		Products
+		.findAll({
+			where: {
+				title: {[Op.like]: `%${req.query.search}%`},
+				state:1
+			}
+		})
+		.then(products => {
+			return res.render('products', { 
+				title2: "Resultados de tu búsqueda" ,
+				products
+				});
+				
+		})
+		.catch(error => res.send(error));
+	},
+
+				
 };
 
 module.exports = controller

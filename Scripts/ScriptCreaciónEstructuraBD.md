@@ -49,7 +49,7 @@ city VARCHAR(50) NOT NULL,
 CP varchar(10) NOT NULL,
 province VARCHAR(50) NOT NULL,
 avatarName VARCHAR(50),
-password VARBINARY(500) NOT NULL,
+password VARCHAR(100) NOT NULL,
 state INT DEFAULT 1,
 createdAt timestamp NULL DEFAULT NULL,
 updatedAt timestamp NULL DEFAULT NULL);

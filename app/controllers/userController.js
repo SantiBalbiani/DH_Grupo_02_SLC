@@ -77,8 +77,13 @@ const fpath = path.join(__dirname, '../data/users.json');
 
 
         saveUser: (req, res) => {
+            //req.body.password = bcrypt.hashSync(req.body.password, 11);
+            data = {
+                avatarName: req.file.filename,
+                ...req.body
+            }
             Masterusers
-			.create(req.body)
+			.create(data)
 			.then(() => res.redirect('/users'))
 		.catch(error => res.send(console.log(error)));
 
@@ -95,8 +100,23 @@ const fpath = path.join(__dirname, '../data/users.json');
           //  res.redirect('/');
         },
         saveChanges: (req, res) => {
+           req.body.password = bcrypt.hashSync(req.body.password, 11);
+           
+           if (req.file) {
+            data = {
+                avatarName: req.file.filename,
+                ...req.body
+            }
+           }else {
+            data = {
+                avatarName: req.body.avatarName,
+                ...req.body
+            }
+           }
+           
+          
             Masterusers
-			.update(req.body, {
+			.update(data, {
 				where: {
 					id: req.params.id
 						}
