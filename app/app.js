@@ -11,6 +11,7 @@ const methodOverride = require("method-override");
 const userCookieMiddleware = require('./middlewares/userCookie');
 const localsMiddleware = require('./middlewares/localsMiddleware');
 const session = require('express-session');
+var apiUsers = require('./routes/apiUsers');
 
 var app = express();
 
@@ -39,15 +40,16 @@ app.use(localsMiddleware);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
+//api
+app.use('/api/users', apiUsers);
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   res.render('notFound', {msg:"La página solicitada no existe."});
   //next(createError(404));
   next();
 });
-
-
-
 
 
 // error handler
@@ -60,5 +62,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;
