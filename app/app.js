@@ -44,6 +44,7 @@ app.use('/products', productsRouter);
 app.use('/api/users', apiUsers);
 
 
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   res.render('notFound', {msg:"La página solicitada no existe."});

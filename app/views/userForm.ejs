@@ -25,67 +25,102 @@
            <% })}; %>
           </ul>
 
-        <div class="tab">Sobre vos:
-          <p><input placeholder="Nombre..." name="name" oninput="this.className = ''"></p>
-          <p><input placeholder="Apellido..." name="surname" oninput="this.className = ''"></p>
-          <p><select id="inputState" name="gender" class="form-control">
-            <option selected>Genero</option>
+        <div> <p>Sobre vos:</p>
+          <br>
+          <!-- Nombre -->
+          <input placeholder="Nombre..." name="name"  data-name="Nombre" class="form-control" oninput="this.className = ''">
+          <p class="invalid-feedback"></p>
+          <br>
+          <!-- Apellido -->
+          <input placeholder="Apellido..." name="surname" data-name="Apellido" class="form-control" oninput="this.className = ''">
+          <p class="invalid-feedback"></p>
+          <br>
+          <!-- Género -->
+          <label>Género </label>
+          <select id="inputState" name="gender" data-name="Género" class="form-control">
+            <option value=""></option>
             <option>Hombre</option>
             <option>Mujer</option>
             <option>Prefiero no decirlo</option>
-          </select></p>
-         
-          
-            <p> <label for="avatarName" class="btn btn-primary btn-block btn-outlined">Cargá tu Foto</label>
-              <input type="file" id="avatarName" accept="images/*" name="avatarName" style="display: none"> </p>
+          </select>
+          <p class="invalid-feedback"></p>
+          <br>
+          <!-- Imagen -->
+					<label>Imagen de perfil:</label>
+					<!-- Preview Imagen -->
+					<div id="imgPreview"></div>
+						<input type="file" id="avatarName" accept="images/*" name="avatarName" class="form-control form-control-file" data-name="imagen de perfil">
+            <p class="invalid-feedback"></p>
+          <br>
+          <!-- Tipo Documento -->
             <label>Tipo de Documento</label>
-            <p><select id="inputState" name="typeDocument" class="form-control">
+            <select id="inputState" name="typeDocument" data-name="Tipo de Documento" class="form-control">
               <option value=""></option>
               <option>DNI</option>
               <option>Libreta</option>
               <option>Pasaporte</option>
-            </select></p>
-            
-            <p>
-              <input type="text" class="form-control" id="inputModelo" placeholder="Número de documento..." name="document"></p>
+            </select>
+            <p class="invalid-feedback"></p>
+            <br>
+          <!-- Documento -->
+            <input type="text" class="form-control" id="inputModelo" placeholder="Número de documento..." name="document" data-name="Documento">
+            <p class="invalid-feedback"></p>
+            <br>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div>
+          <p> Datos de Usuario:</p>
+          <br>
+           <!-- Email -->
+          <input placeholder="E-mail..." name="email" data-name="Correo Electrónico" class="form-control" oninput="this.className = ''">
+          <p class="invalid-feedback"></p>
+          <br>
+           <!-- Password -->
+          <input type="password" placeholder="Contraseña..." name="password" data-name="Contraseña" class="form-control" oninput="this.className = ''">
+          <p class="invalid-feedback"></p>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div class>
+          <p>Datos de contacto</p>
+          <br>
+           <!-- Teléfono -->
+          <input type="tel" name="telephone" placeholder="Telefono..." data-name="Teléfono" class="form-control" >
+          <p class="invalid-feedback"></p>
+          <br>
+           <!-- Calle -->
+          <input type="text" name="street" placeholder="Calle y número..." data-name="Calle" class="form-control" >
+          <p class="invalid-feedback"></p>
+          <br>
+           <!-- Ciudad -->
+          <input type="text" name="city" placeholder="Ciudad..." data-name="Ciudad" class="form-control">
+          <p class="invalid-feedback"></p>
+          <br>
+           <!-- CP -->
+          <input type="text" name="CP" placeholder="Código Postal" data-name="Código Postal" class="form-control">
+          <p class="invalid-feedback"></p>
+          <br>
+           <!-- Provincia -->
+          <input type="text" name="province" placeholder="Provincia..." data-name="Provincia" class="form-control">
+          <p class="invalid-feedback"></p>
+          <br>
+          <hr>
+          <br>
+          <!-- Términos y condiciones -->
+          <input type="checkbox" id="aceptaTerminos" value="first_checkbox">
+          <p>Al registrarme acepto los terminos y condiciones y la Politica de Privacidad de SLC Componentes Electronicos SA </p>
+        </div>
+     
+<!-- Botón de envío -->
+<div class="col-12 text-center">
+  <button type="submit" class="btn btn-info btn-lg">Registrarse</button>
+</div>
+<!-- /Botón de envío -->
+        
 
-        </div>
-
-        <div class="tab">Datos de Usuario:
-          <p><input placeholder="E-mail..." name="email" oninput="this.className = ''"></p>
-          <p><input type="password" placeholder="Contraseña..." name="password" oninput="this.className = ''"></p>
-        </div>
-        
-        <div class="tab">Datos de Contacto:
-          
-          <p> <input type="tel" name="telephone" placeholder="Telefono..."></p>
-          <p><input type="text" name="street" placeholder="Calle y número..."></p>
-          <p> <input type="text" name="city" placeholder="Ciudad..."></p>
-          <p><input type="text" name="CP" placeholder="Código Postal"></p>
-          <p><input type="text" name="province" placeholder="Provincia..."></p>
-        </div>
-        
-        <div class="tab">Perfil de Vendedor:
-          <!--<p><input type="text" name="nomVendedor" placeholder="Nombre Fantasia/Apodo"></p>
-         <p><input type="checkbox" id="utilizarApodo"  value="first_checkbox">Utilizar mi nombre y apellido como nombre fantasia/apodo</p>
-       <p><input type="checkbox" id="esVendedor" value="first_checkbox"><b>No quiero activar ahora mi perfil de vendedor</b></p> -->
-      <p><input type="checkbox" id="aceptaTerminos" value="first_checkbox">Al registrarme acepto los <a>terminos y condiciones y la Politica de Privacidad de SLC Componentes Electronicos SA</a></p>
-        </div>
-        
-        <div style="overflow:auto;">
-          <div style="float:right;">
-            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Anterior</button>
-            <button type="button" id="nextBtn" onclick="nextPrev(1)">Siguiente</button>
-          </div>
-        </div>
-        
-           <div style="text-align:center;margin-top:40px;">
-          <span class="step"></span>
-          <span class="step"></span>
-          <span class="step"></span>
-          <span class="step"></span>
-        </div>
-        
         </form>
       
         <%- include('../partials/footer'); %>
@@ -94,6 +129,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="/js/multi-step-conf.js"></script>
+<script src="/js/validator.min.js"></script>
+<script src="/js/validationsUserForm.js"></script>
 
 </body>
 </html>
