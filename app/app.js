@@ -3,7 +3,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
@@ -13,6 +12,7 @@ const localsMiddleware = require('./middlewares/localsMiddleware');
 const session = require('express-session');
 var apiUsers = require('./routes/apiUsers');
 var apiProducts = require('./routes/apiProducts');
+var bodyParser = require('body-parser');
 var app = express();
 
 // view engine setup
@@ -33,6 +33,13 @@ app.use(session({
   saveUninitialized: true
 }));
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-COntrol-Allow-Request-Method');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+  res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+  next();
+}) 
 
 app.use(userCookieMiddleware);
 app.use(localsMiddleware);
