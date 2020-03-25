@@ -12,7 +12,7 @@ const userCookieMiddleware = require('./middlewares/userCookie');
 const localsMiddleware = require('./middlewares/localsMiddleware');
 const session = require('express-session');
 var apiUsers = require('./routes/apiUsers');
-
+var apiProducts = require('./routes/apiProducts');
 var app = express();
 
 // view engine setup
@@ -42,7 +42,7 @@ app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 //api
 app.use('/api/users', apiUsers);
-
+app.use('/api/products', apiProducts);
 
 
 // catch 404 and forward to error handler

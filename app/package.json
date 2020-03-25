@@ -6,6 +6,7 @@
     "start": "npx nodemon ./bin/www"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "bcrypt": "^3.0.7",
     "bcryptjs": "^2.4.3",
     "bootstrap-icons": "^1.0.0-alpha",
