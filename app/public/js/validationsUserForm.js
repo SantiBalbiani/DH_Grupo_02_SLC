@@ -48,7 +48,7 @@ for (let oneInput of formElements)
         // 4d-I. Asignar el evento change al campo
         oneInput.addEventListener ('blur', function (){
         //4d-II. Capturar el valor del campo
-        let inputEmailValue = this.value; 
+        var inputEmailValue = this.value; 
         // 4d-III. Validar si NO está vacío y si es NO un formato de correo electrónico
         if (!validator.isEmpty(inputEmailValue) && !validator.isEmail(inputEmailValue)) {
             // 4d-IV. Agregar la clase "is-invalid" y eliminamos la clase "is-valid"
@@ -62,7 +62,29 @@ for (let oneInput of formElements)
 
             }
         })    
+        // Evento keypress para validar email en la base
+        oneInput.addEventListener('change', function (e) {
+            let emailIngresado = this.value;
+            if (emailIngresado.length > 3) {
+                fetch('http://localhost:3030/api/users')
+                    .then(response => response.json())
+                    .then(data => {
+                        for (const oneData of data) {
+                            if(oneData.email === emailIngresado)  {
+                                this.classList.add('is-invalid');
+                                this.classList.remove('is-valid');
+                                this.nextElementSibling.innerHTML = `El email ingresdo ya existe`;
+                                inputsWithErrors[this.name] = true;
+                            } 
+                        }   
+                    })                       
+                    .catch(error => console.error(error))
+            }    
+
+        })
+
     }
+
 // 4e. Validar el campo de imagen
 if (oneInput.name == 'avatarName') {
 // 4e-I. Asignar el evento change
@@ -92,6 +114,46 @@ oneInput.addEventListener('change', function () {
     }
 });
 
+}
+// 4f. Validar el campo de nombre
+if (oneInput.name === 'name') {
+    // 4f-I. Asignar el evento blur al campo
+    oneInput.addEventListener ('blur', function (){
+    //4f-II. Capturar el valor del campo
+    let inputNameValue = this.value; 
+    // 4f-III. Validar si NO está vacío y si tiene al menos dos caracteres
+    if (!validator.isEmpty(inputNameValue) && !validator.isLength(inputNameValue,{min:2, max: 100})) {
+        // 4f-IV. Agregar la clase "is-invalid" y eliminamos la clase "is-valid"
+        this.classList.add('is-invalid');
+        this.classList.remove('is-valid');
+        // 4f-V. Al <p> que está inmediatamente después del campo se le agrega el texto de error
+        this.nextElementSibling.innerHTML = `Debés ingresar un nombre que tenga al menos dos letras`;
+
+        // Agregar al objeto de errores, un error para ese campo
+           inputsWithErrors[this.name] = true;
+
+        }
+    })    
+}
+// 4g. Validar el campo de contraseña
+if (oneInput.name === 'password') {
+    // 4g-I. Asignar el evento blur al campo
+    oneInput.addEventListener ('blur', function (){
+    //4g-II. Capturar el valor del campo
+    let inputPasswordValue = this.value; 
+    // 4f-III. Validar si NO está vacío y si tiene al menos ocho caracteres
+    if (!validator.isEmpty(inputPasswordValue) && !validator.isLength(inputPasswordValue,{min:8, max: 50})) {
+        // 4f-IV. Agregar la clase "is-invalid" y eliminamos la clase "is-valid"
+        this.classList.add('is-invalid');
+        this.classList.remove('is-valid');
+        // 4f-V. Al <p> que está inmediatamente después del campo se le agrega el texto de error
+        this.nextElementSibling.innerHTML = `La contraseña debe tener al menos 8 caracteres`;
+
+        // Agregar al objeto de errores, un error para ese campo
+           inputsWithErrors[this.name] = true;
+
+        }
+    })    
 }
 
 }
