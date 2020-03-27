@@ -12,18 +12,18 @@ class Navbar extends React.Component {
     render(){
     let enlaces = [
         {
-            url: "http://localhost:3030/",
-            text: "home"
-        },
-        {
             url: "/productos",
-            text: "productos",
+            text: "products",
         },
         {
             url: "/contactos",
-            text: "contactos",
+            text: "Users",
 
-        }
+        },
+        {
+            url: "http://localhost:3030/",
+            text: "Go Back to SLC"
+        },
     ]
     return (
         <React.Fragment>
