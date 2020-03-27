@@ -1,6 +1,6 @@
 import React from "react";
 import NavbarItem from './NavBarItem';
-import './styles/navBar.css';
+
 
 class Navbar extends React.Component {
     constructor(props){
@@ -22,12 +22,15 @@ class Navbar extends React.Component {
         },
         {
             url: "http://localhost:3030/",
-            text: "Go Back to SLC"
+            text: "Go Back to SLC",
         },
     ]
     return (
         <React.Fragment>
-            <nav className="nav">
+            <div className="navbar">
+            <div class="navbar-inner">
+            <a class="brand" href="#">Dashboard</a>
+            <ul class="nav">
                 {
                     enlaces.map(function (unE, i) {
                         if (i === 0) {
@@ -36,7 +39,9 @@ class Navbar extends React.Component {
                         return <NavbarItem className="nav" key={i} url={unE.url} text={unE.text} />
                     })
                 }
-            </nav>
+                </ul>
+            </div>
+            </div>
             { this.state.children }
         </React.Fragment>
     )

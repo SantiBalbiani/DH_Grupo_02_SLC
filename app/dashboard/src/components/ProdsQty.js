@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios';
+import indBox from './styles/indicator.css';
 
 class ProdsQty extends React.Component{
 
@@ -24,10 +25,10 @@ class ProdsQty extends React.Component{
 
     render(){
     return(
-        <div class="card" style={{width: "18rem"}}>
-        <img class="card-img-top" src={this.state.img} alt="Card image cap" />
-          <div class="card-body">
+        <div className={"card"} style={{width: "18rem"}}>
             <h5 class="card-title">{this.state.title}</h5>
+            <img class="card-img-top" src={this.state.img} alt="Card image cap" />
+            <div class="card-body">
             <p class="card-text">Some quick { this.state.products.length }</p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>

@@ -1,0 +1,25 @@
+.card{
+/*     border-color: black;
+    border-width: 1em; */
+    background-color:  cornflowerblue; 
+/*     width: "18rem";
+    position: relative; */
+}
+
+/* .card-img-top{
+    position: absolute;
+    top: 5px;
+    left: 10px;
+} */
+
+/* .card-title{
+    position: absolute;
+    
+    left: 20px;
+}
+
+.card-body{
+    position: absolute;
+    top: 5px;
+    left: 10px;
+} */
