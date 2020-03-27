@@ -6,18 +6,29 @@ import LineGraph from './components/LineGraph';
 import NavBar from './components/NavBar';
 
 function App() {
+  const images = {
+    categoryLogo : './images/category.png',
+  };
   return (
     <div className="App">
-     
+        
 			<NavBar>
 				<p>Esto es un párrafo</p>
 				<hr/>
 				<img alt="un jean" src="https://unspun.s3.amazonaws.com/2019/12/jean-1022x1080.png" width="100" />
         </NavBar>
-     <LineGraph />
+        <div class="col-xl-6 col-lg-6 mb-4">
+        <ProdsQty
+      img = {require(`${images.categoryLogo}`)} title="Cantidad de Productos de Categoría" />
+      </div>
       <ProdsQty
-      nro = '2' />
+      img = {logo} title="Cantidad de Productos de Categoría" />
+      <ProdsQty
+      img = {logo} title="Cantidad de Productos de Categoría" />
+     <LineGraph />
+      
     </div>
+    
   );
 }
 
