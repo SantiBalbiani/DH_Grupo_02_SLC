@@ -1,6 +1,6 @@
 import React from "react";
 import NavbarItem from './NavBarItem';
-
+import './styles/navBar.css';
 
 class Navbar extends React.Component {
     constructor(props){
@@ -28,9 +28,9 @@ class Navbar extends React.Component {
     return (
         <React.Fragment>
             <div className="navbar">
-            <div class="navbar-inner">
-            <a class="brand" href="#">Dashboard</a>
-            <ul class="nav">
+            <div className="navbar-inner">
+            <a className="brand" href="#">Dashboard</a>
+            <ul className="nav">
                 {
                     enlaces.map(function (unE, i) {
                         if (i === 0) {

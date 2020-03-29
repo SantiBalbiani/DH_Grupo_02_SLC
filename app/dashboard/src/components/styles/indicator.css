@@ -2,10 +2,24 @@
 /*     border-color: black;
     border-width: 1em; */
     background-color:  cornflowerblue; 
+    max-width:100%;
+    height:auto;
 /*     width: "18rem";
     position: relative; */
 }
+.card-img-top {
+    width: 50%;
+    height: 50%;
 
+    max-width:20%;
+}
+
+.card-text{
+    font-size: 340%;
+    font-weight: 500;
+}
+
+img {max-width:100%; height:auto}
 /* .card-img-top{
     position: absolute;
     top: 5px;
