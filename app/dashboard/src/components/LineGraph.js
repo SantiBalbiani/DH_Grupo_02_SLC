@@ -33,13 +33,12 @@ export default class LineGraph extends Component {
         
 
         
-            axios.get('http://localhost:3030/api/products/1')
+        axios.get('http://localhost:3030/api/products/1')
             .then(res => {
             const productos = res.data;
-            this.setState( { data: productos });
-            console.log(this.state.data);
-        });
-        console.log(this.state.data);
+            this.setState({ data: productos });
+                
+        console.log(this.state.data[1]);
         new Chart(myChartRef, {
             type: "line",
             data: {
@@ -57,7 +56,7 @@ export default class LineGraph extends Component {
                 //Customize chart options
             }
         });
-       
+    });
     }
     render() {
         return (
