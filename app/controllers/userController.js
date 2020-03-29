@@ -179,19 +179,20 @@ const fpath = path.join(__dirname, '../data/users.json');
 				}
                 res.locals.logged = true;
                 res.locals.user = elUser;
-                res.render('userProfile', {title2: "Bienvenido " + elUser.nombre + "!", elUser});
+                var masterusers = elUser;
+                res.render('userProfile', {title2: "Bienvenido " + elUser.nombre + "!", elUser, masterusers});
                // res.render('editUser', {title2: "Bienvenido " + elUser.nombre + "!", msg:'Acceso exitoso!', elUser})
             }else{
-                res.render('register', {title2: 'SLC: Registro', msg: "Su contraseña es incorrecta. Intente de nuevo"});
+                return res.render('register', {title2: 'SLC: Registro', msg: "Su contraseña es incorrecta. Intente de nuevo"});
             }
         }else{
-            res.render('register', {title2: 'SLC: Registro', msg: "Usuario y/o contraseña inexistentes"});
+            return res.render('register', {title2: 'SLC: Registro', msg: "Usuario y/o contraseña inexistentes"});
         }
         },
 
         register: (req, res) => {
             //	let html = readHTML('register');
-                res.render('register', {title2: 'SLC: Registro', msg: "Hola :) Ingresá con tu email y contraseña"});
+                return res.render('register', {title2: 'SLC: Registro', msg: "Hola :) Ingresá con tu email y contraseña"});
             },
 
         logOut: (req, res) => {

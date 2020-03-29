@@ -120,6 +120,7 @@ const controller = {
 	saveProduct: (req, res) => {
 		data = {
 			imageName: req.file.filename,
+			createdAt: new Date(),
 			...req.body
 		}
 		Products

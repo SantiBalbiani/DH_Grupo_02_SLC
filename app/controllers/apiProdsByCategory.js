@@ -19,27 +19,24 @@ const getValues = ( field, value, entity) => {
 
 const controller = {
 	index: (req, res) => {
-    
-        
-         
             Products
                 .findAll({
-                    attributes: ["idCategory"],
+                    attributes: ["idCategory", "createdAt"],
                     where: { idCategory: req.params.idCat }
                 })
                 .then(result => {
                     return res.json(result);
                 }).catch(error => res.json(error));
-            }   
-            
-        
-
-      //  var prods = getValues( "idCategory", req.params.idCat, Products);
-       
-        
-        
- //       return res.json(prods);
+            },
+    allTheCategories: (req, res) =>{ 
+               Categories
+                 .findAll()
+                    .then(result => {
+                        return res.json(result);
+                    })
+                    .catch(error => res.json(error));
 	
+        }
 }
 
 

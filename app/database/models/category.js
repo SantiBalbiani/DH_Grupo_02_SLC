@@ -15,19 +15,19 @@ module.exports = (sequelize, DataTypes) => {
 		timestamps: false, // createdAt - updatedAt
 	};*/
     
-    const categories = sequelize.define(alias, columns);
+    const category = sequelize.define(alias, columns);
 
   
 
-  categories.associate = function(models) {
+  category.associate = function(models) {
     // associations can be defined here
     // hasMany
-      categories.hasMany(models.products, {
+      category.hasMany(models.products, {
         as: 'products',
         foreignKey: 'idCategory'
       })
     
 
   };
-  return categories;
+  return category;
 };
