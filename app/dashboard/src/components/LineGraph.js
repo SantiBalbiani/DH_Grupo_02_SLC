@@ -23,7 +23,8 @@ export default class LineGraph extends Component {
     constructor(props){
         super(props);
         this.state = {
-            data: 0
+            data: 0,
+            param: props.param,
         }
     }
     chartRef = React.createRef();
@@ -33,7 +34,7 @@ export default class LineGraph extends Component {
         
 
         
-        axios.get('http://localhost:3030/api/products/1')
+        axios.get(`http://localhost:3030/api/products/${this.state.param}`)
             .then(res => {
             const productos = res.data;
             this.setState({ data: productos });

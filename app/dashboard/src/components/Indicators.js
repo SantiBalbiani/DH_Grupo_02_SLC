@@ -40,7 +40,7 @@ class Indicators extends React.Component{
             
             <div className="card-body">
             <p className="card-text">{ this.state.products.length }</p>
-            <a href="#" className="btn btn-primary">Go somewhere</a>
+            <a href="#" className="btn btn-primary">Watch Graphic</a>
           </div>
         </div>
     ); 
