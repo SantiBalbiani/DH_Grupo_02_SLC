@@ -13,6 +13,7 @@ class LineGraph extends Component {
             data: 0,
             param: props.param,
             months: props.months,
+            title: props.label,
         }
     }
     chartRef = React.createRef();
@@ -43,7 +44,7 @@ class LineGraph extends Component {
                 labels: lastMonthsNames,
                 datasets: [
                     {
-                        label: "New Arduino Products",
+                        label: `${this.state.title}`,
                         backgroundColor: "#597ff9",
                         data: quantity, 
                     }

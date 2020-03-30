@@ -16,13 +16,14 @@ class App extends React.Component {
     this.state = {
       categories: [],
       idCat_graphic: 1,
-      
+      label: 'new Arduino Products'
     }
   }
 
-  handler(idCategory){
+  handler(idCategory, name){
     this.setState(
-      { idCat_graphic: idCategory }
+      { idCat_graphic: idCategory,
+      label: `New ${name} products`, }
     );
     
 
@@ -59,7 +60,7 @@ class App extends React.Component {
         </div>
         <div className="row">
           <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-              <LineGraph key={Math.random()} param = {this.state.idCat_graphic} months = '4' />
+              <LineGraph key={Math.random()} param = {this.state.idCat_graphic} months = '4' label= {this.state.label} />
 
           </div>
         </div>

@@ -44,7 +44,7 @@ class Indicators extends React.Component{
             <h5 className="card-title">{this.state.title}</h5>
             <div className="card-body">
             <p className="card-text">{ this.state.products.length }</p>
-            <button type="button" className="btn btn-primary" onClick={ () => handler(this.state.idCategory)    }>Show Graphic</button>
+            <button type="button" className="btn btn-primary" onClick={ () => handler(this.state.idCategory, this.state.title)    }>Show Graphic</button>
           </div>
         </div>
         </div>
