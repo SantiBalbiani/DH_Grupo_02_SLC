@@ -1,22 +1,9 @@
 import React, { Component } from 'react'
 import Chart from "chart.js";
 import classes from "./LineGraph.module.css";
-import axios from 'axios';
 import API from '../config/API';
-function getLast3Months() {
+import DateHandler from '../config/datesHandler';
 
-    var monthNames = ["January", "February", "March", "April", "May", "June",
-      "July", "August", "September", "October", "November", "December"
-    ];
-  
-    var today = new Date();
-    var last3Months = []
-  
-    for (let i = 0; i < 3; i++) {
-      last3Months.push(monthNames[(today.getMonth() - i)] + ' - ' +today.getFullYear()  );
-    }
-    return last3Months.reverse();
-  }
 
 export default class LineGraph extends Component {
 
@@ -25,35 +12,50 @@ export default class LineGraph extends Component {
         this.state = {
             data: 0,
             param: props.param,
+            months: props.months,
         }
     }
     chartRef = React.createRef();
     
   async  componentDidMount() {
         const myChartRef = this.chartRef.current.getContext("2d");
-        
         let prodsByCat = await API.get(`http://localhost:3030/api/products/${this.state.param}`);
-        
         prodsByCat = prodsByCat.data;
-
+        prodsByCat = prodsByCat.filter( aData => aData.createdAt !== null);
         this.setState({ data: prodsByCat });
+        let fechasDB = this.state.data.map( (aData) => new Date(aData.createdAt) );
+        let lastMonths = DateHandler.getLastMonths(this.state.months); 
+        let quantity = [];
+        for( let i=0; i < lastMonths.length; i++){
+            let lastDayOfMonth = DateHandler.getLastDayOfMonth(lastMonths[i].getFullYear(), lastMonths[i].getMonth()); 
+            let rangoFechas = {
+                fechaDesde: lastMonths[i],
+                fechaHasta: lastDayOfMonth,
+            }; 
+            quantity.push(  (fechasDB.filter( aDate => ((aDate <= rangoFechas.fechaHasta) && (aDate >=rangoFechas.fechaDesde)))).length );
+        } 
+
+       let lastMonthsNames = DateHandler.getLastMonthsNames(lastMonths);
+
+       
+
+
         
 
         new Chart(myChartRef, {
             type: "line",
             data: {
-                //Bring in data
-                labels: getLast3Months(),
+                labels: lastMonthsNames,
                 datasets: [
                     {
-                        label: "New Products",
+                        label: "New Arduino Products",
                         backgroundColor: "#597ff9",
-                        data: [3, 5, 2], // La cant de productos por mes
+                        data: quantity, 
                     }
                 ]
             },
             options: {
-                //Customize chart options
+               
             }
         });
     

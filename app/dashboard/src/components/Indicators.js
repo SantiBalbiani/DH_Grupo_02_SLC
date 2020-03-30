@@ -16,6 +16,7 @@ class Indicators extends React.Component{
     constructor(props){
         super(props);
         this.state = {
+            idx: props.idx,
             img: props.img,
             title: props.title,
             idCategory: props.idCategory,
