@@ -160,11 +160,51 @@ text-decoration: underline;
     width: auto\9; /* ie8 
 } 
 */
-@media (max-width: 460px){
+
+#primeraCol{
+  display: flex;
+  justify-content: flex-end;
+}
+
+#segundaCol{
+  display: flex;
+  justify-content: center;
+}
+
+#terceraCol{
+  display: flex;
+  justify-content: flex-start;
+}
+
+#cuartaCol{
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px){
   .combos{
     width: 118%;
   }
-  .col-xl-3{
+  
+  #primeraCol{
+    display: flex;
     justify-content: center;
   }
+  
+  #segundaCol{
+    display: flex;
+    justify-content: center;
+  }
+  
+  #terceraCol{
+    display: flex;
+    justify-content: center;
+  }
+
+  #cuartaCol{
+    display: flex;
+    justify-content: center;
+  }
+
+
 }
