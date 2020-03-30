@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+body {
+    font-family: 'Montserrat', sans-serif;
+   }
+
+.brand{
+    align-items: center;
+    align-self: center;
+    text-align: center;
+}
+
+.vertical-menu {
+    width: 90%; /* Set a width if you like */
+  }
+  
+  .vertical-menu a {
+    background-color: #eee; /* Grey background color */
+    color: black; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 5%; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+  }
+  
+  .vertical-menu a:hover {
+    background-color: #ccc; /* Dark grey background on mouse-over */
+  }
+  
+  .vertical-menu a.active {
+    background-color: rgb(76, 94, 175); /* Add a green color to the "active/current" link */
+    color: white;
+  }
+
+  ul{
+    list-style-type: none;
+  }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Chart from "chart.js";
-import classes from "./LineGraph.module.css";
+import classes from "./styles/LineGraph.module.css";
 import API from '../config/API';
 import DateHandler from '../config/datesHandler';
 
@@ -36,11 +36,6 @@ export default class LineGraph extends Component {
         } 
 
        let lastMonthsNames = DateHandler.getLastMonthsNames(lastMonths);
-
-       
-
-
-        
 
         new Chart(myChartRef, {
             type: "line",

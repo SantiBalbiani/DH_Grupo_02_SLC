@@ -22,15 +22,15 @@ class Navbar extends React.Component {
         },
         {
             url: "http://localhost:3030/",
-            text: "Go Back to SLC",
+            text: "Back to SLC",
         },
     ]
     return (
         <React.Fragment>
-            <div className="navbar">
-            <div className="navbar-inner">
+            <div className="vertical-menu">
+            
             <a className="brand" href="#">Dashboard</a>
-            <ul className="nav">
+            <ul className="brand">
                 {
                     enlaces.map(function (unE, i) {
                         if (i === 0) {
@@ -40,7 +40,7 @@ class Navbar extends React.Component {
                     })
                 }
                 </ul>
-            </div>
+            
             </div>
             { this.state.children }
         </React.Fragment>

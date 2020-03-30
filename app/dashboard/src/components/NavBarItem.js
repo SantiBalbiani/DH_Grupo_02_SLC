@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function NavbarItem (props) {
     return (
         <li className={`${props.active ? 'active' : ''}`} >
-           <a href={props.url}> {props.text.toUpperCase()} </a>
+           <a href={props.url}> {props.text} </a>
         </li>
     )
 }
