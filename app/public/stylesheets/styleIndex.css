@@ -164,4 +164,7 @@ text-decoration: underline;
   .combos{
     width: 118%;
   }
+  .col-xl-3{
+    justify-content: center;
+  }
 }
