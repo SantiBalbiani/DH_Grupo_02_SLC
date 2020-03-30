@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+/* import logo from './logo.svg'; */
 import categoryIMG from './images/category2.jpg';
 import './App.css';
 import Indicators from './components/Indicators';
@@ -12,23 +12,36 @@ class App extends React.Component {
   
   constructor(props){
     super(props);
+    this.handler = this.handler.bind(this);
     this.state = {
       categories: [],
-      idCat_graphic: 2,
+      idCat_graphic: 1,
+      
     }
   }
 
-  onUpdateGraph(idCategory){
-    
+  handler(idCategory){
     this.setState(
       { idCat_graphic: idCategory }
-    )
+    );
+    
+
+  /*   if (this.state.idCat_graphic !== idCategory){
+      this.setState(
+        { idCat_graphic: 1 }
+      );
+      console.log(this.state.idCat_graphic);
+    } */
+    
+    
   }
 
+
+
   render(){
-    const images = {
+/*     const images = {
       categoryLogo : './images/category.png',
-    };
+    }; */
   return (
       <React.Fragment>
 			
@@ -42,11 +55,11 @@ class App extends React.Component {
 
         <div className="row">
             {this.state.categories.map( (cat, idx) => 
-            <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12"> <Indicators idx = {idx} img = {categoryIMG} title = {cat.categoryName} idCategory = {cat.id} onUpdateGraph = {this.onUpdateGraph.bind(this)} /> </div>)}
+             <Indicators key={idx} img={categoryIMG} title={cat.categoryName} idCategory={cat.id} handler={this.handler.bind(this)} />)}
         </div>
         <div className="row">
           <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-              <LineGraph  param = {this.state.idCat_graphic} months = '4' />
+              <LineGraph key={Math.random()} param = {this.state.idCat_graphic} months = '4' />
           </div>
         </div>
           </div>
@@ -61,6 +74,7 @@ async componentDidMount(){
   this.setState({
     categories: allCategories,
   }); 
+
 }
 
 

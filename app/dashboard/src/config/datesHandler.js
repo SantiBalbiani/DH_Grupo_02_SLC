@@ -7,8 +7,8 @@ const datesHandler = {
         return new Date((new Date(Year, Month+1, 1)) - 1);
 },
     getLastMonths: (n) => {
-    var monthNames = ["January", "February", "March", "April", "May", "June",
-      "July", "August", "September", "October", "November", "December"];
+    /* var monthNames = ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"]; */
   
     var today = new Date();
     var lastMonths = []

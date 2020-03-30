@@ -5,7 +5,7 @@ import API from '../config/API';
 import DateHandler from '../config/datesHandler';
 
 
-export default class LineGraph extends Component {
+class LineGraph extends Component {
 
     constructor(props){
         super(props);
@@ -19,6 +19,7 @@ export default class LineGraph extends Component {
     
   async  componentDidMount() {
         const myChartRef = this.chartRef.current.getContext("2d");
+        console.log(this.state.param);
         let prodsByCat = await API.get(`http://localhost:3030/api/products/${this.state.param}`);
         prodsByCat = prodsByCat.data;
         prodsByCat = prodsByCat.filter( aData => aData.createdAt !== null);
@@ -66,3 +67,5 @@ export default class LineGraph extends Component {
         )
     }
 }
+
+export default LineGraph;
