@@ -19,12 +19,11 @@ class LineGraph extends Component {
     
   async  componentDidMount() {
         const myChartRef = this.chartRef.current.getContext("2d");
-        console.log(this.state.param);
         let prodsByCat = await API.get(`http://localhost:3030/api/products/${this.state.param}`);
         prodsByCat = prodsByCat.data;
         prodsByCat = prodsByCat.filter( aData => aData.createdAt !== null);
-        this.setState({ data: prodsByCat });
-        let fechasDB = this.state.data.map( (aData) => new Date(aData.createdAt) );
+       /*  this.setState({ data: prodsByCat }); */
+        let fechasDB = prodsByCat.map( (aData) => new Date(aData.createdAt) );
         let lastMonths = DateHandler.getLastMonths(this.state.months); 
         let quantity = [];
         for( let i=0; i < lastMonths.length; i++){
