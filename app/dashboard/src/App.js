@@ -43,10 +43,7 @@ class App extends React.Component {
 }
 async componentDidMount(){
   let allCategories = await API.get('products/allCategories');
-
   allCategories = allCategories.data;
-  console.log(allCategories);
-
   this.setState({
     categories: allCategories,
   }); 

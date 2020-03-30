@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Chart from "chart.js";
 import classes from "./LineGraph.module.css";
 import axios from 'axios';
-
+import API from '../config/API';
 function getLast3Months() {
 
     var monthNames = ["January", "February", "March", "April", "May", "June",
@@ -29,17 +29,16 @@ export default class LineGraph extends Component {
     }
     chartRef = React.createRef();
     
-    componentDidMount() {
+  async  componentDidMount() {
         const myChartRef = this.chartRef.current.getContext("2d");
         
-
+        let prodsByCat = await API.get(`http://localhost:3030/api/products/${this.state.param}`);
         
-        axios.get(`http://localhost:3030/api/products/${this.state.param}`)
-            .then(res => {
-            const productos = res.data;
-            this.setState({ data: productos });
-                
-        console.log(this.state.data[1]);
+        prodsByCat = prodsByCat.data;
+
+        this.setState({ data: prodsByCat });
+        
+
         new Chart(myChartRef, {
             type: "line",
             data: {
@@ -57,7 +56,7 @@ export default class LineGraph extends Component {
                 //Customize chart options
             }
         });
-    });
+    
     }
     render() {
         return (
