@@ -25,7 +25,7 @@ class Indicators extends React.Component{
 
     componentDidMount() {
 
-        axios.get('http://localhost:3030/api/products/1')
+        axios.get(`http://localhost:3030/api/products/${this.state.idCategory}`)
           .then(res => {
             const productos = res.data;
             this.setState({ products: productos });
