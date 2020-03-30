@@ -13,11 +13,16 @@ class Navbar extends React.Component {
     let enlaces = [
         {
             url: "/productos",
-            text: "products",
+            text: "Product Sales",
         },
         {
             url: "/contactos",
             text: "Users",
+
+        },
+        {
+            url: "/contactos",
+            text: "Categories",
 
         },
         {

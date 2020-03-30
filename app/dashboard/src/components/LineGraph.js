@@ -32,7 +32,7 @@ export default class LineGraph extends Component {
                 fechaDesde: lastMonths[i],
                 fechaHasta: lastDayOfMonth,
             }; 
-            quantity.push(  (fechasDB.filter( aDate => ((aDate <= rangoFechas.fechaHasta) && (aDate >=rangoFechas.fechaDesde)))).length );
+            quantity.push((fechasDB.filter( aDate => ((aDate <= rangoFechas.fechaHasta) && (aDate >=rangoFechas.fechaDesde)))).length );
         } 
 
        let lastMonthsNames = DateHandler.getLastMonthsNames(lastMonths);

@@ -21,8 +21,10 @@ class Indicators extends React.Component{
             title: props.title,
             idCategory: props.idCategory,
             products: [],
+            onUpdateGraph: props.onUpdateGraph,
         }
     }
+
 
     componentDidMount() {
 
@@ -41,7 +43,7 @@ class Indicators extends React.Component{
             
             <div className="card-body">
             <p className="card-text">{ this.state.products.length }</p>
-            <a href="#" className="btn btn-primary">Watch Graphic</a>
+            <button type="button" className="btn btn-primary" onClick={ () => this.state.onUpdateGraph(this.state.idCategory) }>Show Graphic</button>
           </div>
         </div>
     ); 
