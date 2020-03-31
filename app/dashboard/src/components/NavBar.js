@@ -14,23 +14,21 @@ class Navbar extends React.Component {
     render(){
     let enlaces = [
         {
-            url: "/productos",
-            text: "Product Sales",
-        },
-        {
             url: "/contactos",
             text: "Users",
 
         },
         {
+            url: "/productos",
+            text: "Product Sales",
+        },
+        
+        {
             url: "/contactos",
             text: "Categories",
 
         },
-        {
-            url: "http://localhost:3030/",
-            text: "Back to SLC",
-        },
+
     ]
     var updDashboard  =  this.props.updDashboard;
     return (

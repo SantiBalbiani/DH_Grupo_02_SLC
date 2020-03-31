@@ -14,9 +14,9 @@ import RangeSlider from 'react-bootstrap-range-slider';
 
 const icons = [categoryIMG, usersIMG, salesIMG, usersIMG ]
 const icons2 = [
-  './images/category2.jpg',
   './images/usersIcon.png',
   './images/salesIcon.jpg',
+  './images/category2.jpg'
 ]
 class App extends React.Component {
   
@@ -29,7 +29,7 @@ class App extends React.Component {
       id_graphic: 1,
       label: ' ',
       value: 4,
-      img: 0,
+      img: 2,
       
     }
   }
