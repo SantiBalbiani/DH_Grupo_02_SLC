@@ -14,6 +14,8 @@ class LineGraph extends Component {
             param: props.param,
             months: props.months,
             title: props.label,
+            isTypeLine: props.typeGr,
+            typeGr: 'bar',
         }
     }
     chartRef = React.createRef();
@@ -23,7 +25,7 @@ class LineGraph extends Component {
         let prodsByCat = await API.get(`http://localhost:3030/api/products/${this.state.param}`);
         prodsByCat = prodsByCat.data;
         prodsByCat = prodsByCat.filter( aData => aData.createdAt !== null);
-       /*  this.setState({ data: prodsByCat }); */
+        (this.state.isTypeLine)? this.setState({typeGr: 'line'}) : this.setState({typeGr: 'bar'});
         let fechasDB = prodsByCat.map( (aData) => new Date(aData.createdAt) );
         let lastMonths = DateHandler.getLastMonths(this.state.months); 
         let quantity = [];
@@ -39,7 +41,7 @@ class LineGraph extends Component {
        let lastMonthsNames = DateHandler.getLastMonthsNames(lastMonths);
 
         new Chart(myChartRef, {
-            type: "line",
+            type: this.state.typeGr,
             data: {
                 labels: lastMonthsNames,
                 datasets: [

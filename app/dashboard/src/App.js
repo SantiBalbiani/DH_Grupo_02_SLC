@@ -11,9 +11,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import API from './config/API';
 import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
 import RangeSlider from 'react-bootstrap-range-slider';
+import BootstrapSwitchButton from 'bootstrap-switch-button-react';
 
-const icons = [categoryIMG, usersIMG, salesIMG, usersIMG ]
-const icons2 = [
+const icons = [
   './images/usersIcon.png',
   './images/salesIcon.jpg',
   './images/category2.jpg'
@@ -30,7 +30,7 @@ class App extends React.Component {
       label: ' ',
       value: 4,
       img: 2,
-      
+      isTypeLine: false,
     }
   }
 
@@ -41,11 +41,6 @@ class App extends React.Component {
 
   updDashboard(opt){
          this.updIcon(opt); 
-
-        /*   this.setState({img: opt,
-           }); */
-
-        console.log(this.state.img);
   }
 
   handler(id, name){
@@ -67,14 +62,23 @@ class App extends React.Component {
         <div className="col-9">
         <div className="row">
             {this.state.data.map( (cat, idx) => 
-             <Indicators key={idx} img={`${icons2[this.state.img]}`} title={cat.categoryName} idCategory={cat.id} handler={this.handler.bind(this)} />)}
+             <Indicators key={idx} img={`${icons[this.state.img]}`} title={cat.categoryName} idCategory={cat.id} handler={this.handler.bind(this)} />)}
         </div>
         <div className="row">
           <div className="col-xl-10 col-lg-12 col-md-12 col-sm-12 col-12">
-              <LineGraph key={Math.random()} param = {this.state.id_graphic} months = {this.state.value} label= {this.state.label} />
+              <LineGraph key={Math.random()} param = {this.state.id_graphic} months = {this.state.value} label= {this.state.label} typeGr = {this.state.isTypeLine} />
           </div>
           <div className="col-xl-2 col-lg-12 col-md-12 col-sm-12 col-12">
-           <div className="text"> Choose the Time Length [Months] </div>
+          <div className="text"> Graphic Type </div>
+          <BootstrapSwitchButton
+                  checked={false}
+                  onlabel='Line'
+                  offlabel='Bar'
+                  onChange={(checked) => {
+                      this.setState({ isTypeLine: checked })
+                  }}
+              />
+           <div className="text"> Time Length [Months] </div>
            <RangeSlider value={this.state.value} min={1} max={12} step={1} onChange={ event => this.setState( { value: event.target.value })}  /> 
           </div>
         </div>
