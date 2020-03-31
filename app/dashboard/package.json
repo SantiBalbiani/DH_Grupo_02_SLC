@@ -10,6 +10,7 @@
     "bootstrap": "^4.4.1",
     "bootstrap-switch-button-react": "^1.2.0",
     "canvasjs": "^1.8.3",
+    "chart.js": "^2.9.3",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.0",
     "react-bootstrap-range-slider": "^0.3.1",
