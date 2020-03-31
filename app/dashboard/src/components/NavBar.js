@@ -3,11 +3,13 @@ import NavbarItem from './NavBarItem';
 import './styles/navBar.css';
 
 class Navbar extends React.Component {
+
     constructor(props){
         super(props);
         this.state = {
-            props: props,
-        }
+            updDashboard: props.updDashboard,
+            test: props.test,
+        };
     }
     render(){
     let enlaces = [
@@ -30,23 +32,23 @@ class Navbar extends React.Component {
             text: "Back to SLC",
         },
     ]
+    var updDashboard  =  this.props.updDashboard;
     return (
         <React.Fragment>
             <div className="vertical-menu">
             
             <a className="brand" href="#">Dashboard</a>
-            <ul className="brand">
+            
                 {
                     enlaces.map(function (unE, i) {
-                        if (i === 0) {
-                            return  <NavbarItem className="nav" key={i} url={unE.url} text={unE.text} active={true} />
-                        }
-                        return <NavbarItem className="nav" key={i} url={unE.url} text={unE.text} />
+                        /* if (i === 0) {
+                            return  <NavbarItem className="nav" key={i} url={unE.url} text={unE.text} active={true} updDashboard={this.state.updDashboard.bind(this)} test={this.state.test} />
+                        } */
+                        return <NavbarItem className="nav" key={i} nro={i} url={unE.url} text={unE.text} updDashboard={updDashboard.bind(this)}  />
                     })
                 }
-                </ul>
-            
-            </div>
+                </div>
+                
             { this.state.children }
         </React.Fragment>
     )

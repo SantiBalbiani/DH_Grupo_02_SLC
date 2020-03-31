@@ -3,9 +3,16 @@ import PropTypes from 'prop-types';
 
 function NavbarItem (props) {
     return (
-        <li className={`${props.active ? 'active' : ''}`} >
+       /*  <li className={`${props.active ? 'active' : ''}`} >
            <a href={props.url}> {props.text} </a>
-        </li>
+        </li> */
+        <div className="row">
+                <div className="col-12">
+        <button className="btn btn-primary" onClick={ () => props.updDashboard(props.nro)} >
+             {props.text} 
+        </button>
+        </div>
+        </div>
     )
 }
 
