@@ -1,3 +1,9 @@
+@media (max-width: 768px){
+*{
+  box-sizing: initial;
+}
+
+}
 .App {
   text-align: center;
 }

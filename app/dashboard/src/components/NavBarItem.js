@@ -9,7 +9,7 @@ function NavbarItem (props) {
         <div className="row">
                 <div className="col-12 d-flex justify-content-center">
         <div className="botonesMenu">
-        <button className="btn btn-primary" onClick={ () => props.updDashboard(props.nro)} >
+        <button className="btn btn-primary custom" onClick={ () => props.updDashboard(props.nro)} >
              {props.text} 
         </button>
         </div>

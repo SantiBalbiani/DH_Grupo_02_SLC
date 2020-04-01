@@ -15,7 +15,7 @@ body {
   }
   
   .vertical-menu a {
-    background-color: #eee; /* Grey background color */
+    background-color: rgb(238, 238, 238); /* Grey background color */
     color: black; /* Black text color */
     display: block; /* Make the links appear below each other */
     padding: 5%; /* Add some padding */
@@ -38,3 +38,17 @@ body {
   .botonesMenu{
     margin: 3%;
   }
+
+  #dashboard{
+    font-weight: 500;
+  }
+
+  .custom {
+    max-width: 100% !important;
+  height: auto !important;
+}
+
+.img-fluid{
+  max-width: 100%;;
+  height: auto;
+}

@@ -35,7 +35,7 @@ class Navbar extends React.Component {
         <React.Fragment>
             <div className="vertical-menu">
             <img src="./images/logo.png" alt="logo"/>
-            <a className="brand" href="#">Dashboard</a>
+            <a className="brand" id="dashboard" href="#">Dashboard</a>
             
                 {
                     enlaces.map(function (unE, i) {
@@ -45,6 +45,7 @@ class Navbar extends React.Component {
                         return <NavbarItem className="nav" key={i} nro={i} url={unE.url} text={unE.text} updDashboard={updDashboard.bind(this)}  />
                     })
                 }
+                <a className="brand" id="dashboard" href="http://localhost:3030/"> <img src="./images/exitIcon.jpg" alt="exit"/> </a>
                 </div>
                 
             { this.state.children }
