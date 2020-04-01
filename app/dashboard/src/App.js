@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 /* import logo from './logo.svg'; */
-import categoryIMG from './images/category2.jpg';
-import usersIMG from './images/usersIcon.png';
-import salesIMG from './images/salesIcon.jpg';
 import './App.css';
 import Indicators from './components/Indicators';
 import LineGraph from './components/LineGraph';
@@ -12,6 +9,7 @@ import API from './config/API';
 import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
 import RangeSlider from 'react-bootstrap-range-slider';
 import BootstrapSwitchButton from 'bootstrap-switch-button-react';
+
 
 const icons = [
   './images/usersIcon.png',

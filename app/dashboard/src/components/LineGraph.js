@@ -37,7 +37,7 @@ class LineGraph extends Component {
             }; 
             quantity.push((fechasDB.filter( aDate => ((aDate <= rangoFechas.fechaHasta) && (aDate >=rangoFechas.fechaDesde)))).length );
         } 
-
+       
        let lastMonthsNames = DateHandler.getLastMonthsNames(lastMonths);
 
         new Chart(myChartRef, {

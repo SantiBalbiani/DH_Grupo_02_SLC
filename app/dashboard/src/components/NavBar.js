@@ -34,7 +34,7 @@ class Navbar extends React.Component {
     return (
         <React.Fragment>
             <div className="vertical-menu">
-            
+            <img src="./images/logo.png" alt="logo"/>
             <a className="brand" href="#">Dashboard</a>
             
                 {

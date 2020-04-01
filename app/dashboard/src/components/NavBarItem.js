@@ -7,10 +7,12 @@ function NavbarItem (props) {
            <a href={props.url}> {props.text} </a>
         </li> */
         <div className="row">
-                <div className="col-12">
+                <div className="col-12 d-flex justify-content-center">
+        <div className="botonesMenu">
         <button className="btn btn-primary" onClick={ () => props.updDashboard(props.nro)} >
              {props.text} 
         </button>
+        </div>
         </div>
         </div>
     )

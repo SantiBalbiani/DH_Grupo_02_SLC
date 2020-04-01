@@ -34,3 +34,7 @@ body {
   ul{
     list-style-type: none;
   }
+
+  .botonesMenu{
+    margin: 3%;
+  }
