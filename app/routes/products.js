@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const productsController = require('../controllers/productsController');
+const searchBarController = require('../controllers/searchBarController');
 const multer = require('multer');
 const path = require('path');
 
@@ -18,6 +19,7 @@ let upload = multer({ storage: diskStorage })
 
 /* GET users listing. */
 router.get('/', productsController.root);
+router.get('/search', searchBarController.root);
 router.get('/create', productsController.createProduct);
 router.get('/:id', productsController.getProduct);
 router.get('/:id/edit', productsController.editProduct);
@@ -25,6 +27,7 @@ router.get('/category/:category', productsController.getProdsByCat);
 router.post('/', upload.single('imageName'), productsController.saveProduct);
 router.put('/:id/edit', upload.single('imageName'), productsController.saveEditProduct);
 router.delete('/:id', productsController.deleteProduct);
+
 
 module.exports = router;
 

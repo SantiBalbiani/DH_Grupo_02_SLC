@@ -73,7 +73,7 @@ for (let oneInput of formElements)
                             if(oneData.email === emailIngresado)  {
                                 this.classList.add('is-invalid');
                                 this.classList.remove('is-valid');
-                                this.nextElementSibling.innerHTML = `El email ingresdo ya existe`;
+                                this.nextElementSibling.innerHTML = `El correo electrónico ingresado ya existe`;
                                 inputsWithErrors[this.name] = true;
                             } 
                         }   
