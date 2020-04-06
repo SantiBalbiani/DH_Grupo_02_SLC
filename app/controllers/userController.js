@@ -165,11 +165,21 @@ const fpath = path.join(__dirname, '../data/users.json');
         },
         logIn:(req, res) => {
         
-        let elUser = m.find_("email", req.body.email, fpath);
+            Masterusers
+			.findAll({where: {email: req.body.email}})
+			.then(masterusers => {
+				
+			
+          let elUser = masterusers[0].dataValues;
+          console.log("el indice:");
+          console.log(elUser);
+          console.log("el array:");
+          console.log(masterusers);
+          let elUser2 = m.find_("email", req.body.email, fpath);
         
         if (elUser != undefined){
         
-        let logSuccessfull = bcrypt.compareSync( req.body.contrasena , elUser.contrasena);
+        let logSuccessfull = bcrypt.compareSync( req.body.contrasena , elUser.password);
         
             if (logSuccessfull) {
                 req.session.user = elUser;
@@ -180,7 +190,8 @@ const fpath = path.join(__dirname, '../data/users.json');
                 res.locals.logged = true;
                 res.locals.user = elUser;
                 var masterusers = elUser;
-                res.render('userProfile', {title2: "Bienvenido " + elUser.nombre + "!", elUser, masterusers});
+                
+                res.render('userProfile', {title2: "Bienvenido " + elUser.name + "!", elUser, masterusers});
                // res.render('editUser', {title2: "Bienvenido " + elUser.nombre + "!", msg:'Acceso exitoso!', elUser})
             }else{
                 return res.render('register', {title2: 'SLC: Registro', msg: "Su contraseña es incorrecta. Intente de nuevo"});
@@ -188,6 +199,9 @@ const fpath = path.join(__dirname, '../data/users.json');
         }else{
             return res.render('register', {title2: 'SLC: Registro', msg: "Usuario y/o contraseña inexistentes"});
         }
+
+    })
+    .catch(error => res.send(error));
         },
 
         register: (req, res) => {
