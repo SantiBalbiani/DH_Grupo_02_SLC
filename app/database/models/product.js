@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
         description: DataTypes.STRING,
 		imageName: DataTypes.STRING,
 		idCategory: DataTypes.INTEGER,
+		idSeller: DataTypes.INTEGER,
 		state: DataTypes.INTEGER,
     };
     /*let config = {
@@ -28,12 +29,19 @@ module.exports = (sequelize, DataTypes) => {
 
   product.associate = function(models) {
     // associations can be defined here
-
-   	// belongsTo 
+	
+   		// belongsTo 
 		product.belongsTo(models.categories, {
 			as: 'categories',
 			foreignKey: 'idCategory'
 		});
+
+		// belongsTo 
+		product.belongsTo(models.masterusers, {
+			as: 'masterusers',
+			foreignKey: 'idSeller'
+		});
+
   };
   return product;
 };

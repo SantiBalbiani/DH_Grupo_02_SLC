@@ -30,7 +30,12 @@ module.exports = (sequelize, DataTypes) => {
     const masteruser = sequelize.define(alias, columns);
   
     masteruser.associate = function(models) {
-      // associations can be defined here
+      
+      masteruser.hasMany(models.products, {
+        as: 'products',
+        foreignKey: 'idSeller'
+      })
+
     };
 
     return masteruser;

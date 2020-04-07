@@ -77,7 +77,7 @@ const fpath = path.join(__dirname, '../data/users.json');
 
 
         saveUser: (req, res) => {
-            //req.body.password = bcrypt.hashSync(req.body.password, 11);
+            req.body.password = bcrypt.hashSync(req.body.password, 11);
             data = {
                 avatarName: req.file.filename,
                 ...req.body
