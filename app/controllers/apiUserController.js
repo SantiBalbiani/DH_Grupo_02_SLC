@@ -48,6 +48,24 @@ const controller = {
     
             }).catch(error => res.json(error));
         }, 
+            findUserCookie:  (req, res) => {
+                Masterusers
+                    .findByPk(req.params.id)
+                    .then(masterusers => {
+                        let userDetail = {
+                            meta: {
+                            status: 200,
+                            },
+                            data: {
+                            ...masterusers.toJSON(),
+                            imagenUrl: "http://localhost:3030/images/users/"  + masterusers.avatarName, 
+        
+                            }
+                        }
+                        return res.json (userDetail);
+            
+                    }).catch(error => res.json(error));
+                }, 
 
 
 };

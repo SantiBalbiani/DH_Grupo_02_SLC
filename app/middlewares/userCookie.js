@@ -1,22 +1,31 @@
 const express = require('express');
 const model = require('../model/model');
 const path = require('path');
-const userFilePath = path.join(__dirname, '../data/users.json');
 const bcrypt = require('bcryptjs');
+const axios = require('axios');
 
 function userCookie (req, res, next) {
-    if (req.cookies.user != undefined){
-        var finded = true;
-        data = model.loadFile(userFilePath);
-        data.forEach( user => {
-            finded = bcrypt.compareSync( user.id.toString(), req.cookies.user.toString()  );
-            if (finded){
-                req.session.user = model.find_("id", user.id, userFilePath);
-                next();
-                }
-        } );
+    var losIDs = [...Array(10).keys()];
+    var elID = 0;
+    if ((req.originalUrl == '/') && (req.cookies.user != undefined) && !(req.session.user)){
+    loop1:
+    for(var i = 0; i < losIDs.length; i++){
+        finded = bcrypt.compareSync( losIDs[i].toString(), req.cookies.user.toString()  );
+        if (finded){
+            elID = losIDs[i];
+            break loop1;
+        }
     }
-    next();
+        if (elID != 0){
+        axios.get(`http://localhost:3030/api/users/fillCookie/${elID}`)
+            .then(res => {
+                const user = res.data.data;
+                req.session.user = user;
+               return next();
+            })
+            }
+}else{ return next(); }
+
 };
 
 module.exports = userCookie;

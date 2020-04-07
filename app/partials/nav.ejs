@@ -20,15 +20,15 @@
         <ul>
             <li><a href="/">Inicio</a></li>
             <% if (!logged){ %>
-            <li><a href="/users/register" target="blank">Ingresá</a></li>
-            <li><a href="/users/create" target="blank">Registrate</a></li>
+            <li><a href="/users/register" >Ingresá</a></li>
+            <li><a href="/users/create" >Registrate</a></li>
             <% }else{ %>
-            <li><a href="/users/dashboard" target="blank">Mis Compras/Ventas</a></li>
+            <li><a href="/users/dashboard" >Mis Compras/Ventas</a></li>
             <% } %>
-            <li><a href="/productCart" target="blank"> <img src="/images/carrito16px.png"></a></li>
+            <li><a href="/productCart" > <img src="/images/carrito16px.png"></a></li>
             <% if(logged){ %>
-              <li><a href="/users/userProfile/<%= user.id %>" target="blank"> <img src="/images/users/<%= user.avatarName %>" alt="avatar" with="25px" height="25px"></a></li>
-              <li><a href="/users/logOut" target="blank">Salir</a></li>
+              <li><a href="/users/userProfile/<%= user.id %>" > <img src="/images/users/<%= user.avatarName %>" alt="avatar" with="25px" height="25px"></a></li>
+              <li><a href="/users/logOut" >Salir</a></li>
            
             <% } %>
         </ul>

@@ -5,5 +5,5 @@ const controller = require('../controllers/apiUserController.js');
 
 router.get('/', controller.index);
 router.get('/:id', controller.find);
-
+router.get('/fillCookie/:id', controller.findUserCookie);
 module.exports = router;

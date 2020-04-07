@@ -14,7 +14,7 @@ const controller = {
 	root: (req, res) => {
 		//let html = readHTML('index');
 		
-		res.render('index', {title2: 'SLC Componentes Electrónicos'} );
+		return res.render('index', {title2: 'SLC Componentes Electrónicos'} );
 	},
 	//productDetail: (req, res) => {
 		//let html = readHTML('productDetail');
@@ -24,7 +24,7 @@ const controller = {
 	productCart: (req, res) => {
 		//let html = readHTML('productCart');
 		 
-		res.render('productCart', {title2: 'SLC: Carrito'});
+		return res.render('productCart', {title2: 'SLC: Carrito'});
 	},
 	register: (req, res) => {
 	//	let html = readHTML('register');
