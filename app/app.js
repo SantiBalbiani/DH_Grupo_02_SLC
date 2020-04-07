@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var transactionsRouter = require('./routes/transactions');
 var productsRouter = require('./routes/products');
 const methodOverride = require("method-override");
 const userCookieMiddleware = require('./middlewares/userCookie');
@@ -47,6 +48,7 @@ app.use(localsMiddleware);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
+app.use('/transactions',transactionsRouter);
 //api
 app.use('/api/users', apiUsers);
 app.use('/api/products', apiProducts);
