@@ -54,108 +54,24 @@ state INT DEFAULT 1,
 createdAt timestamp NULL DEFAULT NULL,
 updatedAt timestamp NULL DEFAULT NULL);
 
-Categorías:
-create table  categories (
-id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-categoryName VARCHAR(30) NOT NULL,
-createdAt timestamp NULL DEFAULT NULL,
-updatedAt timestamp NULL DEFAULT NULL);
+Debajo el script
+======================================================================================================================================
 
+CREATE DATABASE db_slc;
 
-Compradores:
-create table buyers (
-id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-userID INT NOT NULL,
-idCart INT DEFAULT NULL,
-historyBuyer INT DEFAULT NULL,
-FOREIGN KEY (UserID) REFERENCES masterusers(ID));
+CREATE TABLE db_slc.masterusers ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, name VARCHAR(50) NOT NULL, surname VARCHAR(50) NOT NULL, gender VARCHAR(30) NOT NULL, typeDocument VARCHAR(30) NOT NULL, document VARCHAR(30) NOT NULL, telephone INT(50), email VARCHAR(50) NOT NULL, street VARCHAR(100) NOT NULL, city VARCHAR(50) NOT NULL, CP varchar(10) NOT NULL, province VARCHAR(50) NOT NULL, avatarName VARCHAR(50), password VARCHAR(100) NOT NULL, state INT DEFAULT 1, createdAt timestamp NULL DEFAULT NULL, updatedAt timestamp NULL DEFAULT NULL);
 
-Vendedores:
-create table sellers (
-id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-userID INT NOT NULL,
-historySeller INT DEFAULT NULL,
-FOREIGN KEY (UserID) REFERENCES masterusers(ID));
+CREATE TABLE db_slc.categories ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, categoryName VARCHAR(30) NOT NULL, createdAt timestamp NULL DEFAULT NULL, updatedAt timestamp NULL DEFAULT NULL);
 
-Productos:
-create table  Products (
-id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-prodName VARCHAR(500) NOT NULL,
-idCategory INT,
-idBuyer INT,
-model VARCHAR(30),
-voltage VARCHAR(30),
-price decimal (6,2) NOT NULL,
-description VARCHAR(5000) DEFAULT NULL,
-imageName VARCHAR(256) NULL DEFAULT NULL ,
-state INT DEFAULT 1,
-FOREIGN KEY (idBuyer) REFERENCES buyers(ID),
-FOREIGN KEY (idCategory) REFERENCES categories(ID),
-createdAt timestamp NULL DEFAULT NULL,
-updatedAt timestamp NULL DEFAULT NULL);
+CREATE TABLE db_slc.Products ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, prodName VARCHAR(500) NOT NULL, idCategory INT, idSeller INT, model VARCHAR(30), voltage VARCHAR(30), price decimal (6,2) NOT NULL, description VARCHAR(5000) DEFAULT NULL, imageName VARCHAR(256) NULL DEFAULT NULL , state INT DEFAULT 1, FOREIGN KEY (idSeller) REFERENCES masterusers(ID), FOREIGN KEY (idCategory) REFERENCES categories(ID), createdAt timestamp NULL DEFAULT NULL, updatedAt timestamp NULL DEFAULT NULL);
 
-Transacciones:
-create table transaction (
-id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-idBuyer INT,
-idSeller INT,
-total INT,
-trxDate datetime,
-FOREIGN KEY (idBuyer) REFERENCES buyers(ID),
-FOREIGN KEY (idSeller) REFERENCES sellers(ID),
-createdAt timestamp NULL DEFAULT NULL,
-updatedAt timestamp NULL DEFAULT NULL);
+CREATE TABLE db_slc.trx ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, idBuyer INT, total INT, trxDate datetime, FOREIGN KEY (idBuyer) REFERENCES masterusers(ID),  createdAt timestamp NULL DEFAULT NULL, updatedAt timestamp NULL DEFAULT NULL);
 
+CREATE TABLE db_slc.trxItem ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, idTrx INT, idProd INT, cant INT, FOREIGN KEY (idTrx) REFERENCES trx(ID), FOREIGN KEY (idProd) REFERENCES Products(ID) );
 
-Transacciones por usuario:
-CREATE TABLE trxByUser (
-id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-idTrx INT NOT NULL,
-FOREIGN KEY (idTrx) REFERENCES transaction(ID));
+CREATE TABLE db_slc.cart ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, idUser INT,  FOREIGN KEY (idUser) REFERENCES masterusers(ID), createdAt timestamp NULL DEFAULT NULL, updatedAt timestamp NULL DEFAULT NULL);
 
-Carrito:
-create table cart (
-id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-state INT,
-idBuyer INT,
-idTrx INT,
-FOREIGN KEY (idBuyer) REFERENCES buyers(ID),
-FOREIGN KEY (idTrx) REFERENCES transaction(ID),
-createdAt timestamp NULL DEFAULT NULL,
-updatedAt timestamp NULL DEFAULT NULL);
-
-Agregar FK idCart a tabla Vendedores
-ALTER TABLE buyers
-ADD FOREIGN KEY (idCart) REFERENCES cart(ID);
-
-Agregar FK historia de trx a tabla Vendedores
-ALTER TABLE buyers
-ADD FOREIGN KEY (historyBuyer) REFERENCES trxbyuser(ID);
-
-Agregar FK historia de trx a tabla Compradores
-ALTER TABLE sellers
-ADD FOREIGN KEY (historySeller) REFERENCES trxbyuser(ID);
-
-Items de transacción:
-create table transactionItem (
-id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-idTrx INT NOT NULL,
-idProduct INT NOT NULL,
-price INT,
-quantity INT,
-FOREIGN KEY (idProduct) REFERENCES products(ID),
-FOREIGN KEY (idTrx) REFERENCES transaction(ID));
-
-Cart Items:
-create table cartItem (
-id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-idCart INT NOT NULL,
-idProduct INT NOT NULL,
-price INT,
-quantity INT,
-FOREIGN KEY (idProduct) REFERENCES products(ID),
-FOREIGN KEY (idCart) REFERENCES cart(ID));
-
+CREATE TABLE  db_slc.cartItem ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, idCart INT, idProd INT, cant INT, FOREIGN KEY (idCart) REFERENCES cart(ID), FOREIGN KEY (idProd) REFERENCES Products(ID) , createdAt timestamp NULL DEFAULT NULL, updatedAt timestamp NULL DEFAULT NULL);
 
 
 
