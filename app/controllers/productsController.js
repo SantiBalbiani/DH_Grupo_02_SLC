@@ -177,6 +177,11 @@ const controller = {
 			title2: `Detail of ${req.body.prodName}`, msg: "Product Added to the Cart",
 			product
 		}); */
+	},
+	deleteCart: (req, res) =>{
+		req.session.destroy();
+		res.cookie('cart', null, { maxAge: -1 });
+		res.redirect("/");
 	}
 				
 };

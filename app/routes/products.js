@@ -21,6 +21,7 @@ let upload = multer({ storage: diskStorage })
 router.get('/', productsController.root);
 router.get('/search', searchBarController.root);
 router.get('/create', productsController.createProduct);
+router.get('/delCart', productsController.deleteCart);
 router.get('/:id', productsController.getProduct);
 router.get('/:id/edit', productsController.editProduct);
 router.get('/category/:category', productsController.getProdsByCat);

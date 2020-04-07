@@ -15,8 +15,9 @@
         Carrito de Compras
       </div>
 
-      <div class="compras">
-        <% cart.forEach( prod => {  %>
+      <div class="compras"> 
+        <% if(cart){ %>
+        <%  cart.forEach( prod => {  %>
          <div class="unItem"> 
               <div class="prodImagen">
               <img src="/images/products/<%=prod.imageName %>" alt="una compra" width="175" height="150" class="imagen"> 
@@ -31,16 +32,29 @@
               </div>
             </div>
             </div>
-            <% }); %>
+            <% })}else{ %>
+              <% console.log('pasé por acá'); %>
+             <%  var sinCarrito = "Usted no tiene productos en su carro de compras"; %>
             
+             <div><%= sinCarrito %> 
+            </div>
+            <% } %>
+      </div>
    <div class="container">       
         <div class="row">
           <div class="col-12">
             <div class="pieDetalle">
               <div class="row align-items-center">
-                  <% cart.forEach( p => console.log(p)) %>
+                <% if(cart){ %>
+                  <%  var precios = cart.map( prod => Number(prod.price)); %>
+                  <%  var total = precios.reduce((a, b) => a + b, 0); %>
+                  <% }else{ %>
+                   <% var total = 0; %>
+                    <% } %>
                 <div class="col-12 col-lg-3">
-                  <h2 class="precio"> TOTAL  $ <%= cart.reduce( (a,b) => Number(a.price) + Number(b.price)   ) %></h2> 
+                  <h2 class="precio"> TOTAL  $ <%= total %>
+                  
+                  </h2> 
                 </div>
 
 
@@ -52,6 +66,10 @@
                 <div class="col-12 col-md-4 col-lg-4">
                 <a href="/" class="buttonComprar">  Comprar  </a>
                 </div>
+
+                <div class="col-12 col-md-1 col-lg-1">
+                  <a href="/products/delCart" >  <img src="/images/tachito.jpg" alt="borrar" width="40" height="40" >  </a>
+                  </div>
 
                 
           
