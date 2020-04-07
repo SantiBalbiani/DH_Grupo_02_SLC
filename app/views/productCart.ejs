@@ -63,26 +63,18 @@
                 <% if(!cart){ %>
                   <%   caso = 'noCart' %>
                   <%   }else{ %>
-                    <%   if(logged){ %>
-                      <%     caso = 'noLogged' %>
-                      <%    }else{ %>
-                        <%      caso = 'comprar' %>
-                        <%     } %>
-                        <%    } %>
+                    <%   caso = cart.length %>
+                    <% } %>
                 <div class="col-12 col-md-4 col-lg-4">
-                  <form name="compras" action="/transactions/buy"  method="POST"  class="cabezalPagina">
+                  <form name="compras" id="compras" action="/transactions/buy"  method="POST"  class="cabezalPagina">
                     <input type="hidden" class="form-control" name="caso" value="<%= caso %>"> 
-                    <button type="submit" class="buttonComprar"  >Comprar</button>
+                    <button type="submit" id="comprame" class="buttonComprar"  >Comprar</button>
                    </form> 
                 </div>
 
                 <div class="col-12 col-md-1 col-lg-1">
                   <a href="/products/delCart" >  <img src="/images/tachito.jpg" alt="borrar" width="40" height="40" >  </a>
                   </div>
-
-                
-          
-
                   </div>
                 </div>
               </div>
@@ -95,7 +87,7 @@
   </body>
   <script src="/js/jquery-3.4.1.min.js"></script>
   <script src="/js/bootstrap-input-spinner.js"></script>
-  <script scr="/js/validateBuy.js"></script>
+  <script src="/js/validateBuy.js"></script>
 <script>
     $("input[type='number']").inputSpinner();
 </script> 
