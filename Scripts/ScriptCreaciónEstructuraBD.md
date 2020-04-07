@@ -54,21 +54,21 @@ state INT DEFAULT 1,
 createdAt timestamp NULL DEFAULT NULL,
 updatedAt timestamp NULL DEFAULT NULL);
 
-CREATE DATABASE db_slc2;
+CREATE DATABASE db_slc;
 
-CREATE TABLE db_slc2.masterusers ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, name VARCHAR(50) NOT NULL, surname VARCHAR(50) NOT NULL, gender VARCHAR(30) NOT NULL, typeDocument VARCHAR(30) NOT NULL, document VARCHAR(30) NOT NULL, telephone INT(50), email VARCHAR(50) NOT NULL, street VARCHAR(100) NOT NULL, city VARCHAR(50) NOT NULL, CP varchar(10) NOT NULL, province VARCHAR(50) NOT NULL, avatarName VARCHAR(50), password VARCHAR(100) NOT NULL, state INT DEFAULT 1, createdAt timestamp NULL DEFAULT NULL, updatedAt timestamp NULL DEFAULT NULL);
+CREATE TABLE db_slc.masterusers ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, name VARCHAR(50) NOT NULL, surname VARCHAR(50) NOT NULL, gender VARCHAR(30) NOT NULL, typeDocument VARCHAR(30) NOT NULL, document VARCHAR(30) NOT NULL, telephone INT(50), email VARCHAR(50) NOT NULL, street VARCHAR(100) NOT NULL, city VARCHAR(50) NOT NULL, CP varchar(10) NOT NULL, province VARCHAR(50) NOT NULL, avatarName VARCHAR(50), password VARCHAR(100) NOT NULL, state INT DEFAULT 1, createdAt timestamp NULL DEFAULT NULL, updatedAt timestamp NULL DEFAULT NULL);
 
-CREATE TABLE db_slc2.categories ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, categoryName VARCHAR(30) NOT NULL, createdAt timestamp NULL DEFAULT NULL, updatedAt timestamp NULL DEFAULT NULL);
+CREATE TABLE db_slc.categories ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, categoryName VARCHAR(30) NOT NULL, createdAt timestamp NULL DEFAULT NULL, updatedAt timestamp NULL DEFAULT NULL);
 
-CREATE TABLE db_slc2.Products ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, prodName VARCHAR(500) NOT NULL, idCategory INT, idSeller INT, model VARCHAR(30), voltage VARCHAR(30), price decimal (6,2) NOT NULL, description VARCHAR(5000) DEFAULT NULL, imageName VARCHAR(256) NULL DEFAULT NULL , state INT DEFAULT 1, FOREIGN KEY (idSeller) REFERENCES masterusers(ID), FOREIGN KEY (idCategory) REFERENCES categories(ID), createdAt timestamp NULL DEFAULT NULL, updatedAt timestamp NULL DEFAULT NULL);
+CREATE TABLE db_slc.Products ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, prodName VARCHAR(500) NOT NULL, idCategory INT, idSeller INT, model VARCHAR(30), voltage VARCHAR(30), price decimal (6,2) NOT NULL, description VARCHAR(5000) DEFAULT NULL, imageName VARCHAR(256) NULL DEFAULT NULL , state INT DEFAULT 1, FOREIGN KEY (idSeller) REFERENCES masterusers(ID), FOREIGN KEY (idCategory) REFERENCES categories(ID), createdAt timestamp NULL DEFAULT NULL, updatedAt timestamp NULL DEFAULT NULL);
 
-CREATE TABLE db_slc2.trx ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, idBuyer INT, total INT, trxDate datetime, FOREIGN KEY (idBuyer) REFERENCES masterusers(ID),  createdAt timestamp NULL DEFAULT NULL, updatedAt timestamp NULL DEFAULT NULL);
+CREATE TABLE db_slc.trx ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, idBuyer INT, total INT, trxDate datetime, FOREIGN KEY (idBuyer) REFERENCES masterusers(ID),  createdAt timestamp NULL DEFAULT NULL, updatedAt timestamp NULL DEFAULT NULL);
 
-CREATE TABLE db_slc2.trxItem ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, idTrx INT, idProd INT, cant INT, FOREIGN KEY (idTrx) REFERENCES trx(ID), FOREIGN KEY (idProd) REFERENCES Products(ID) );
+CREATE TABLE db_slc.trxItem ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, idTrx INT, idProd INT, cant INT, FOREIGN KEY (idTrx) REFERENCES trx(ID), FOREIGN KEY (idProd) REFERENCES Products(ID) );
 
-CREATE TABLE db_slc2.cart ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, idUser INT,  FOREIGN KEY (idUser) REFERENCES masterusers(ID), createdAt timestamp NULL DEFAULT NULL, updatedAt timestamp NULL DEFAULT NULL);
+CREATE TABLE db_slc.cart ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, idUser INT,  FOREIGN KEY (idUser) REFERENCES masterusers(ID), createdAt timestamp NULL DEFAULT NULL, updatedAt timestamp NULL DEFAULT NULL);
 
-CREATE TABLE  db_slc2.cartItem ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, idCart INT, idProd INT, cant INT, FOREIGN KEY (idCart) REFERENCES cart(ID), FOREIGN KEY (idProd) REFERENCES Products(ID) , createdAt timestamp NULL DEFAULT NULL, updatedAt timestamp NULL DEFAULT NULL);
+CREATE TABLE  db_slc.cartItem ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, idCart INT, idProd INT, cant INT, FOREIGN KEY (idCart) REFERENCES cart(ID), FOREIGN KEY (idProd) REFERENCES Products(ID) , createdAt timestamp NULL DEFAULT NULL, updatedAt timestamp NULL DEFAULT NULL);
 
 
 
