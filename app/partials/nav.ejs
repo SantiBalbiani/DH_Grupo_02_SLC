@@ -25,7 +25,12 @@
             <% }else{ %>
             <li><a href="/users/dashboard" >Mis Compras/Ventas</a></li>
             <% } %>
-            <li><a href="/productCart" > <img src="/images/carrito16px.png"></a></li>
+
+            <% if(logged){ %>
+            <li><a href="/productCart" > <img src="/images/carrito16px.png"> (  <%= cart.length %>    ) </a></li>
+            <% }else{ %>
+              <li><a href="/productCart" > <img src="/images/carrito16px.png"></a></li>
+              <% } %>
             <% if(logged){ %>
               <li><a href="/users/userProfile/<%= user.id %>" > <img src="/images/users/<%= user.avatarName %>" alt="avatar" with="25px" height="25px"></a></li>
               <li><a href="/users/logOut" >Salir</a></li>
