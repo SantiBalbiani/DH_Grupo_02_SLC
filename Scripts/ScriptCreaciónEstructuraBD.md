@@ -54,6 +54,9 @@ state INT DEFAULT 1,
 createdAt timestamp NULL DEFAULT NULL,
 updatedAt timestamp NULL DEFAULT NULL);
 
+Debajo el script
+======================================================================================================================================
+
 CREATE DATABASE db_slc;
 
 CREATE TABLE db_slc.masterusers ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, name VARCHAR(50) NOT NULL, surname VARCHAR(50) NOT NULL, gender VARCHAR(30) NOT NULL, typeDocument VARCHAR(30) NOT NULL, document VARCHAR(30) NOT NULL, telephone INT(50), email VARCHAR(50) NOT NULL, street VARCHAR(100) NOT NULL, city VARCHAR(50) NOT NULL, CP varchar(10) NOT NULL, province VARCHAR(50) NOT NULL, avatarName VARCHAR(50), password VARCHAR(100) NOT NULL, state INT DEFAULT 1, createdAt timestamp NULL DEFAULT NULL, updatedAt timestamp NULL DEFAULT NULL);
