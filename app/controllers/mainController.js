@@ -23,6 +23,7 @@ const controller = {
 	//}, 
 	productCart: (req, res) => {
 		//let html = readHTML('productCart');
+		 
 		res.render('productCart', {title2: 'SLC: Carrito'});
 	},
 	register: (req, res) => {

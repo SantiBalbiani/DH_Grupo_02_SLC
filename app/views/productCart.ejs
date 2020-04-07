@@ -16,46 +16,31 @@
       </div>
 
       <div class="compras">
+        <% cart.forEach( prod => {  %>
          <div class="unItem"> 
               <div class="prodImagen">
-              <img src="/images/raspberry.JPG" alt="una compra" class="imagen"> 
+              <img src="/images/products/<%=prod.imageName %>" alt="una compra" width="175" height="150" class="imagen"> 
               </div>
             <div class="tituloYCantPrecio">
-              <div class="tituloProducto">Raspberry Pi 3 Plus con descripcion super larga aaaa
+              <div class="tituloProducto"> <%= prod.prodName %>
               </div>
               <div class="precioCant">
               <input class="form-control col-xl-2  col-12"  type="number" value="2" min="1" max="999">
-                <div class="col-xl-2  col-12">$1532.56
+                <div class="col-xl-2  col-12">$ <%= prod.price %>
                 </div> 
               </div>
             </div>
             </div>
-        
-            <div class="unItem"> 
-                <div class="prodImagen">
-                  <img src="/images/puenteRect.JPG" alt="una compra" class="imagen"> 
-                </div>
-
-                <div class="tituloYCantPrecio">
-                    <div class="tituloProducto">Puente Rectificador 1.5A con descripción super larga
-                    </div>
-
-                  <div class="precioCant">
-                  <input class="form-control col-xl-2  col-12" type="number" value="2" min="1" max="999">
-                     <div class="col-xl-2  col-12">$232.26
-                      </div> 
-                  </div>
-                </div>
-            </div>
-
+            <% }); %>
+            
    <div class="container">       
         <div class="row">
           <div class="col-12">
             <div class="pieDetalle">
               <div class="row align-items-center">
-
+                  <% cart.forEach( p => console.log(p)) %>
                 <div class="col-12 col-lg-3">
-                  <h2 class="precio"> TOTAL  $1764.82</h2> 
+                  <h2 class="precio"> TOTAL  $ <%= cart.reduce( (a,b) => Number(a.price) + Number(b.price)   ) %></h2> 
                 </div>
 
 

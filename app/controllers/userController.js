@@ -171,19 +171,15 @@ const fpath = path.join(__dirname, '../data/users.json');
 				
 			
           let elUser = masterusers[0].dataValues;
-          console.log("el indice:");
-          console.log(elUser);
-          console.log("el array:");
-          console.log(masterusers);
-          let elUser2 = m.find_("email", req.body.email, fpath);
-        
+          elUser.cart = [];
         if (elUser != undefined){
         
         let logSuccessfull = bcrypt.compareSync( req.body.contrasena , elUser.password);
         
             if (logSuccessfull) {
                 req.session.user = elUser;
-
+                req.session.cart = [];
+                res.cookie('cart', '');
                 if (req.body.recordar) {
 					res.cookie('user', bcrypt.hashSync(elUser.id.toString(), 12), { maxAge: 180000});
 				}
@@ -233,7 +229,8 @@ const fpath = path.join(__dirname, '../data/users.json');
             //ya estaba// allUsers.find( usr => usr.userId == req.params.userId )
             //elUser == undefined? res.render('notFound', {msg:"Usuario Inexistente"}):
             //res.render('userProfile', {title2: 'Perfil de' + user.nombre,  user});
-        }
+        },
+       
     };
     
     module.exports = controller

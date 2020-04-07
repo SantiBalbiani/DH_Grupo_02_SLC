@@ -1,6 +1,11 @@
 const express = require('express');
 
 const localsMiddleware = (req, res, next)  => {
+
+	if(req.session.cart != undefined){
+		res.locals.cart = req.session.cart;
+	}
+
 	res.locals.logged = false;
 	if (req.session.user != undefined) {
 		res.locals.logged = true;
