@@ -151,6 +151,14 @@ const controller = {
 		res.cookie('cart', JSON.stringify(cart), { maxAge: 180000});
 		res.redirect("/products");
 	},
+	buyProd:(req, res) =>{
+		let product = { id: req.body.id, cant: req.body.cant, prodName: req.body.prodName, price: req.body.price, imageName: req.body.imageName };
+		var cart = req.session.cart || [];  
+		cart.push(product);
+		req.session.cart = cart;
+		res.cookie('cart', JSON.stringify(cart), { maxAge: 180000});
+		return res.render('productCart', {title2: 'SLC: Carrito'});
+	},
 	deleteCart: (req, res) =>{
 		req.session.cart = [];
 		res.cookie('cart', null, { maxAge: -1 });

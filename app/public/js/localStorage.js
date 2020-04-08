@@ -1,4 +1,13 @@
 
+window.onload = function() {
+    var src = document.getElementById("cantCarrito"),
+        dst = document.getElementById("cantCompra");
+    src.addEventListener('input', function() {
+        dst.value = src.value;
+    });
+};
+
+
 var prodInstance = document.getElementById("theProd").value;
 
 var prod = {aProduct:{ id: prodInstance.id, prodName: prodInstance.prodName, price: prodInstance.price }};

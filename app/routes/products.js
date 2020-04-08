@@ -37,6 +37,7 @@ router.get('/:id/edit', productsMiddleware, productsController.editProduct);
 router.get('/category/:category', productsController.getProdsByCat);
 router.post('/', upload.single('imageName'), productsController.saveProduct);
 router.post('/addToCart', productsController.addProductToCart)
+router.post('/buy1Prod', productsController.buyProd)
 router.put('/:id/edit', upload.single('imageName'), productsController.saveEditProduct);
 router.delete('/:id', productsController.deleteProduct);
 
