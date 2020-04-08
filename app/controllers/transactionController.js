@@ -10,7 +10,7 @@ const Trxitem = db.trxitems;
 const controller = {
     buyProd: (req, res) => {
         console.log(req.session.user);
-        
+        if(req.session.user){
         var trxitm = req.session.cart.map((prd) => {
 
            return  {  idProd: prd.id,
@@ -45,13 +45,23 @@ const controller = {
                     }
 
                     Trxitem.create(data2)
-                    .then( (item) => console.log(item)  )
+                    .then( (item) => {
+                        console.log(item);
+                        req.session.cart = [];
+		                res.cookie('cart', null, { maxAge: -1 });
+                        return res.render('index', {title2: 'SLC Componentes Electrónicos'} );
+                        }  )
                     .catch (error => res.send(console.log(error)));
                 })
             })
+        
+            return res.render('index', {title2: 'SLC Componentes Electrónicos'} );
+        }else{
+                return res.render('register', {title2: 'SLC: Registro', msg: "Hola :) Ingresá con tu email y contraseña"});
+            }
 
         
-        return res.render('index', {title2: 'SLC Componentes Electrónicos'} );
+        
     },
     saveCart: (req, res) => {
         return res.render('index', {title2: 'SLC Componentes Electrónicos'} );

@@ -124,8 +124,11 @@ const fpath = path.join(__dirname, '../data/users.json');
         
             if (logSuccessfull) {
                 req.session.user = elUser;
-                req.session.cart = [];
-                res.cookie('cart', '');
+                if (req.session.cart.length < 1){
+                    req.session.cart = [];
+                    res.cookie('cart', '');
+                }
+                
                 if (req.body.recordar) {
 					res.cookie('user', bcrypt.hashSync(elUser.id.toString(), 12), { maxAge: 180000});
 				}

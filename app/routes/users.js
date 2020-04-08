@@ -43,11 +43,11 @@ function (req, res, next) {
 
 //************ Middlewares ************
 const editUserMiddleware = require('../middlewares/editUserMiddleware');
-  
+const buynotLogged = require('../middlewares/buynotLogged');  
 
 /* GET users listing. */
 router.get('/', userController.getUsers);
-router.post('/login', userController.logIn);
+router.post('/login',buynotLogged, userController.logIn);
 router.get('/create', userController.createUser);
 router.get('/register', userController.register);
 router.get('/logout', userController.logOut);
