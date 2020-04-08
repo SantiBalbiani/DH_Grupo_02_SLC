@@ -65,11 +65,11 @@ for (let oneInput of formElements)
         // Evento keypress para validar email en la base
         oneInput.addEventListener('change', function (e) {
             let emailIngresado = this.value;
-            if (emailIngresado.length > 3) {
+            if (emailIngresado.length > 2) {
                 fetch('http://localhost:3030/api/users')
                     .then(response => response.json())
                     .then(data => {
-                        for (const oneData of data) {
+                         for (const oneData of data.data) {
                             if(oneData.email === emailIngresado)  {
                                 this.classList.add('is-invalid');
                                 this.classList.remove('is-valid');
@@ -77,7 +77,7 @@ for (let oneInput of formElements)
                                 inputsWithErrors[this.name] = true;
                             } 
                         }   
-                    })                       
+                    })                                           
                     .catch(error => console.error(error))
             }    
 
