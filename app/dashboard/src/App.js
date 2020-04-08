@@ -10,12 +10,33 @@ import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
 import RangeSlider from 'react-bootstrap-range-slider';
 import BootstrapSwitchButton from 'bootstrap-switch-button-react';
 
-
 const icons = [
   './images/usersIcon.png',
   './images/salesIcon.jpg',
   './images/category2.jpg'
 ]
+
+function Greeting(props) {
+  var info = props.myState.info;
+  if (info == 2) {
+    
+    return props.myState.data.map( (cat, idx) => 
+    <Indicators key={Math.random()} img={`${icons[props.myState.img]}`} title={cat.title} idCategory={cat.id} handler={props.aHandler} url={props.myState.API} info = {props.myState.info}/>);
+  }
+  if (info == 1){
+   
+    return <Indicators key={Math.random()} img={`${icons[props.myState.img]}`} title='Total Sales' idCategory={1} handler={props.aHandler} url={props.myState.API} info = {props.myState.info}/>
+  }
+
+  if (info == 0){
+    return <Indicators key={Math.random()} img={`${icons[props.myState.img]}`} title='Total Users' idCategory={1} handler={props.aHandler} url={props.myState.API} info = {props.myState.info}/>
+  }
+
+  return 'empty'
+}
+
+
+
 class App extends React.Component {
   
   constructor(props){
@@ -33,6 +54,8 @@ class App extends React.Component {
       API: 'http://localhost:3030/api/products/1',
     }
   }
+
+ 
 
   updAPI(option){
     switch(option){
@@ -85,9 +108,11 @@ class App extends React.Component {
             <NavBar updDashboard={this.updDashboard.bind(this)} test="1"/>
         </div>
         <div className="col-9">
+        
+
         <div className="row">
-            {this.state.data.map( (cat, idx) => 
-             <Indicators key={Math.random()} img={`${icons[this.state.img]}`} title={cat.title} idCategory={cat.id} handler={this.handler.bind(this)} url={this.state.API} info = {this.state.info}/>)}
+        <Greeting myState={this.state} aHandler = {this.handler.bind(this)} />,
+            
         </div>
         <div className="row">
           <div className="col-xl-10 col-lg-12 col-md-12 col-sm-12 col-12">
