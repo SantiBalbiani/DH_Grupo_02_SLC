@@ -25,8 +25,7 @@ const fpath = path.join(__dirname, '../data/users.json');
 				});
 			})
 			.catch(error => res.send(error));
-                //let allUsers = m.loadFile(fpath); 
-            //res.render('users', {title2: 'Todos los Usuarios', users: allUsers } );
+ 
         },
         getUser: (req, res) => {
             Masterusers
@@ -41,19 +40,8 @@ const fpath = path.join(__dirname, '../data/users.json');
 	
 	
 		
-            // ya estaba con //let html = readHTML('productDetail');
-           // let allUsers = m.loadFile(fpath);
-            //elUser = m.getData(allUsers, req.params.id);
-            // ya estaba con ////allUsers.find( usr => usr.userId == req.params.userId )
-            //elUser == undefined? res.render('notFound', {msg:"Usuario Inexistente"}):
-            //res.render('userDetail', {title2: 'Detalle del Usuario', user: elUser});
         },
-        // createUser: (req, res) => {
-        //     //let html = readHTML('productCart');
-        //     res.render('userAdd', {title2: 'SLC: Crear Usuario'});
-        // },
         createUser: (req, res) => {
-            //let html = readHTML('productCart');
             res.render('userForm', {title2: 'SLC: Crear Usuario', ers: undefined});
         },
         editUser: (req, res) => {
@@ -68,11 +56,6 @@ const fpath = path.join(__dirname, '../data/users.json');
 			})
 			.catch(error => res.send(error));
 
-        //ya estaba//	let html = readHTML('register');
-        //let allUsers = m.loadFile(fpath);
-        //ya estaaba// elUser = m.getData(allUsers, req.params.id);
-        //elUser = allUsers.find( usr => usr.id == req.params.id );
-        //res.render('editUser', { user: elUser, title2: 'Editar Usuario', msg:'Modifique datos y presione guardar'});
         },
 
 
@@ -87,17 +70,6 @@ const fpath = path.join(__dirname, '../data/users.json');
 			.then(() => res.redirect('/users'))
 		.catch(error => res.send(console.log(error)));
 
-            //req.body.contrasena = bcrypt.hashSync(req.body.contrasena, 11);
-
-            //let newUser = {
-            //    id: m.genId(fpath),
-            //    ...req.body,
-            //    image: req.file.filename,
-            //}
-            //m.create(newUser, fpath);
-            
-            //res.render('register', {title2: 'SLC: Registro', msg: "Usuario creado con éxito! :) Ingresá con tu email y contraseña"});
-          //  res.redirect('/');
         },
         saveChanges: (req, res) => {
            req.body.password = bcrypt.hashSync(req.body.password, 11);
@@ -124,30 +96,6 @@ const fpath = path.join(__dirname, '../data/users.json');
 		.then(() => res.redirect('/'))
 		.catch(error => res.send(error));
 
-        //ya estaba//	let html = readHTML('productAdd2');
-        
-        //let allUsers = m.loadFile(fpath);
-        //oldUser = m.getData(allUsers, req.params.id);
-        //let file = 'file';
-        //let image;
-
-        //(req.hasOwnProperty(file))?  image = req.file.filename : image = oldUser.image;
-        
-        //let elUser = {
-		//	id: parseInt(req.params.id),
-		//	...req.body,
-		//	image: image,
-        //};
-        
-        //(req.body.contrasena == '')?  elUser.contrasena = oldUser.contrasena : elUser.contrasena =  bcrypt.hashSync(req.body.contrasena, 11);
-
-		//m.saveChanges(elUser, fpath);
-        //ya estaba// let guardado = "/users/" + user.id + "/edit";
-
-        //res.render('editUser', { title2: "Modificar mis Datos",  msg: "Datos actualizados!", elUser});
-
-
-        //res.redirect(guardado);
         },
         deleteUser: (req, res) => {
             Masterusers
@@ -160,8 +108,6 @@ const fpath = path.join(__dirname, '../data/users.json');
 			)
 			.catch(error => res.send(error));
 
-            //m.delete_(req.params.id, fpath);
-            //res.redirect("/");
         },
         logIn:(req, res) => {
         
@@ -188,7 +134,6 @@ const fpath = path.join(__dirname, '../data/users.json');
                 var masterusers = elUser;
                 
                 res.render('userProfile', {title2: "Bienvenido " + elUser.name + "!", elUser, masterusers});
-               // res.render('editUser', {title2: "Bienvenido " + elUser.nombre + "!", msg:'Acceso exitoso!', elUser})
             }else{
                 return res.render('register', {title2: 'SLC: Registro', msg: "Su contraseña es incorrecta. Intente de nuevo"});
             }
@@ -201,7 +146,6 @@ const fpath = path.join(__dirname, '../data/users.json');
         },
 
         register: (req, res) => {
-            //	let html = readHTML('register');
                 return res.render('register', {title2: 'SLC: Registro', msg: "Hola :) Ingresá con tu email y contraseña"});
             },
 
@@ -223,12 +167,6 @@ const fpath = path.join(__dirname, '../data/users.json');
 			})
             .catch(error => res.send(console.log(error)));
             
-            //let allUsers = m.loadFile(fpath);
-            //elUser = m.getData(allUsers, req.params.id);
-            //var user = elUser;
-            //ya estaba// allUsers.find( usr => usr.userId == req.params.userId )
-            //elUser == undefined? res.render('notFound', {msg:"Usuario Inexistente"}):
-            //res.render('userProfile', {title2: 'Perfil de' + user.nombre,  user});
         },
        
     };
