@@ -148,7 +148,8 @@ const controller = {
 		var cart = req.session.cart || [];  
 		cart.push(product);
 		req.session.cart = cart;
-				res.redirect("/products");
+		res.cookie('cart', JSON.stringify(cart), { maxAge: 180000});
+		res.redirect("/products");
 	},
 	deleteCart: (req, res) =>{
 		req.session.cart = [];

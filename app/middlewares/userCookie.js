@@ -21,6 +21,11 @@ function userCookie (req, res, next) {
             .then(res => {
                 const user = res.data.data;
                 req.session.user = user;
+
+                if(req.cookies.cart){
+                    req.session.cart = JSON.parse(req.cookies.cart);
+                }
+
                return next();
             })
             }

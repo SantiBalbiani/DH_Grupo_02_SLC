@@ -127,6 +127,9 @@ const fpath = path.join(__dirname, '../data/users.json');
                 if (req.session.cart.length < 1){
                     req.session.cart = [];
                     res.cookie('cart', '');
+                }else{
+                    
+                    res.cookie('cart', JSON.stringify(req.session.cart), { maxAge: 180000});
                 }
                 
                 if (req.body.recordar) {
