@@ -11,7 +11,7 @@ function editUserMiddleware (req, res, next) {
 	}
     return res.redirect('/users/register');
     
-    
+
 };
 
 module.exports = editUserMiddleware;
