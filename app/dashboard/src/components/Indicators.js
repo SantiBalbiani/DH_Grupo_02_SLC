@@ -21,7 +21,15 @@ class Indicators extends React.Component{
 
     componentDidMount() {
 
-      axios.get(this.state.url)
+      let urlUpdated = this.state.url;
+      console.log(' La opcion elegida es la: ');
+      console.log(this.state.info);
+      if (this.state.info == 2){
+        urlUpdated = this.state.url + this.state.idCategory;
+      }
+
+
+      axios.get(urlUpdated)
       .then(res => {
         const productos = res.data;
         this.setState({ products: productos });

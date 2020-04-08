@@ -43,7 +43,7 @@ class App extends React.Component {
         this.setState({API: 'http://localhost:3030/api/products/allProducts'});
         break;
       case 2:
-        this.setState({API: 'http://localhost:3030/api/products/1'});
+        this.setState({API: 'http://localhost:3030/api/products/'});
         break;
       default:
         break;
@@ -87,7 +87,7 @@ class App extends React.Component {
         <div className="col-9">
         <div className="row">
             {this.state.data.map( (cat, idx) => 
-             <Indicators key={Math.random()} img={`${icons[this.state.img]}`} title={cat.title} idCategory={cat.id} handler={this.handler.bind(this)} url={this.state.API}/>)}
+             <Indicators key={Math.random()} img={`${icons[this.state.img]}`} title={cat.title} idCategory={cat.id} handler={this.handler.bind(this)} url={this.state.API} info = {this.state.info}/>)}
         </div>
         <div className="row">
           <div className="col-xl-10 col-lg-12 col-md-12 col-sm-12 col-12">
