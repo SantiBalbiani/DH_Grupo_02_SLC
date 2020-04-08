@@ -28,8 +28,27 @@ class App extends React.Component {
       label: ' ',
       value: 4,
       img: 2,
+      info: 2,
       isTypeLine: false,
+      API: 'http://localhost:3030/api/products/1',
     }
+  }
+
+  updAPI(option){
+    switch(option){
+      case 0:
+        this.setState({API: 'http://localhost:3030/api/users/allUsrs'});
+        break;
+      case 1:
+        this.setState({API: 'http://localhost:3030/api/products/allProducts'});
+        break;
+      case 2:
+        this.setState({API: 'http://localhost:3030/api/products/1'});
+        break;
+      default:
+        break;
+    }
+    console.log(this.state.API);
   }
 
   updIcon(imgidx){
@@ -37,8 +56,16 @@ class App extends React.Component {
     });
   }
 
+  updInfo(opt){
+    this.setState({info: opt,
+    });
+  }
+
   updDashboard(opt){
          this.updIcon(opt); 
+         this.updInfo(opt);
+         this.updAPI(opt);
+         console.log(opt);
   }
 
   handler(id, name){
@@ -60,11 +87,11 @@ class App extends React.Component {
         <div className="col-9">
         <div className="row">
             {this.state.data.map( (cat, idx) => 
-             <Indicators key={idx} img={`${icons[this.state.img]}`} title={cat.categoryName} idCategory={cat.id} handler={this.handler.bind(this)} />)}
+             <Indicators key={Math.random()} img={`${icons[this.state.img]}`} title={cat.title} idCategory={cat.id} handler={this.handler.bind(this)} url={this.state.API}/>)}
         </div>
         <div className="row">
           <div className="col-xl-10 col-lg-12 col-md-12 col-sm-12 col-12">
-              <LineGraph key={Math.random()} param = {this.state.id_graphic} months = {this.state.value} label= {this.state.label} typeGr = {this.state.isTypeLine} />
+              <LineGraph key={Math.random()} param = {this.state.id_graphic} months = {this.state.value} label= {this.state.label} typeGr = {this.state.isTypeLine} info= {this.state.info} />
           </div>
           <div className="col-xl-2 col-lg-12 col-md-12 col-sm-12 col-12">
           <div className="text"> Graphic Type </div>
@@ -87,12 +114,16 @@ class App extends React.Component {
   )
 }
 async componentDidMount(){
-  let allCategories = await API.get('products/allCategories');
+  let allCategories;
+  let dataSet;
+ 
+  allCategories = await API.get('products/allCategories');
   allCategories = allCategories.data;
+  dataSet = allCategories.map( cat => {return { title: cat.categoryName, ...cat  } } )
   this.setState({
-    data: allCategories,
-  }); 
-
+    data: dataSet,
+  });
+  
 }
 
 }

@@ -13,17 +13,28 @@ class Indicators extends React.Component{
             idCategory: props.idCategory,
             products: [],
             handler: props.handler ,
+            info: props.info,
+            url: props.url
         }
     }
 
 
     componentDidMount() {
 
-        axios.get(`http://localhost:3030/api/products/${this.state.idCategory}`)
-          .then(res => {
-            const productos = res.data;
-            this.setState({ products: productos });
-          })
+      axios.get(this.state.url)
+      .then(res => {
+        const productos = res.data;
+        this.setState({ products: productos });
+      })
+
+      console.log(this.state.url);
+  /*     axios.get(`http://localhost:3030/api/products/${this.state.idCategory}`)
+        .then(res => {
+          const productos = res.data;
+          this.setState({ products: productos });
+        }) */
+  
+    
       }
 
     render(){
@@ -34,7 +45,7 @@ class Indicators extends React.Component{
           <img key={Math.random()} className="card-img-top" src={`${this.props.img}?${new Date().getTime()}`}  width="100" height="50" alt="Card image cap" />
             <h5 className="card-title">{this.state.title}</h5>
             <div className="card-body">
-            <p className="card-text">{ this.state.products.length }</p>
+            <p key={Math.random()} className="card-text">{ this.state.products.length }</p>
             <button type="button" className="btn btn-primary" onClick={ () => handler(this.state.idCategory, this.state.title)    }>Show Graphic</button>
           </div>
         </div>
