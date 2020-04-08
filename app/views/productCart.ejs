@@ -26,8 +26,8 @@
               <div class="tituloProducto"> <%= prod.prodName %>
               </div>
               <div class="precioCant">
-              <input class="form-control col-xl-2  col-12"  type="number" value="2" min="1" max="999">
-                <div class="col-xl-2  col-12">$ <%= prod.price %>
+              <input class="form-control col-xl-2  col-12"  type="number" value="<%= prod.cant %>" min="1" max="999" disabled="true">
+                <div class="col-xl-2  col-12">$ <%= (prod.price * prod.cant) %>
                 </div> 
               </div>
             </div>
@@ -44,7 +44,7 @@
             <div class="pieDetalle">
               <div class="row align-items-center">
                 <% if(cart){ %>
-                  <%  var precios = cart.map( prod => Number(prod.price)); %>
+                  <%  var precios = cart.map( prod => (Number(prod.price) * Number(prod.cant))); %>
                   <%  var total = precios.reduce((a, b) => a + b, 0); %>
                   <% }else{ %>
                    <% var total = 0; %>

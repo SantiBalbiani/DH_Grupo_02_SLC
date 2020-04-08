@@ -20,6 +20,7 @@
 <!---titulo producto-->
 
 <div class="container">
+  <form action="/products/addToCart"  method="POST" class="cabezalPagina">
   <div class="row">
     <div class="col-12 col-sm-6 col-lg-8"> 
       <p class="tituloProducto"> <%= product.prodName %></p>
@@ -56,25 +57,18 @@
             <h2 class="precio"> $ <%= product.price %> </h2> 
           </div>
 
-         <!--  <div class="col-12 col-md-4 col-lg-3">
-            <div class="dropdown drop-own">
-              <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
-                Elegir Cantidad <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu">
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-              </ul>
-            </div>
-          </div> -->
+          <div class="col-12 col-md-4 col-lg-3">
+            <input class="form-control" name="cant" type="number" value="2" min="1" max="999">
+          </div> 
+
+          
 
           <div class="col-12 col-md-4 col-lg-3">
             <a href="/" class="buttonComprar">  Comprar  </a>
           </div>
 
           <div class="col-12 col-md-4 col-lg-3">
-             <form action="/products/addToCart"  method="POST" class="cabezalPagina">
+             
               <input type="hidden" class="form-control" name="prodName" value="<%= product.prodName %>"> 
               <input type="hidden" class="form-control" name="id" value="<%= product.id %>">
               <input type="hidden" class="form-control" name="price" value="<%= product.price %>">
