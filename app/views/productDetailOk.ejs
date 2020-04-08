@@ -32,12 +32,15 @@
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star"></span>
       <a href="#" target="blank">Ver Opiniones </a>
+     <% if(user.id == product.idSeller && logged){ %>
+        <a href="/products/<%= product.id %>/edit" >Editar mi Producto </a>
+        <%   } %>
     </div>
   </div>
   
   <div class="row">
     <div class="col-6 col-lg-4"> 
-      <img src="/images/products/<%= product.imageName %>">
+      <img src="/images/products/<%= product.imageName %>" alt="Product" width="150" height="150">
     </div>
     <div class="col-12 col-sm-6 col-lg-8"> 
       <p class="tituloDetalle"> Características del Producto </p>
@@ -67,7 +70,7 @@
             <input type="hidden" class="form-control" name="prodName" value="<%= product.prodName %>"> 
             <input type="hidden" class="form-control" name="id" value="<%= product.id %>">
             <input type="hidden" class="form-control" name="price" value="<%= product.price %>">
-            <input type="hidden" class="form-control" name="imageName" value="<%= product.imageName %>">
+            <input type="hidden" class="form-control" name="imageName"  value="<%= product.imageName %>">
             <button type="submit" class="buttonCarrito"  >Agregar al Carrito</button>
            </form> 
         </div>
