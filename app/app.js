@@ -12,6 +12,7 @@ const userCookieMiddleware = require('./middlewares/userCookie');
 const localsMiddleware = require('./middlewares/localsMiddleware');
 const session = require('express-session');
 var apiUsers = require('./routes/apiUsers');
+var apiSells = require('./routes/apiSells');
 var apiProducts = require('./routes/apiProducts');
 var bodyParser = require('body-parser');
 var app = express();
@@ -52,7 +53,7 @@ app.use('/transactions',transactionsRouter);
 //api
 app.use('/api/users', apiUsers);
 app.use('/api/products', apiProducts);
-
+app.use('/api/Sells', apiSells);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
