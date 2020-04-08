@@ -36,7 +36,14 @@ const controller = {
                     })
                     .catch(error => res.json(error));
 	
-        }
+        },
+        allTheProducts:   (req, res) =>{
+         Products
+        .findAll()
+        .then(result => {
+            return res.json(result);
+        }).catch(error => res.json(error));
+    },
 }
 
 

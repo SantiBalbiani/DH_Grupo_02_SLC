@@ -67,6 +67,14 @@ const controller = {
                     }).catch(error => res.json(error));
                 }, 
 
+                allUsers: (req, res) => {
+                    Masterusers
+                    .findAll({attributes: ["id", "name", "surname", "state"]})
+                    .then(result => {
+                        return res.json(result);
+                }).catch(error => res.json(error));
+            },
+
 
 };
 module.exports = controller
