@@ -16,7 +16,7 @@ const icons = [
   './images/category2.jpg'
 ]
 
-function Greeting(props) {
+function Board(props) {
   var info = props.myState.info;
   if (info == 2) {
     
@@ -111,7 +111,7 @@ class App extends React.Component {
         
 
         <div className="row">
-        <Greeting myState={this.state} aHandler = {this.handler.bind(this)} />,
+        <Board myState={this.state} aHandler = {this.handler.bind(this)} />,
             
         </div>
         <div className="row">
