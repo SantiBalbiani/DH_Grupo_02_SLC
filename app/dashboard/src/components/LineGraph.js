@@ -16,17 +16,44 @@ class LineGraph extends Component {
             title: props.label,
             isTypeLine: props.typeGr,
             typeGr: 'bar',
+            info: props.info,
         }
     }
     chartRef = React.createRef();
     
   async  componentDidMount() {
+
+        var theQuantity = [];
+
         const myChartRef = this.chartRef.current.getContext("2d");
-        let prodsByCat = await API.get(`http://localhost:3030/api/products/${this.state.param}`);
+        
+        let prodsByCat;
+        let fechasDB = 0;
+        if(this.state.info == 2){
+        prodsByCat = await API.get(`http://localhost:3030/api/products/${this.state.param}`);
         prodsByCat = prodsByCat.data;
         prodsByCat = prodsByCat.filter( aData => aData.createdAt !== null);
         (this.state.isTypeLine)? this.setState({typeGr: 'line'}) : this.setState({typeGr: 'bar'});
-        let fechasDB = prodsByCat.map( (aData) => new Date(aData.createdAt) );
+        
+        fechasDB = prodsByCat.map( (aData) => new Date(aData.createdAt) );
+        }
+
+        if(this.state.info == 1){
+        prodsByCat = await API.get('http://localhost:3030/api/sells/sellsHead');
+        prodsByCat = prodsByCat.data;
+        prodsByCat = prodsByCat.filter( aData => aData.createdAt !== null);
+        (this.state.isTypeLine)? this.setState({typeGr: 'line'}) : this.setState({typeGr: 'bar'});
+        fechasDB = prodsByCat.map( (aData) => new Date(aData.createdAt) );
+        }
+
+        if(this.state.info == 0){
+            prodsByCat = await API.get('http://localhost:3030/api/users/allUsrs');
+            prodsByCat = prodsByCat.data;
+            prodsByCat = prodsByCat.filter( aData => aData.createdAt !== null);
+            (this.state.isTypeLine)? this.setState({typeGr: 'line'}) : this.setState({typeGr: 'bar'});
+            fechasDB = prodsByCat.map( (aData) => new Date(aData.createdAt) );
+            }
+
         let lastMonths = DateHandler.getLastMonths(this.state.months); 
         let quantity = [];
         for( let i=0; i < lastMonths.length; i++){
@@ -38,6 +65,7 @@ class LineGraph extends Component {
             quantity.push((fechasDB.filter( aDate => ((aDate <= rangoFechas.fechaHasta) && (aDate >=rangoFechas.fechaDesde)))).length );
         } 
        
+        
        let lastMonthsNames = DateHandler.getLastMonthsNames(lastMonths);
 
         new Chart(myChartRef, {

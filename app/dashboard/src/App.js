@@ -40,7 +40,7 @@ class App extends React.Component {
         this.setState({API: 'http://localhost:3030/api/users/allUsrs'});
         break;
       case 1:
-        this.setState({API: 'http://localhost:3030/api/products/allProducts'});
+        this.setState({API: 'http://localhost:3030/api/sells/sellsHead'});
         break;
       case 2:
         this.setState({API: 'http://localhost:3030/api/products/'});

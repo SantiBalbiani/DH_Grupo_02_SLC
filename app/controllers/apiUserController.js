@@ -69,7 +69,7 @@ const controller = {
 
                 allUsers: (req, res) => {
                     Masterusers
-                    .findAll({attributes: ["id", "name", "surname", "state"]})
+                    .findAll({attributes: ["id", "name", "surname", "state", "createdAt"]})
                     .then(result => {
                         return res.json(result);
                 }).catch(error => res.json(error));
