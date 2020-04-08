@@ -41,6 +41,10 @@ function (req, res, next) {
     next();
   };
 
+//************ Middlewares ************
+const editUserMiddleware = require('../middlewares/editUserMiddleware');
+  
+
 /* GET users listing. */
 router.get('/', userController.getUsers);
 router.post('/login', userController.logIn);
@@ -49,7 +53,7 @@ router.get('/register', userController.register);
 router.get('/logout', userController.logOut);
 router.get('/userProfile/:id', userController.profile)
 router.get('/:id', userController.getUser);
-router.get('/:id/edit', userController.editUser);
+router.get('/:id/edit', editUserMiddleware, userController.editUser);
 router.post('/', upload.single('avatarName'), [check('password').not().isEmpty().isLength({min: 4}).withMessage( 'La contraseña debe tener mínimo 4 caracteres.'),  check("email").isEmail().withMessage('Ingresar un email válido.')],  messages  , userController.saveUser);
 router.put('/:id/edit',upload.single('avatarName'), userController.saveChanges);
 router.delete('/:id', userController.deleteUser);
