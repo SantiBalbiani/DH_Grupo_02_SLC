@@ -108,11 +108,8 @@ class App extends React.Component {
             <NavBar updDashboard={this.updDashboard.bind(this)} test="1"/>
         </div>
         <div className="col-9">
-        
-
         <div className="row">
         <Board myState={this.state} aHandler = {this.handler.bind(this)} />,
-            
         </div>
         <div className="row">
           <div className="col-xl-10 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -141,8 +138,6 @@ class App extends React.Component {
 async componentDidMount(){
   let allCategories;
   let dataSet;
-  console.log('cambió el info');
-  console.log(this.state.info);
   allCategories = await API.get('products/allCategories');
   allCategories = allCategories.data;
   dataSet = allCategories.map( cat => {return { title: cat.categoryName, ...cat  } } )
