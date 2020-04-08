@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    let alias = 'trxItem';
+    let alias = 'trxitems';
     let columns = {
 		id: {
 			type: DataTypes.INTEGER,
@@ -16,7 +16,9 @@ module.exports = (sequelize, DataTypes) => {
 		timestamps: false, // createdAt - updatedAt
 	};*/
     
-    const atrxItem = sequelize.define(alias, columns);
+    const atrxItem = sequelize.define(alias, columns,  {
+      timestamps: false
+  });
 
     
     atrxItem.associate = function(models) {

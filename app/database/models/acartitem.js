@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    let alias = 'trxItem';
+    let alias = 'cartitem';
     let columns = {
 		id: {
 			type: DataTypes.INTEGER,
@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
 			allowNull: false,
 			autoIncrement: true,
 		},
-        idTrx: DataTypes.INTEGER,
+        idCart: DataTypes.INTEGER,
         idProd: DataTypes.INTEGER,
         cant: DataTypes.INTEGER,
     };
@@ -16,23 +16,23 @@ module.exports = (sequelize, DataTypes) => {
 		timestamps: false, // createdAt - updatedAt
 	};*/
     
-    const atrxItem = sequelize.define(alias, columns);
+    const acartitem = sequelize.define(alias, columns);
 
     
-    atrxItem.associate = function(models) {
+    acartitem.associate = function(models) {
         // associations can be defined here
     
            // belongsTo 
-           atrxItem.belongsTo(models.trx, {
-                as: 'trx',
-                foreignKey: 'idTrx'
+           acartitem.belongsTo(models.cart, {
+                as: 'cart',
+                foreignKey: 'idCart'
             });
             
             // belongsTo 
-            atrxItem.belongsTo(models.products, {
+            acartitem.belongsTo(models.products, {
             as: 'products',
             foreignKey: 'idProd'
         });
       };
-      return atrxItem;
+      return acartitem;
     };

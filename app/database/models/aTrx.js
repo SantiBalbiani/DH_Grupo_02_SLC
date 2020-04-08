@@ -15,7 +15,10 @@ module.exports = (sequelize, DataTypes) => {
 		timestamps: false, // createdAt - updatedAt
 	};*/
     
-    const aTrx = sequelize.define(alias, columns);
+    const aTrx = sequelize.define(alias, columns,{
+      freezeTableName: true,
+      tableName: 'trx',
+    });
 
   
 
@@ -27,6 +30,11 @@ module.exports = (sequelize, DataTypes) => {
 			as: 'masterusers',
 			foreignKey: 'idBuyer'
         });
+
+        aTrx.hasMany(models.trxitems, {
+          as: 'trxitems',
+          foreignKey: 'idTrx'
+        })
   };
   return aTrx;
 };

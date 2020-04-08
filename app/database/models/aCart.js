@@ -27,6 +27,11 @@ module.exports = (sequelize, DataTypes) => {
 			as: 'masterusers',
 			foreignKey: 'idUser'
         });
+
+        aCart.hasMany(models.cartitem, {
+          as: 'cartitem',
+          foreignKey: 'idCart'
+        })
         
       
   };

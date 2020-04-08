@@ -143,7 +143,7 @@ const controller = {
 	
 	},
 	addProductToCart:(req, res) =>{
-		let product = { id: req.body.id, prodName: req.body.prodName, price: req.body.price, imageName: req.body.imageName };
+		let product = { id: req.body.id, cant: req.body.cant, prodName: req.body.prodName, price: req.body.price, imageName: req.body.imageName };
 		var cart = req.session.cart || [];  
 		cart.push(product);
 		req.session.cart = cart;
