@@ -116,7 +116,8 @@ class App extends React.Component {
 async componentDidMount(){
   let allCategories;
   let dataSet;
- 
+  console.log('cambió el info');
+  console.log(this.state.info);
   allCategories = await API.get('products/allCategories');
   allCategories = allCategories.data;
   dataSet = allCategories.map( cat => {return { title: cat.categoryName, ...cat  } } )

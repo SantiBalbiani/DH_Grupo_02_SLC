@@ -22,27 +22,14 @@ class Indicators extends React.Component{
     componentDidMount() {
 
       let urlUpdated = this.state.url;
-      console.log(' La opcion elegida es la: ');
-      console.log(this.state.info);
       if (this.state.info == 2){
         urlUpdated = this.state.url + this.state.idCategory;
       }
-
-
       axios.get(urlUpdated)
       .then(res => {
         const productos = res.data;
         this.setState({ products: productos });
       })
-
-      console.log(this.state.url);
-  /*     axios.get(`http://localhost:3030/api/products/${this.state.idCategory}`)
-        .then(res => {
-          const productos = res.data;
-          this.setState({ products: productos });
-        }) */
-  
-    
       }
 
     render(){
