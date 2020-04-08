@@ -157,7 +157,8 @@ const fpath = path.join(__dirname, '../data/users.json');
 
         logOut: (req, res) => {
 		req.session.destroy();
-		res.cookie('user', null, { maxAge: -1 });
+        res.cookie('user', null, { maxAge: -1 });
+        res.cookie('cart', null, { maxAge: -1 });
 		return res.redirect('/');
         },
         
