@@ -17,13 +17,23 @@ let diskStorage = multer.diskStorage({
 
 let upload = multer({ storage: diskStorage })
 
+function productsMiddleware (req, res, next) {
+    
+    if(req.session.user != undefined) {
+      return next();
+    }
+    return res.redirect('/users/register');
+  }
+
+  module.exports = productsMiddleware;
+
 /* GET users listing. */
 router.get('/', productsController.root);
 router.get('/search', searchBarController.root);
-router.get('/create', productsController.createProduct);
+router.get('/create', productsMiddleware, productsController.createProduct);
 router.get('/delCart', productsController.deleteCart);
 router.get('/:id', productsController.getProduct);
-router.get('/:id/edit', productsController.editProduct);
+router.get('/:id/edit', productsMiddleware, productsController.editProduct);
 router.get('/category/:category', productsController.getProdsByCat);
 router.post('/', upload.single('imageName'), productsController.saveProduct);
 router.post('/addToCart', productsController.addProductToCart)
