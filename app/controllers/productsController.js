@@ -104,6 +104,7 @@ const controller = {
 	saveProduct: (req, res) => {
 		data = {
 			imageName: req.file.filename,
+			idSeller: req.session.user.id,
 			createdAt: new Date(),
 			...req.body
 		}
